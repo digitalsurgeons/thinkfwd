@@ -2,7 +2,7 @@ import App, { Container } from 'next/app'
 import React from 'react'
 import withApolloClient from '../lib/with-apollo-client'
 import { ApolloProvider } from 'react-apollo'
-
+import Layout from '../components/Layout'
 import GlobalStyles from '../styles'
 
 class MyApp extends App {
@@ -12,7 +12,9 @@ class MyApp extends App {
       <Container>
         <GlobalStyles />
         <ApolloProvider client={apolloClient}>
-          <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </ApolloProvider>
       </Container>
     )

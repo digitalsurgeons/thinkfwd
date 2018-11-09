@@ -1,9 +1,8 @@
 import { withRouter } from 'next/router'
-import Layout from '../components/Layout'
 
 export default withRouter(({ router: { query } }) => {
   return (
-    <Layout>
+    <div>
       <h1
         style={{
           textAlign: 'center',
@@ -15,6 +14,6 @@ export default withRouter(({ router: { query } }) => {
         }}>
         {query.slug}
       </h1>
-    </Layout>
+    </div>
   )
 })
