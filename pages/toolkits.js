@@ -31,12 +31,12 @@ export default () => {
   return (
     <Query query={toolkitsPageQuery}>
       {({ loading, error, data }) => {
-        if (error) return <ErrorMessage message="Error loading toolkits." />
+        if (error) return <ErrorMessage message="Error loading page." />
         if (loading) return <div>Loading</div>
         let components = data.allToolkits_pages.edges[0].node.body
         return (
           <section>
-            {components.map(component => getComponent(component.type))}
+            {components.map(component => getComponent(component))}
           </section>
         )
       }}
@@ -44,11 +44,17 @@ export default () => {
   )
 }
 
-function getComponent(type) {
-  switch (type) {
+function getComponent(component) {
+  switch (component.type) {
     case 'header':
-      return <Header key={type} />
+      return (
+        <Header
+          title={component.primary.title[0].text}
+          headline={component.primary.headline[0].text}
+          key={component.type}
+        />
+      )
     case 'toolkits':
-      return <Toolkits key={type} />
+      return <Toolkits key={component.type} />
   }
 }
