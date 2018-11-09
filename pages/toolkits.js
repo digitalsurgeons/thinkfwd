@@ -1,6 +1,7 @@
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
 import ErrorMessage from '../components/ErrorMessage'
+import Layout from '../components/Layout'
 import getComponent from '../lib/getComponent'
 
 export const toolkitsPageQuery = gql`
@@ -34,9 +35,9 @@ export default () => {
         if (loading) return <div>Loading</div>
         let components = data.allToolkits_pages.edges[0].node.body
         return (
-          <section>
+          <Layout>
             {components.map(component => getComponent(component))}
-          </section>
+          </Layout>
         )
       }}
     </Query>

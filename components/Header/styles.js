@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { settings } from '../../styles'
 
 export const Container = styled.header({
-  padding: '40px 0',
+  padding: '56px 0 40px',
   maxWidth: settings.screens.desktop,
   margin: '0 auto'
 })
