@@ -1,8 +1,7 @@
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
 import ErrorMessage from '../components/ErrorMessage'
-import Header from '../components/Header'
-import Toolkits from '../components/Toolkits'
+import getComponent from '../lib/getComponent'
 
 export const toolkitsPageQuery = gql`
   query {
@@ -42,19 +41,4 @@ export default () => {
       }}
     </Query>
   )
-}
-
-function getComponent(component) {
-  switch (component.type) {
-    case 'header':
-      return (
-        <Header
-          title={component.primary.title[0].text}
-          headline={component.primary.headline[0].text}
-          key={component.type}
-        />
-      )
-    case 'toolkits':
-      return <Toolkits key={component.type} />
-  }
 }
