@@ -19,6 +19,13 @@ export const toolkitsPageQuery = gql`
             ... on Toolkits_pageBodyToolkits {
               type
             }
+            ... on Toolkits_pageBodyNewsletter_signup {
+              type
+              primary {
+                headline
+                subheadline
+              }
+            }
           }
         }
       }

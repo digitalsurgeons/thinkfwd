@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { settings } from '../../styles'
-import { isAbsolute } from 'path'
 
 export const Root = styled.nav({
   width: '100%',
