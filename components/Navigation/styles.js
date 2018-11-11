@@ -31,5 +31,20 @@ export const NavLink = styled.a({
   position: 'relative',
   ':last-child': {
     marginRight: 0
+  },
+  '::before': {
+    transition: '.3s',
+    backgroundColor: '#3FE3FA',
+    height: '8px',
+    zIndex: -1,
+    opacity: 0,
+    content: "''",
+    bottom: '-1px',
+    width: '100%',
+    position: 'absolute'
+  },
+  ':hover::before': {
+    transition: '.3s',
+    opacity: 1
   }
 })
