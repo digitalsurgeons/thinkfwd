@@ -14,7 +14,7 @@ export default () => {
           <Link route="/events" passHref>
             <NavLink>Events</NavLink>
           </Link>
-          <Link route="/sprints" passHref>
+          <Link route="/sprintsss" passHref>
             <NavLink>Sprints</NavLink>
           </Link>
           <Link route="/toolkits" passHref>
