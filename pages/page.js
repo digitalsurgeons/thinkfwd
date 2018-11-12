@@ -1,25 +1,30 @@
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
+import Error from 'next/error'
+import { withRouter } from 'next/router'
 import ErrorMessage from '../components/ErrorMessage'
 import getComponent from '../lib/getComponent'
 
-export const toolkitsPageQuery = gql`
-  query {
-    allToolkits_pages {
+export const allPagesQuery = gql`
+  query allPages($uid: String!) {
+    allPages(uid: $uid) {
       edges {
         node {
+          _meta {
+            uid
+          }
           body {
-            ... on Toolkits_pageBodyHeader {
+            ... on PageBodyHeader {
               type
               primary {
                 title
                 headline
               }
             }
-            ... on Toolkits_pageBodyToolkits {
+            ... on PageBodyToolkits {
               type
             }
-            ... on Toolkits_pageBodyNewsletter_signup {
+            ... on PageBodyNewsletter_signup {
               type
               primary {
                 headline
@@ -33,15 +38,19 @@ export const toolkitsPageQuery = gql`
   }
 `
 
-export default () => {
+export default withRouter(({ router: { query } }) => {
   return (
-    <Query query={toolkitsPageQuery}>
+    <Query query={allPagesQuery} variables={{ uid: query.slug }}>
       {({ loading, error, data }) => {
         if (error) return <ErrorMessage message="Error loading page." />
+        // If there are no pages that match this slug throw a 404 error
+        if (!data.allPages.edges.length) {
+          return <Error statusCode={404} />
+        }
         if (loading) return <div>Loading</div>
-        let components = data.allToolkits_pages.edges[0].node.body
+        let components = data.allPages.edges[0].node.body
         return <div>{components.map(component => getComponent(component))}</div>
       }}
     </Query>
   )
-}
+})

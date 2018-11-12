@@ -4,7 +4,7 @@ export default ({ message }) => (
       padding: '20px',
       fontSize: '18px',
       color: 'white',
-      backgoundColor: 'red'
+      backgroundColor: 'red'
     }}>
     {message}
   </aside>
