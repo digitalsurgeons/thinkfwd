@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { settings } from '../../styles'
+import settings from '../../lib/settings'
 
 export const Container = styled.div({
   maxWidth: settings.screens.desktop,

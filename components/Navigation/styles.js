@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { settings } from '../../styles'
+import settings from '../../lib/settings'
 
 export const Root = styled.nav({
   width: '100%',
