@@ -47,7 +47,11 @@ export default withRouter(({ statusCode, router: { query } }) => {
         if (loading) return <div>Loading</div>
         if (data.allPages.edges.length === 0) return throw404()
         let components = data.allPages.edges[0].node.body
-        return <div>{components.map(component => getComponent(component))}</div>
+        return (
+          <section>
+            {components.map(component => getComponent(component))}
+          </section>
+        )
       }}
     </Query>
   )

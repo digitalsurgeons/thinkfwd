@@ -1,3 +1,5 @@
+import Textfield from '../Textfield'
+import Button from '../Button'
 import {
   Root,
   Container,
@@ -17,6 +19,12 @@ export default ({ headline, subheadline }) => {
           <Headline>{headline}</Headline>
           <Subheadline>{subheadline}</Subheadline>
         </Body>
+        <Form>
+          <Textfield floatingLabelText="Name" />
+          <Textfield floatingLabelText="Email" />
+          <Textfield floatingLabelText="Organization" />
+          <Button>Submit</Button>
+        </Form>
       </Container>
     </Root>
   )

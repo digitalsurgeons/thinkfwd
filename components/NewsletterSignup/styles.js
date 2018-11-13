@@ -8,6 +8,8 @@ export const Root = styled.nav({
 
 export const Container = styled.div({
   display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
   maxWidth: settings.screens.desktop,
   margin: '0 auto'
 })
@@ -17,8 +19,11 @@ export const Body = styled.div({
   position: 'relative'
 })
 
+export const Form = styled.form({
+  maxWidth: '465px'
+})
+
 export const Headline = styled.h2({
-  paddingTop: '140px',
   fontSize: '80px',
   marginBottom: '16px',
   fontWeight: 600,
@@ -36,5 +41,3 @@ export const Image = styled.img({
   marginLeft: '-150px',
   position: 'absolute'
 })
-
-export const Form = styled.form({})
