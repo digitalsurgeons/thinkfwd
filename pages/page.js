@@ -6,32 +6,33 @@ import ErrorMessage from '../components/ErrorMessage'
 import { throw404 } from '../lib/helpers'
 import getComponent from '../lib/getComponent'
 
-export const allPagesQuery = gql`
-  query allPages($uid: String!) {
-    allPages(uid: $uid) {
-      edges {
-        node {
-          _meta {
-            uid
+const pageQuery = gql`
+  query page($lang: String!, $uid: String!) {
+    page(lang: $lang, uid: $uid) {
+      body {
+        ... on PageBodyHeader {
+          type
+          primary {
+            title
+            headline
           }
-          body {
-            ... on PageBodyHeader {
-              type
-              primary {
-                title
-                headline
-              }
-            }
-            ... on PageBodyToolkits {
-              type
-            }
-            ... on PageBodyNewsletter_signup {
-              type
-              primary {
-                headline
-                subheadline
-              }
-            }
+        }
+        ... on PageBodyToolkits {
+          type
+        }
+        ... on PageBodyNewsletter_signup {
+          type
+          primary {
+            headline
+            subheadline
+          }
+        }
+        ... on PageBodyStagger {
+          type
+          primary {
+            image
+            headline
+            description
           }
         }
       }
@@ -39,19 +40,14 @@ export const allPagesQuery = gql`
   }
 `
 
-export default withRouter(({ statusCode, router: { query } }) => {
+export default withRouter(({ router: { query } }) => {
   return (
-    <Query query={allPagesQuery} variables={{ uid: query.slug }}>
-      {({ loading, error, data }) => {
+    <Query query={pageQuery} variables={{ lang: 'en-us', uid: query.slug }}>
+      {({ loading, error, data: { page } }) => {
         if (error) return <ErrorMessage message="Error loading page." />
         if (loading) return <div>Loading</div>
-        if (data.allPages.edges.length === 0) return throw404()
-        let components = data.allPages.edges[0].node.body
-        return (
-          <section>
-            {components.map(component => getComponent(component))}
-          </section>
-        )
+        if (!page) return throw404()
+        return page.body.map(component => getComponent(component))
       }}
     </Query>
   )

@@ -10,14 +10,14 @@ import {
   Form
 } from './styles'
 
-export default ({ headline, subheadline }) => {
+export default ({ data: { headline, subheadline } }) => {
   return (
     <Root>
       <Container>
         <Body>
           <Image src="/static/img/flyingBox.svg" />
-          <Headline>{headline}</Headline>
-          <Subheadline>{subheadline}</Subheadline>
+          <Headline>{headline[0].text}</Headline>
+          <Subheadline>{subheadline[0].text}</Subheadline>
         </Body>
         <Form>
           <Textfield floatingLabelText="Name" />

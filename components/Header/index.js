@@ -1,10 +1,10 @@
 import { Container, Title, Headline } from './styles'
 
-export default ({ title, headline }) => {
+export default ({ data: { title, headline } }) => {
   return (
     <Container>
-      <Title>{title}</Title>
-      <Headline>{headline}</Headline>
+      <Title>{title[0].text}</Title>
+      <Headline>{headline[0].text}</Headline>
     </Container>
   )
 }

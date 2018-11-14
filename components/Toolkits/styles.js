@@ -9,3 +9,7 @@ export const Container = styled.div({
   gridRowGap: '32px',
   gridTemplateColumns: 'auto auto'
 })
+
+export const StyledLink = styled.a({
+  marginBottom: '80px'
+})

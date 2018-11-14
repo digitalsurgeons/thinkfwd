@@ -1,16 +1,15 @@
 import styled from 'styled-components'
-import settings from '../../lib/settings'
+import { screens } from '../../lib/settings'
 
 export const Root = styled.nav({
   width: '100%',
-  padding: '80px 0'
+  padding: '200px 0 80px'
 })
 
 export const Container = styled.div({
   display: 'flex',
   justifyContent: 'space-between',
-  alignItems: 'center',
-  maxWidth: settings.screens.desktop,
+  maxWidth: screens.desktop,
   margin: '0 auto'
 })
 
@@ -20,7 +19,8 @@ export const Body = styled.div({
 })
 
 export const Form = styled.form({
-  maxWidth: '465px'
+  maxWidth: '465px',
+  width: '100%'
 })
 
 export const Headline = styled.h2({
@@ -38,6 +38,7 @@ export const Subheadline = styled.h3({
 export const Image = styled.img({
   height: '255px',
   width: '255px',
-  marginLeft: '-150px',
+  top: '-150px',
+  marginLeft: '-135px',
   position: 'absolute'
 })
