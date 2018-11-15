@@ -33,6 +33,18 @@ const pageQuery = gql`
             image
             headline
             description
+            link {
+              ... on _ExternalLink {
+                url
+              }
+              ... on _ImageLink {
+                url
+              }
+              ... on _FileLink {
+                url
+              }
+            }
+            link_text
           }
         }
       }
