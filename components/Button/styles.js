@@ -6,6 +6,7 @@ export const Button = styled.button(props => ({
   color: colors.offBlack,
   fontFamily: fonts.secondary,
   border: 0,
+  cursor: 'pointer',
   fontSize: '16px',
   fontWeight: '800',
   letterSpacing: '1px',

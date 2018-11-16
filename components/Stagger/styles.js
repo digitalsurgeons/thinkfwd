@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors, fonts, screens } from '../../lib/settings'
+import { colors, fonts, breakpoints } from '../../lib/settings'
 
 export const Root = styled.nav({
   backgroundColor: colors.offBlack,
@@ -11,7 +11,7 @@ export const Root = styled.nav({
 export const Container = styled.div({
   display: 'flex',
   justifyContent: 'space-between',
-  maxWidth: screens.desktop,
+  maxWidth: `${breakpoints[3]}px`,
   position: 'relative',
   overflow: 'visible',
   margin: '0 auto'

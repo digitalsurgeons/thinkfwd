@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import settings from '../../lib/settings'
+import { breakpoints } from '../../lib/settings'
 
 export const Container = styled.div({
-  maxWidth: settings.screens.desktop,
+  maxWidth: `${breakpoints[3]}px`,
   margin: '0 auto',
   display: 'grid',
   gridColumnGap: '32px',
