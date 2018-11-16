@@ -5,6 +5,7 @@ import ErrorMessage from '../ErrorMessage'
 import Card from '../Card'
 import { Wrapper, Box, StyledLink } from './styles'
 import { Container } from '../../lib/helpers'
+import Loader from '../Loader'
 
 export const allToolkits = gql`
   query {

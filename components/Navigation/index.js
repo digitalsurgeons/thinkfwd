@@ -19,7 +19,7 @@ export default () => {
             <Link route="/education" passHref>
               <NavLink>Education</NavLink>
             </Link>
-            <Link route="/toolkits" passHref>
+            <Link prefetch withData route="/toolkits" passHref>
               <NavLink>Toolkits</NavLink>
             </Link>
             <Link route="/blog" passHref>

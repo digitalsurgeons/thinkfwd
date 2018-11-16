@@ -5,6 +5,7 @@ import Router, { withRouter } from 'next/router'
 import ErrorMessage from '../components/ErrorMessage'
 import { throw404 } from '../lib/helpers'
 import getComponent from '../lib/getComponent'
+import Loader from '../components/Loader'
 
 const pageQuery = gql`
   query page($lang: String!, $uid: String!) {
@@ -57,7 +58,7 @@ export default withRouter(({ router: { query } }) => {
     <Query query={pageQuery} variables={{ lang: 'en-us', uid: query.slug }}>
       {({ loading, error, data: { page } }) => {
         if (error) return <ErrorMessage message="Error loading page." />
-        if (loading) return <div>Loading</div>
+        if (loading) return <Loader loading />
         if (!page) return throw404()
         return page.body.map(component => getComponent(component))
       }}

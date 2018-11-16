@@ -1,6 +1,6 @@
-const routes = require('next-routes')
+const routes = (module.exports = require('next-routes')())
 
-module.exports = routes()
+routes
   .add('index', '/')
   .add('page', '/:slug')
   .add('toolkit', '/toolkits/:slug')
