@@ -19,7 +19,7 @@ export default ({ children }) => {
 
           @font-face {
             font-family: 'gilroy';
-            src: url('gilroy-light-webfont.woff2') format('woff2'),
+            src: url('/static/fonts/gilroy-light-webfont.woff2') format('woff2'),
               url('gilroy-light-webfont.woff') format('woff');
             font-weight: 200;
             font-style: normal;
@@ -63,8 +63,10 @@ export default ({ children }) => {
 
           @font-face {
             font-family: 'gilroy';
-            src: url('gilroy-extrabold_3-webfont.woff2') format('woff2'),
-              url('gilroy-extrabold_3-webfont.woff') format('woff');
+            src: url('/static/fonts/gilroy-extrabold_3-webfont.woff2')
+                format('woff2'),
+              url('/static/fonts/gilroy-extrabold_3-webfont.woff')
+                format('woff');
             font-weight: 800;
             font-style: normal;
           }

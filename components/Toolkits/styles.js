@@ -11,5 +11,5 @@ export const Container = styled.div({
 })
 
 export const StyledLink = styled.a({
-  marginBottom: '80px'
+  marginBottom: '90px'
 })

@@ -1,5 +1,9 @@
 import { Button } from './styles'
 
-export default ({ children, inverse = false }) => {
-  return <Button inverse={inverse}>{children}</Button>
+export default ({ children, secondary = false, ...other }) => {
+  return (
+    <Button secondary={secondary} {...other}>
+      {children}
+    </Button>
+  )
 }

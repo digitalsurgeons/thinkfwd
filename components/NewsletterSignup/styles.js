@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { screens } from '../../lib/settings'
+import { screens, fonts } from '../../lib/settings'
 
 export const Root = styled.nav({
   width: '100%',
-  padding: '200px 0 80px'
+  padding: '250px 0 80px'
 })
 
 export const Container = styled.div({
@@ -25,6 +25,7 @@ export const Form = styled.form({
 
 export const Headline = styled.h2({
   fontSize: '80px',
+  fontFamily: fonts.secondary,
   marginBottom: '16px',
   fontWeight: 600,
   lineHeight: '104px'
@@ -32,7 +33,8 @@ export const Headline = styled.h2({
 
 export const Subheadline = styled.h3({
   fontSize: '20px',
-  lineHeight: '40px'
+  lineHeight: '40px',
+  fontFamily: fonts.secondary
 })
 
 export const Image = styled.img({

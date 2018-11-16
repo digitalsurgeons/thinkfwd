@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { fonts } from './lib/settings'
 
 export default createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -24,6 +25,7 @@ export default createGlobalStyle`
   border: 0;
   font-size: 100%;
   font: inherit;
+  font-family: ${fonts.primary};
   vertical-align: baseline;
   }
   /* HTML5 display-role reset for older browsers */
@@ -53,9 +55,6 @@ export default createGlobalStyle`
   /* 
     Typography
   */
-  body {
-    font-family: 'gilroy'
-  }
   a {
     text-decoration: none
   }

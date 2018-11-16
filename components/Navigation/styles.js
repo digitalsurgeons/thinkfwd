@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import settings from '../../lib/settings'
+import { screens, fonts } from '../../lib/settings'
 
 export const Root = styled.nav({
   width: '100%',
@@ -7,7 +7,7 @@ export const Root = styled.nav({
 })
 
 export const Container = styled.div({
-  maxWidth: settings.screens.desktop,
+  maxWidth: screens.desktop,
   margin: '0 auto',
   display: 'flex',
   alignItems: 'center',
@@ -25,6 +25,7 @@ export const Nav = styled.div({
 export const NavLink = styled.a({
   color: '#000',
   fontWeight: 600,
+  fontFamily: fonts.secondary,
   display: 'block',
   marginRight: '56px',
   position: 'relative',
