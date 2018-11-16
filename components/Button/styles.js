@@ -2,18 +2,20 @@ import styled from 'styled-components'
 import { colors, fonts } from '../../lib/settings'
 
 export const Button = styled.button(props => ({
-  backgroundColor: props.secondary ? colors.offBlack : colors.yellow,
-  color: colors.offBlack,
+  backgroundColor: props.secondary ? colors.white : colors.yellow,
+  color: props.secondary ? colors.pink : colors.black,
   fontFamily: fonts.secondary,
-  border: 0,
+  border: `1px solid`,
+  borderColor: props.secondary ? colors.gray : 'transparent',
   cursor: 'pointer',
   fontSize: '16px',
-  fontWeight: '800',
+  fontWeight: '700',
   letterSpacing: '1px',
   textAlign: 'center',
-  padding: '20px 40px',
+  padding: '16px 24px',
   display: 'inline-block',
-  borderRadius: '4px',
+  outline: 'none',
+  borderRadius: '8px',
   ':hover': {},
   ':active': {}
 }))

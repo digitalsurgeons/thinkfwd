@@ -6,20 +6,20 @@ export const Root = styled.nav({
   padding: '40px 0'
 })
 
-export const Container = styled.div({
-  maxWidth: `${breakpoints[3]}px`,
-  margin: '0 auto',
+export const Wrapper = styled.div({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between'
 })
 
 export const LogoLink = styled.a({
-  display: 'block'
+  display: 'block',
+  cursor: 'pointer'
 })
 
 export const Nav = styled.div({
-  display: 'flex'
+  display: 'flex',
+  width: '100%'
 })
 
 export const NavLink = styled.a({
@@ -27,7 +27,7 @@ export const NavLink = styled.a({
   fontWeight: 600,
   fontFamily: fonts.secondary,
   display: 'block',
-  marginRight: '56px',
+  marginRight: '40px',
   position: 'relative',
   ':last-child': {
     marginRight: 0
@@ -47,4 +47,10 @@ export const NavLink = styled.a({
     transition: '.3s',
     opacity: 1
   }
+})
+
+export const ButtonContainer = styled.div({
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'flex-end'
 })

@@ -13,12 +13,11 @@ export const Input = styled.input(props => ({
   borderColor: '#d8d8d8',
   color: colors.black,
   display: 'block',
-  opacity: 0.6,
   fontWeight: 600,
   fontSize: '24px',
   fontFamily: fonts.secondary,
   padding: '10px 0',
-  width: '325px',
+  width: '100%',
   ':focus': {
     outline: 'none'
   }

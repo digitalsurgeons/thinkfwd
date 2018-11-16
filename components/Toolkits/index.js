@@ -3,7 +3,8 @@ import gql from 'graphql-tag'
 import { Link } from '../../routes'
 import ErrorMessage from '../ErrorMessage'
 import Card from '../Card'
-import { Container, Box, StyledLink } from './styles'
+import { Wrapper, Box, StyledLink } from './styles'
+import { Container } from '../../lib/helpers'
 
 export const allToolkits = gql`
   query {
@@ -31,20 +32,22 @@ export default () => {
         if (loading) return <div>Loading</div>
         return (
           <Container>
-            {data.allToolkits.edges.map((toolkit, i) => (
-              <Link
-                key={i}
-                route={`/toolkits/${toolkit.node._meta.uid}`}
-                passHref>
-                <StyledLink>
-                  <Card
-                    title={toolkit.node.title[0].text}
-                    subtitle={toolkit.node.description[0].text}
-                    image={toolkit.node.image.url}
-                  />
-                </StyledLink>
-              </Link>
-            ))}
+            <Wrapper>
+              {data.allToolkits.edges.map((toolkit, i) => (
+                <Link
+                  key={i}
+                  route={`/toolkits/${toolkit.node._meta.uid}`}
+                  passHref>
+                  <StyledLink>
+                    <Card
+                      title={toolkit.node.title[0].text}
+                      subtitle={toolkit.node.description[0].text}
+                      image={toolkit.node.image.url}
+                    />
+                  </StyledLink>
+                </Link>
+              ))}
+            </Wrapper>
           </Container>
         )
       }}

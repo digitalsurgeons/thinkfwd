@@ -8,13 +8,9 @@ export const Root = styled.nav({
   paddingBottom: '140px'
 })
 
-export const Container = styled.div({
+export const Wrapper = styled.div({
   display: 'flex',
-  justifyContent: 'space-between',
-  maxWidth: `${breakpoints[3]}px`,
-  position: 'relative',
-  overflow: 'visible',
-  margin: '0 auto'
+  justifyContent: 'space-between'
 })
 
 export const Image = styled.img({

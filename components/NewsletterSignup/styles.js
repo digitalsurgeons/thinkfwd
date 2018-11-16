@@ -1,16 +1,14 @@
 import styled from 'styled-components'
-import { breakpoints, fonts } from '../../lib/settings'
+import { screens, fonts } from '../../lib/settings'
 
 export const Root = styled.nav({
   width: '100%',
   padding: '250px 0 80px'
 })
 
-export const Container = styled.div({
+export const Wrapper = styled.div({
   display: 'flex',
-  justifyContent: 'space-between',
-  maxWidth: `${breakpoints[3]}px`,
-  margin: '0 auto'
+  justifyContent: 'space-between'
 })
 
 export const Body = styled.div({

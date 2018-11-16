@@ -1,8 +1,9 @@
 import Textfield from '../Textfield'
 import Button from '../Button'
+import { Container } from '../../lib/helpers'
 import {
   Root,
-  Container,
+  Wrapper,
   Body,
   Image,
   Headline,
@@ -14,17 +15,19 @@ export default ({ data: { headline, subheadline } }) => {
   return (
     <Root>
       <Container>
-        <Body>
-          <Image src="/static/img/flyingBox.svg" />
-          <Headline>{headline[0].text}</Headline>
-          <Subheadline>{subheadline[0].text}</Subheadline>
-        </Body>
-        <Form>
-          <Textfield floatingLabelText="Name" />
-          <Textfield floatingLabelText="Email" />
-          <Textfield floatingLabelText="Organization" />
-          <Button>Submit</Button>
-        </Form>
+        <Wrapper>
+          <Body>
+            <Image src="/static/img/flyingBox.svg" />
+            <Headline>{headline[0].text}</Headline>
+            <Subheadline>{subheadline[0].text}</Subheadline>
+          </Body>
+          <Form>
+            <Textfield floatingLabelText="Name" />
+            <Textfield floatingLabelText="Email" />
+            <Textfield floatingLabelText="Organization" />
+            <Button>Submit</Button>
+          </Form>
+        </Wrapper>
       </Container>
     </Root>
   )

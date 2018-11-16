@@ -1,10 +1,13 @@
-import { Container, Title, Headline } from './styles'
+import { Root, Title, Headline } from './styles'
+import { Container } from '../../lib/helpers'
 
 export default ({ data: { title, headline } }) => {
   return (
-    <Container>
-      <Title>{title[0].text}</Title>
-      <Headline>{headline[0].text}</Headline>
-    </Container>
+    <Root>
+      <Container>
+        <Title>// {title[0].text.toLowerCase()}</Title>
+        <Headline>{headline[0].text}</Headline>
+      </Container>
+    </Root>
   )
 }
