@@ -1,7 +1,8 @@
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
+import Head from 'next/head'
 import Error from 'next/error'
-import Router, { withRouter } from 'next/router'
+import { withRouter } from 'next/router'
 import ErrorMessage from '../components/ErrorMessage'
 import { throw404 } from '../lib/helpers'
 import getComponent from '../lib/getComponent'
@@ -60,7 +61,14 @@ export default withRouter(({ router: { query } }) => {
         if (error) return <ErrorMessage message="Error loading page." />
         if (loading) return <Loader loading />
         if (!page) return throw404()
-        return page.body.map(component => getComponent(component))
+        return (
+          <>
+            <Head>
+              <title>{query.slug}</title>
+            </Head>
+            {page.body.map(component => getComponent(component))}
+          </>
+        )
       }}
     </Query>
   )

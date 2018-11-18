@@ -15,8 +15,7 @@ class MyApp extends App {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <ApolloProvider client={apolloClient}>
-          <IconContext.Provider
-            value={{ color: 'black', className: 'global-class-name' }}>
+          <IconContext.Provider value={{ color: 'black' }}>
             <Layout>
               <Component {...pageProps} />
             </Layout>

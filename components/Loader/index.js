@@ -5,7 +5,7 @@ export default ({ loading }) => {
   return (
     <div
       style={{
-        width: '100vh',
+        height: 'calc(100vh - 260px)',
         width: '100vw',
         display: 'flex',
         justifyContent: 'center',
@@ -15,7 +15,7 @@ export default ({ loading }) => {
       <ClimbingBoxLoader
         sizeUnit={'px'}
         size={20}
-        color={colors.purple}
+        color={colors.pink}
         loading={loading}
       />
     </div>

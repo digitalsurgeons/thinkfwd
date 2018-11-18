@@ -30,24 +30,24 @@ export default () => {
     <Query query={allToolkits}>
       {({ loading, error, data }) => {
         if (error) return <ErrorMessage message="Error loading toolkits" />
-        if (loading) return <div>Loading</div>
         return (
           <Container>
             <Wrapper>
-              {data.allToolkits.edges.map((toolkit, i) => (
-                <Link
-                  key={i}
-                  route={`/toolkits/${toolkit.node._meta.uid}`}
-                  passHref>
-                  <StyledLink>
-                    <Card
-                      title={toolkit.node.title[0].text}
-                      subtitle={toolkit.node.description[0].text}
-                      image={toolkit.node.image.url}
-                    />
-                  </StyledLink>
-                </Link>
-              ))}
+              {!loading &&
+                data.allToolkits.edges.map((toolkit, i) => (
+                  <Link
+                    key={i}
+                    route={`/toolkits/${toolkit.node._meta.uid}`}
+                    passHref>
+                    <StyledLink>
+                      <Card
+                        title={toolkit.node.title[0].text}
+                        subtitle={toolkit.node.description[0].text}
+                        image={toolkit.node.image.url}
+                      />
+                    </StyledLink>
+                  </Link>
+                ))}
             </Wrapper>
           </Container>
         )

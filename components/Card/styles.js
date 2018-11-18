@@ -1,10 +1,16 @@
 import styled from 'styled-components'
 import { fonts } from '../../lib/settings'
 
+export const Root = styled.article({
+  height: '260px'
+})
+
 export const Image = styled.img({
   objectFit: 'cover',
-  height: '260px',
+  objectPosition: 'center',
+  height: '100%',
   width: '100%',
+  minWidth: '100%',
   marginBottom: '16px'
 })
 

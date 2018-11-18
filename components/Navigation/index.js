@@ -1,4 +1,5 @@
 import { Link } from '../../routes'
+
 import {
   Root,
   Wrapper,
@@ -7,7 +8,7 @@ import {
   NavLink,
   ButtonContainer
 } from './styles'
-import { Container } from '../../lib/helpers'
+import { Container, prefetch } from '../../lib/helpers'
 import Button from '../Button'
 
 export default () => {
@@ -19,7 +20,7 @@ export default () => {
             <Link route="/education" passHref>
               <NavLink>Education</NavLink>
             </Link>
-            <Link prefetch withData route="/toolkits" passHref>
+            <Link route="/toolkits" passHref>
               <NavLink>Toolkits</NavLink>
             </Link>
             <Link route="/blog" passHref>
