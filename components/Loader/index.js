@@ -12,12 +12,12 @@ export default ({ loading }) => {
         alignItems: 'center',
         position: 'absolute'
       }}>
-      <ClimbingBoxLoader
+      {/* <ClimbingBoxLoader
         sizeUnit={'px'}
         size={20}
         color={colors.pink}
         loading={loading}
-      />
+      /> */}
     </div>
   )
 }

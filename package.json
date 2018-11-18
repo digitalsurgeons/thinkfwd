@@ -38,6 +38,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.8.0"
+    "babel-plugin-styled-components": "^1.8.0",
+    "react-test-renderer": "^16.6.3"
   }
 }
