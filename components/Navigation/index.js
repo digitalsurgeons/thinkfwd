@@ -1,3 +1,4 @@
+import { withRouter } from 'next/router'
 import { Link } from '../../routes'
 import {
   Root,
@@ -10,23 +11,25 @@ import {
 import { Container, prefetch } from '../../lib/helpers'
 import Button from '../Button'
 
-export default () => {
+export default withRouter(({ router, router: { asPath } }) => {
   return (
     <Root>
       <Container>
         <Wrapper>
           <Nav>
             <Link route="/education" passHref>
-              <NavLink>Education</NavLink>
+              <NavLink isActive={asPath.includes('education')}>
+                Education
+              </NavLink>
             </Link>
             <Link route="/toolkits" passHref>
-              <NavLink>Toolkits</NavLink>
+              <NavLink isActive={asPath.includes('toolkits')}>Toolkits</NavLink>
             </Link>
             <Link route="/blog" passHref>
-              <NavLink>Blog</NavLink>
+              <NavLink isActive={asPath.includes('blug')}>Blog</NavLink>
             </Link>
             <Link route="/about" passHref>
-              <NavLink>About</NavLink>
+              <NavLink isActive={asPath.includes('about')}>About</NavLink>
             </Link>
           </Nav>
           <Link route="/">
@@ -43,4 +46,4 @@ export default () => {
       </Container>
     </Root>
   )
-}
+})

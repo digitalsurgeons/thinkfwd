@@ -5,7 +5,7 @@ export default ({ loading }) => {
   return (
     <div
       style={{
-        height: 'calc(100vh - 260px)',
+        height: 'calc(100vh - 324px)',
         width: '100vw',
         display: 'flex',
         justifyContent: 'center',

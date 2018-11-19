@@ -3,7 +3,7 @@ import { breakpoints, fonts } from '../../lib/settings'
 
 export const Root = styled.nav({
   width: '100%',
-  padding: '40px 0'
+  padding: '56px 0'
 })
 
 export const Wrapper = styled.div({
@@ -22,7 +22,7 @@ export const Nav = styled.div({
   width: '100%'
 })
 
-export const NavLink = styled.a({
+export const NavLink = styled.a(props => ({
   color: '#000',
   fontWeight: 600,
   fontFamily: fonts.secondary,
@@ -37,7 +37,7 @@ export const NavLink = styled.a({
     backgroundColor: '#3FE3FA',
     height: '8px',
     zIndex: -1,
-    opacity: 0,
+    opacity: props.isActive ? 1 : 0,
     content: "''",
     bottom: '-1px',
     width: '100%',
@@ -47,7 +47,7 @@ export const NavLink = styled.a({
     transition: '.3s',
     opacity: 1
   }
-})
+}))
 
 export const ButtonContainer = styled.div({
   width: '100%',

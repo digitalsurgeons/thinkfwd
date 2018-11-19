@@ -56,5 +56,9 @@ export const Main = styled.div({
     fontSize: '20px',
     lineHeight: '40px'
   },
+  iframe: {
+    width: '100%',
+    height: '450px'
+  },
   width: '66.666%'
 })
