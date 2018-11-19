@@ -6,7 +6,7 @@ import ErrorMessage from '../components/ErrorMessage'
 import ToolkitArticle from '../components/ToolkitArticle'
 import ToolkitMasthead from '../components/ToolkitMasthead'
 import Loader from '../components/Loader'
-import { throw404 } from '../lib/helpers'
+import { throw404, getComponent } from '../lib/helpers'
 
 const toolkitQuery = gql`
   query toolkit($lang: String!, $uid: String!) {
@@ -16,6 +16,23 @@ const toolkitQuery = gql`
       image
       aside
       main
+      body {
+        ... on ToolkitBodyCall_to_action {
+          type
+          primary {
+            heading
+            link {
+              ... on Page {
+                _meta {
+                  type
+                  uid
+                }
+              }
+            }
+            link_text
+          }
+        }
+      }
     }
   }
 `
@@ -27,7 +44,7 @@ export default withRouter(({ router: { query } }) => {
         if (error) return <ErrorMessage message="Error loading page." />
         if (loading) return <Loader loading />
         if (!toolkit) return throw404()
-        const { title, description, image, aside, main } = toolkit
+        const { title, description, image, aside, main, body } = toolkit
         return (
           <section>
             <ToolkitMasthead
@@ -36,6 +53,7 @@ export default withRouter(({ router: { query } }) => {
               description={description}
             />
             <ToolkitArticle aside={aside} main={main} />
+            {body && body.map(component => getComponent(component))}
           </section>
         )
       }}

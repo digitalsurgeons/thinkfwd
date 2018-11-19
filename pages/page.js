@@ -4,8 +4,7 @@ import Head from 'next/head'
 import Error from 'next/error'
 import { withRouter } from 'next/router'
 import ErrorMessage from '../components/ErrorMessage'
-import { throw404 } from '../lib/helpers'
-import getComponent from '../lib/getComponent'
+import { throw404, getComponent } from '../lib/helpers'
 import Loader from '../components/Loader'
 
 const pageQuery = gql`
