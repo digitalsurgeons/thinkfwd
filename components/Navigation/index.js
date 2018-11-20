@@ -22,8 +22,8 @@ export default withRouter(({ router, router: { asPath } }) => {
                 Education
               </NavLink>
             </Link>
-            <Link route="/toolkits" passHref>
-              <NavLink isActive={asPath.includes('toolkits')}>Toolkits</NavLink>
+            <Link route="/toolkit" passHref>
+              <NavLink isActive={asPath.includes('toolkit')}>Toolkit</NavLink>
             </Link>
             <Link route="/blog" passHref>
               <NavLink isActive={asPath.includes('blug')}>Blog</NavLink>

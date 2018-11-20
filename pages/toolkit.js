@@ -4,38 +4,10 @@ import Error from 'next/error'
 import { withRouter } from 'next/router'
 import ErrorMessage from '../components/ErrorMessage'
 import ToolkitArticle from '../components/ToolkitArticle'
-import ToolkitMasthead from '../components/ToolkitMasthead'
+import Masthead from '../components/Masthead'
 import Loader from '../components/Loader'
 import { throw404, getComponent } from '../lib/helpers'
-
-const toolkitQuery = gql`
-  query toolkit($lang: String!, $uid: String!) {
-    toolkit(lang: $lang, uid: $uid) {
-      title
-      description
-      image
-      aside
-      main
-      body {
-        ... on ToolkitBodyCall_to_action {
-          type
-          primary {
-            heading
-            link {
-              ... on Page {
-                _meta {
-                  type
-                  uid
-                }
-              }
-            }
-            link_text
-          }
-        }
-      }
-    }
-  }
-`
+import toolkitQuery from '../queries/toolkit.graphql'
 
 export default withRouter(({ router: { query } }) => {
   return (
@@ -47,11 +19,7 @@ export default withRouter(({ router: { query } }) => {
         const { title, description, image, aside, main, body } = toolkit
         return (
           <section>
-            <ToolkitMasthead
-              image={image}
-              title={title}
-              description={description}
-            />
+            <Masthead image={image} title={title} description={description} />
             <ToolkitArticle aside={aside} main={main} />
             {body && body.map(component => getComponent(component))}
           </section>

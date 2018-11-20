@@ -1,0 +1,43 @@
+query page($lang: String!, $uid: String!) {
+  page(lang: $lang, uid: $uid) {
+    body {
+      ... on PageBodyHeader {
+        type
+        primary {
+          title
+          headline
+        }
+      }
+      ... on PageBodyToolkit_grid {
+        type
+      }
+      ... on PageBodyNewsletter_signup {
+        type
+        primary {
+          headline
+          subheadline
+        }
+      }
+      ... on PageBodyStagger {
+        type
+        primary {
+          image
+          headline
+          description
+          link {
+            ... on _ExternalLink {
+              url
+            }
+            ... on _ImageLink {
+              url
+            }
+            ... on _FileLink {
+              url
+            }
+          }
+          link_text
+        }
+      }
+    }
+  }
+}

@@ -1,14 +1,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import ToolkitMasthead from './index'
+import Masthead from './index'
 
-describe('ToolkitMasthead', () => {
+describe('Masthead', () => {
   it('renders correctly', () => {
-    const component = renderer.create(
-      <ToolkitMasthead />
-    )
+    const component = renderer.create(<Masthead />)
     let tree = component.toJSON()
     expect(tree).toMatchSnapshot()
   })
 })
-

@@ -18,9 +18,9 @@ export default ({ data: { heading, link, link_text } }) => {
         <g
           id="003-Resources"
           stroke="none"
-          stroke-width="1"
+          strokeWidth="1"
           fill="none"
-          fill-rule="evenodd">
+          fillRule="evenodd">
           <g
             id="Resources---Article"
             transform="translate(-46.000000, -2112.000000)">

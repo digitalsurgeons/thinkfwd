@@ -29,7 +29,7 @@ export const Svg = styled.svg({
 export const Title = styled.h2({
   fontFamily: fonts.secondary,
   fontSize: '24px',
-  marginRight: '100px',
+  marginRight: '120px',
   color: colors.white,
   lineHeight: '36px',
   fontWeight: 600,

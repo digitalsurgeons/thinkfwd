@@ -1,0 +1,15 @@
+query {
+  allToolkits {
+    edges {
+      node {
+        _meta {
+          uid
+          firstPublicationDate
+        }
+        title
+        description
+        image
+      }
+    }
+  }
+}

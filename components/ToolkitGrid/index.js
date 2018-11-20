@@ -6,24 +6,7 @@ import Card from '../Card'
 import { Wrapper, Box, StyledLink } from './styles'
 import { Container } from '../../lib/helpers'
 import Loader from '../Loader'
-
-export const allToolkits = gql`
-  query {
-    allToolkits {
-      edges {
-        node {
-          _meta {
-            uid
-            firstPublicationDate
-          }
-          title
-          description
-          image
-        }
-      }
-    }
-  }
-`
+import allToolkits from '../../queries/allToolkits.graphql'
 
 export default () => {
   return (
@@ -37,7 +20,7 @@ export default () => {
                 data.allToolkits.edges.map((toolkit, i) => (
                   <Link
                     key={i}
-                    route={`/toolkits/${toolkit.node._meta.uid}`}
+                    route={`/toolkit/${toolkit.node._meta.uid}`}
                     passHref>
                     <StyledLink>
                       <Card

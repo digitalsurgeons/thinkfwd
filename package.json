@@ -38,6 +38,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-plugin-import-graphql": "^2.6.2",
     "babel-plugin-styled-components": "^1.8.0",
     "react-test-renderer": "^16.6.3"
   }
