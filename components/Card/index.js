@@ -1,4 +1,4 @@
-import { Root, Image, Title } from './styles'
+import { Image, Root, Title } from './styles'
 
 export default ({ title, description, image }) => {
   return (

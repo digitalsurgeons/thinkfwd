@@ -1,6 +1,6 @@
 import { RichText } from 'prismic-reactjs'
-import { Wrapper, Aside, Main } from './styles'
 import { Container, linkResolver } from '../../lib/helpers'
+import { Aside, Main, Wrapper } from './styles'
 
 export default ({ aside, main }) => (
   <Container>

@@ -1,5 +1,5 @@
-import { Root, Title, Headline } from './styles'
 import { Container } from '../../lib/helpers'
+import { Headline, Root, Title } from './styles'
 
 export default ({ data: { title, headline } }) => {
   return (

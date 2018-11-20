@@ -1,5 +1,5 @@
-import Ripples from 'react-ripples'
 import Color from 'color'
+import Ripples from 'react-ripples'
 import { colors } from '../../lib/settings'
 import { Button } from './styles'
 

@@ -1,8 +1,8 @@
 import { RichText } from 'prismic-reactjs'
 import { Container, linkResolver } from '../../lib/helpers'
-import Button from '../Button'
-import { Root, Wrapper, Image, Body, Headline, Description } from './styles'
 import { colors } from '../../lib/settings'
+import Button from '../Button'
+import { Body, Description, Headline, Image, Root, Wrapper } from './styles'
 
 export default ({
   data: { image, headline, description, link, link_text }

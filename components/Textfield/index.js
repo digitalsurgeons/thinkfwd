@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextField, Input, Bar, Label } from './styles'
+import { Bar, Input, Label, TextField } from './styles'
 
 export default class extends React.Component {
   constructor(props) {

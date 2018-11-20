@@ -1,10 +1,10 @@
 import App, { Container } from 'next/app'
+import Head from 'next/head'
 import React from 'react'
 import { ApolloProvider } from 'react-apollo'
 import { IconContext } from 'react-icons'
-import withApolloClient from '../lib/with-apollo-client'
 import Layout from '../components/Layout'
-import Head from 'next/head'
+import withApolloClient from '../lib/with-apollo-client'
 
 class MyApp extends App {
   render() {

@@ -1,15 +1,15 @@
 import { withRouter } from 'next/router'
+import { Container } from '../../lib/helpers'
 import { Link } from '../../routes'
+import Button from '../Button'
 import {
-  Root,
-  Wrapper,
+  ButtonContainer,
   LogoLink,
   Nav,
   NavLink,
-  ButtonContainer
+  Root,
+  Wrapper
 } from './styles'
-import { Container, prefetch } from '../../lib/helpers'
-import Button from '../Button'
 
 export default withRouter(({ router, router: { asPath } }) => {
   return (

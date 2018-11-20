@@ -1,7 +1,7 @@
-import { Container, Svg, Wrapper, Title } from './styles'
-import Button from '../Button'
-import { Link } from '../../routes'
 import { linkResolver } from '../../lib/helpers'
+import { Link } from '../../routes'
+import Button from '../Button'
+import { Container, Svg, Title, Wrapper } from './styles'
 
 export default ({ data: { heading, link, link_text } }) => {
   return (

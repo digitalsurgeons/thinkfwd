@@ -1,7 +1,7 @@
+import { Container } from '../../lib/helpers'
 import { Link } from '../../routes'
 import Card from '../Card'
-import { Root, Wrapper, Heading, Box, StyledLink } from './styles'
-import { Container } from '../../lib/helpers'
+import { Heading, Root, StyledLink, Wrapper } from './styles'
 
 export default ({ data: { heading, card_one, card_two, card_three } }) => {
   return (

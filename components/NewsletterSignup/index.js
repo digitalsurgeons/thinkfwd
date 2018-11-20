@@ -1,14 +1,14 @@
-import Textfield from '../Textfield'
-import Button from '../Button'
 import { Container } from '../../lib/helpers'
+import Button from '../Button'
+import Textfield from '../Textfield'
 import {
-  Root,
-  Wrapper,
   Body,
-  Image,
+  Form,
   Headline,
+  Image,
+  Root,
   Subheadline,
-  Form
+  Wrapper
 } from './styles'
 
 export default ({ data: { headline, subheadline } }) => {

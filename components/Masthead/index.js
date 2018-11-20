@@ -1,5 +1,5 @@
-import { Wrapper, Card, CardWrapper, Title, Description, Image } from './styles'
 import { Container } from '../../lib/helpers'
+import { Card, CardWrapper, Description, Image, Title, Wrapper } from './styles'
 
 export default ({ title, description, image }) => (
   <Container>

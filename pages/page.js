@@ -1,11 +1,9 @@
-import { Query } from 'react-apollo'
-import gql from 'graphql-tag'
 import Head from 'next/head'
-import Error from 'next/error'
 import { withRouter } from 'next/router'
+import { Query } from 'react-apollo'
 import ErrorMessage from '../components/ErrorMessage'
-import { throw404, getComponent } from '../lib/helpers'
 import Loader from '../components/Loader'
+import { getComponent, throw404 } from '../lib/helpers'
 import pageQuery from '../queries/page.graphql'
 
 export default withRouter(({ router: { query } }) => {

@@ -1,12 +1,10 @@
-import { Query } from 'react-apollo'
-import gql from 'graphql-tag'
-import Error from 'next/error'
 import { withRouter } from 'next/router'
+import { Query } from 'react-apollo'
 import ErrorMessage from '../components/ErrorMessage'
-import ToolkitArticle from '../components/ToolkitArticle'
-import Masthead from '../components/Masthead'
 import Loader from '../components/Loader'
-import { throw404, getComponent } from '../lib/helpers'
+import Masthead from '../components/Masthead'
+import ToolkitArticle from '../components/ToolkitArticle'
+import { getComponent, throw404 } from '../lib/helpers'
 import toolkitQuery from '../queries/toolkit.graphql'
 
 export default withRouter(({ router: { query } }) => {

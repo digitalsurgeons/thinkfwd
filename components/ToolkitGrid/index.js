@@ -1,12 +1,10 @@
 import { Query } from 'react-apollo'
-import gql from 'graphql-tag'
-import { Link } from '../../routes'
-import ErrorMessage from '../ErrorMessage'
-import Card from '../Card'
-import { Wrapper, Box, StyledLink } from './styles'
 import { Container } from '../../lib/helpers'
-import Loader from '../Loader'
 import allToolkits from '../../queries/allToolkits.graphql'
+import { Link } from '../../routes'
+import Card from '../Card'
+import ErrorMessage from '../ErrorMessage'
+import { StyledLink, Wrapper } from './styles'
 
 export default () => {
   return (
