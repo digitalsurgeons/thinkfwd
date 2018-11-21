@@ -1,5 +1,5 @@
 import { linkResolver } from '../../lib/helpers'
-import { Link } from '../../routes'
+import { Link } from '../../lib/routes'
 import Button from '../Button'
 import { Container, Svg, Title, Wrapper } from './styles'
 

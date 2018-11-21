@@ -1,7 +1,7 @@
 import { Query } from 'react-apollo'
 import { Container } from '../../lib/helpers'
 import allToolkits from '../../queries/allToolkits.graphql'
-import { Link } from '../../routes'
+import { Link } from '../../lib/routes'
 import Card from '../Card'
 import ErrorMessage from '../ErrorMessage'
 import { StyledLink, Wrapper } from './styles'

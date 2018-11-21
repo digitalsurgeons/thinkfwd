@@ -1,5 +1,5 @@
 import { Container } from '../../lib/helpers'
-import { Link } from '../../routes'
+import { Link } from '../../lib/routes'
 import Card from '../Card'
 import { Heading, Root, StyledLink, Wrapper } from './styles'
 

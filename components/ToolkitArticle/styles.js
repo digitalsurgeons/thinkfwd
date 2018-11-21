@@ -37,10 +37,10 @@ export const Aside = styled.aside({
 export const Main = styled.div({
   h2: {
     fontFamily: fonts.secondary,
-    fontSize: '32px',
+    fontSize: '24px',
     fontWeight: 600,
-    lineHeight: '48px',
-    marginBottom: '16px'
+    lineHeight: '36px',
+    marginBottom: '8px'
   },
   p: {
     fontSize: '20px',

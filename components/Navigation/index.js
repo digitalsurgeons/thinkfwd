@@ -1,6 +1,6 @@
 import { withRouter } from 'next/router'
 import { Container } from '../../lib/helpers'
-import { Link } from '../../routes'
+import { Link } from '../../lib/routes'
 import Button from '../Button'
 import {
   ButtonContainer,

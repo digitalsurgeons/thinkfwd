@@ -1,6 +1,7 @@
 import Navigation from '../Navigation'
-import GlobalStyles from '../../styles'
+import GlobalStyles from '../../lib/styles'
 import { fonts } from '../../lib/settings'
+import Footer from '../Footer'
 
 export default ({ children }) => {
   return (
@@ -8,6 +9,8 @@ export default ({ children }) => {
       <GlobalStyles />
       <Navigation />
       {children}
+      <Footer />
+      {/* Using jsx for fontface b/c styled-components causes font to flicker */}
       <style jsx global>
         {`
           @font-face {
