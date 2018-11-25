@@ -1,73 +1,20 @@
+#import "./fragments.graphql"
 query page($lang: String!, $uid: String!) {
   page(lang: $lang, uid: $uid) {
     meta_title
     meta_description
     body {
-      ... on PageBodyHeader {
-        type
-        primary {
-          title
-          headline
-        }
-      }
-      ... on PageBodyToolkit_grid {
-        type
-      }
-      ... on PageBodyNewsletter_signup {
-        type
-        primary {
-          headline
-          subheadline
-        }
-      }
-      ... on PageBodyStagger {
-        type
-        primary {
-          image
-          headline
-          description
-          link {
-            ... on _ExternalLink {
-              url
-            }
-            ... on _ImageLink {
-              url
-            }
-            ... on _FileLink {
-              url
-            }
-          }
-          link_text
-        }
-      }
-      ... on PageBodyAnimation {
-        type
-        primary {
-          animations
-        }
-      }
-      ... on PageBodyFunky_cta {
-        type
-        primary {
-          image
-          link {
-            ... on _Document {
-              _meta {
-                type
-                uid
-              }
-            }
-          }
-          link_text
-        }
-      }
-      ... on PageBodyFunky_headings {
-        type
-        primary {
-          heading
-          subheading
-        }
-      }
+      ...Header
+      ...ToolkitGrid
+      ...NewsletterSignup
+      ...Stagger
+      ...Animation
+      ...FunkyHeadings
+      ...BigText
+      ...FunkyCta
+      ...StaggeredCta
+      ...EventsPanel
+      ...LogoWall
     }
   }
 }

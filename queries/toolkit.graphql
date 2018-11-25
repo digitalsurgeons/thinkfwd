@@ -5,6 +5,8 @@ query toolkit($lang: String!, $uid: String!) {
     image
     aside
     main
+    meta_title
+    meta_description
     body {
       ... on ToolkitBodyCall_to_action {
         type

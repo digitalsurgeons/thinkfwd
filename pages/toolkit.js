@@ -1,6 +1,7 @@
 import { withRouter } from 'next/router'
 import { Query } from 'react-apollo'
 import ErrorMessage from '../components/ErrorMessage'
+import Head from 'next/head'
 import Loader from '../components/Loader'
 import Masthead from '../components/Masthead'
 import ToolkitArticle from '../components/ToolkitArticle'
@@ -16,11 +17,14 @@ export default withRouter(({ router: { query } }) => {
         if (!toolkit) return throw404()
         const { title, description, image, aside, main, body } = toolkit
         return (
-          <section>
+          <>
+            <Head>
+              <title>{toolkit.meta_title[0].text}</title>
+            </Head>
             <Masthead image={image} title={title} description={description} />
             <ToolkitArticle aside={aside} main={main} />
             {body && body.map(component => getComponent(component))}
-          </section>
+          </>
         )
       }}
     </Query>

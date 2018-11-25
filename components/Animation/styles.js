@@ -2,5 +2,5 @@ import styled from 'styled-components'
 
 export const Image = styled.img({
   display: 'flex',
-  margin: '0 auto'
+  margin: '0 auto 150px auto'
 })

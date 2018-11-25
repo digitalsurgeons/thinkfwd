@@ -14,12 +14,12 @@ export default withRouter(({ router: { query } }) => {
         if (loading) return <Loader loading />
         if (!page) return throw404()
         return (
-          <div>
+          <>
             <Head>
               <title>{page.meta_title[0].text}</title>
             </Head>
             {page.body.map(component => getComponent(component))}
-          </div>
+          </>
         )
       }}
     </Query>

@@ -16,7 +16,7 @@ export default withRouter(({ router: { query } }) => {
         return (
           <>
             <Head>
-              <title>{query.slug}</title>
+              <title>{page.meta_title[0].text}</title>
             </Head>
             {page.body.map(component => getComponent(component))}
           </>

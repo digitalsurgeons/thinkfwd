@@ -1,0 +1,96 @@
+fragment BigText on PageBodyBig_text {
+  type
+  primary {
+    heading
+  }
+}
+
+fragment FunkyCta on PageBodyFunky_cta {
+  type
+  primary {
+    image
+    link {
+      ... on Page {
+        _meta {
+          type
+          uid
+        }
+      }
+    }
+    link_text
+  }
+}
+
+fragment FunkyHeadings on PageBodyFunky_headings {
+  type
+  primary {
+    heading
+    subheading
+  }
+}
+
+fragment Animation on PageBodyAnimation {
+  type
+}
+
+fragment Stagger on PageBodyStagger {
+  type
+  primary {
+    image
+    headline
+    description
+    link {
+      ... on _ExternalLink {
+        url
+      }
+      ... on _ImageLink {
+        url
+      }
+      ... on _FileLink {
+        url
+      }
+    }
+    link_text
+  }
+}
+
+fragment NewsletterSignup on PageBodyNewsletter_signup {
+  type
+  primary {
+    headline
+    subheadline
+  }
+}
+
+fragment ToolkitGrid on PageBodyToolkit_grid {
+  type
+}
+
+fragment Header on PageBodyHeader {
+  type
+  primary {
+    title
+    headline
+  }
+}
+
+fragment StaggeredCta on PageBodyStaggered_cta {
+  type
+  primary {
+    link_text
+  }
+}
+
+fragment LogoWall on PageBodyLogo_wall {
+  type
+  primary {
+    heading
+  }
+}
+
+fragment EventsPanel on PageBodyEvents_panel {
+  type
+  primary {
+    heading
+  }
+}
