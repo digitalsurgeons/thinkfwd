@@ -15,7 +15,6 @@ export const Button = styled.button(props => ({
   padding: '16px 24px',
   display: 'inline-block',
   outline: 'none',
-  borderRadius: '8px',
   ':hover': {},
   ':active': {}
 }))
