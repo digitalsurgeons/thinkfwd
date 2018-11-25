@@ -2,7 +2,7 @@ import { Root, Wrapper, Stars, Box, BoxWrapper, Arrow, Image } from './styles'
 import { Container, linkResolver } from '../../lib/helpers'
 import { Link } from '../../lib/routes'
 
-export default ({ data: { link, link_text, image } }) => {
+export default ({ primary: { link, link_text, image } }) => {
   return (
     <Root>
       <Container>

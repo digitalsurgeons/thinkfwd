@@ -1,7 +1,7 @@
 import { Container } from '../../lib/helpers'
 import { Headline, Root, Title } from './styles'
 
-export default ({ data: { title, headline } }) => {
+export default ({ primary: { title, headline } }) => {
   return (
     <Root>
       <Container>

@@ -1,7 +1,7 @@
 import { Wrapper, Heading, Subheading } from './styles'
 import { Container } from '../../lib/helpers'
 
-export default ({ data: { heading, subheading } }) => (
+export default ({ primary: { heading, subheading } }) => (
   <Container>
     <Wrapper>
       <Heading>{heading[0].text}</Heading>

@@ -3,7 +3,7 @@ import { Link } from '../../lib/routes'
 import Card from '../Card'
 import { Heading, Root, StyledLink, Wrapper } from './styles'
 
-export default ({ data: { heading, card_one, card_two, card_three } }) => {
+export default ({ primary: { heading, card_one, card_two, card_three } }) => {
   return (
     <Root>
       <Container>

@@ -5,7 +5,7 @@ import Button from '../Button'
 import { Body, Description, Headline, Image, Root, Wrapper } from './styles'
 
 export default ({
-  data: { image, headline, description, link, link_text }
+  primary: { image, headline, description, link, link_text }
 }) => {
   return (
     <Root>

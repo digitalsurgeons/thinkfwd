@@ -11,7 +11,7 @@ import {
   Wrapper
 } from './styles'
 
-export default ({ data: { headline, subheadline } }) => {
+export default ({ primary: { headline, subheadline } }) => {
   return (
     <Root>
       <Container>

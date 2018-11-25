@@ -3,7 +3,7 @@ import { Link } from '../../lib/routes'
 import Button from '../Button'
 import { Container, Svg, Title, Wrapper } from './styles'
 
-export default ({ data: { heading, link, link_text } }) => {
+export default ({ primary: { heading, link, link_text } }) => {
   return (
     <Container>
       <Svg
