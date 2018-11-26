@@ -5,7 +5,9 @@
     "dev": "node server.js",
     "build": "next build",
     "postinstall": "npm run build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "apollo-boost": "^0.1.19",
@@ -42,6 +44,12 @@
   "devDependencies": {
     "babel-plugin-import-graphql": "^2.6.2",
     "babel-plugin-styled-components": "^1.8.0",
-    "react-test-renderer": "^16.6.3"
+    "react-test-renderer": "^16.6.3",
+    "@storybook/react": "^4.0.9",
+    "@storybook/addon-actions": "^4.0.9",
+    "@storybook/addon-links": "^4.0.9",
+    "@storybook/addons": "^4.0.9",
+    "@babel/core": "^7.1.6",
+    "babel-loader": "^8.0.4"
   }
 }
