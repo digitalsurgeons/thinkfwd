@@ -1,9 +1,13 @@
 import styled from 'styled-components'
 import { breakpoints, fonts } from '../../lib/settings'
+import { mq } from '../../lib/helpers'
 
 export const Root = styled.nav({
   width: '100%',
-  padding: '56px 0'
+  padding: '30px 0',
+  [mq[2]]: {
+    padding: '56px 0'
+  }
 })
 
 export const Wrapper = styled.div({
@@ -14,12 +18,24 @@ export const Wrapper = styled.div({
 
 export const LogoLink = styled.a({
   display: 'block',
-  cursor: 'pointer'
+  cursor: 'pointer',
+  textAlign: 'center',
+  width: '100%'
+})
+
+export const Logo = styled.img({
+  width: 150,
+  [mq[2]]: {
+    width: 'initial'
+  }
 })
 
 export const Nav = styled.div({
-  display: 'flex',
-  width: '100%'
+  display: 'none',
+  width: '100%',
+  [mq[2]]: {
+    display: 'flex'
+  }
 })
 
 export const NavLink = styled.a(props => ({
@@ -51,6 +67,9 @@ export const NavLink = styled.a(props => ({
 
 export const ButtonContainer = styled.div({
   width: '100%',
-  display: 'flex',
-  justifyContent: 'flex-end'
+  display: 'none',
+  justifyContent: 'flex-end',
+  [mq[2]]: {
+    display: 'flex'
+  }
 })

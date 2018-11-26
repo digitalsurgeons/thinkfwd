@@ -1,9 +1,14 @@
 import styled from 'styled-components'
-import { fonts } from '../../lib/settings'
+import { fonts, breakpoints } from '../../lib/settings'
+import { mq } from '../../lib/helpers'
 
 export const Wrapper = styled.div({
   display: 'flex',
-  flexWrap: 'wrap'
+  flexWrap: 'wrap',
+  flexDirection: 'column',
+  [mq[2]]: {
+    flexDirection: 'row'
+  }
 })
 
 export const Aside = styled.aside({
@@ -29,9 +34,13 @@ export const Aside = styled.aside({
     lineHeight: '40px'
   },
   '> div': {
-    paddingRight: '140px'
+    [mq[2]]: {
+      paddingRight: '140px'
+    }
   },
-  width: '33.333%'
+  [mq[2]]: {
+    width: '33.333%'
+  }
 })
 
 export const Main = styled.div({
@@ -61,5 +70,7 @@ export const Main = styled.div({
     height: '450px',
     marginBottom: '80px'
   },
-  width: '66.666%'
+  [mq[2]]: {
+    width: '66.666%'
+  }
 })

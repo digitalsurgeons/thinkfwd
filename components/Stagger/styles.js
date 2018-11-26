@@ -1,26 +1,46 @@
 import styled from 'styled-components'
 import { colors, fonts, breakpoints } from '../../lib/settings'
+import { mq } from '../../lib/helpers'
 
-export const Root = styled.nav({
+export const Root = styled.div({
   backgroundColor: colors.offBlack,
+  padding: '60px 0',
   width: '100%',
-  margin: '150px 0 0',
-  paddingBottom: '140px'
+  margin: '40px 0 0',
+  [mq[2]]: {
+    padding: '0 0 140px',
+    margin: '150px 0 0'
+  }
 })
 
 export const Wrapper = styled.div({
   display: 'flex',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
+  flexDirection: 'column-reverse',
+  [mq[2]]: {
+    flexDirection: 'row'
+  }
 })
 
 export const Image = styled.img({
-  margin: '-150px 0 0 -150px'
+  margin: '0',
+  maxHeight: 450,
+  objectFit: 'contain',
+  objectPosition: 'left',
+  [mq[2]]: {
+    maxHeight: 'initial',
+    margin: '-150px 0 0 -150px'
+  }
 })
 
 export const Body = styled.div({
-  maxWidth: '440px',
   width: '100%',
-  paddingTop: '90px'
+  marginBottom: 40,
+  [mq[2]]: {
+    marginBottom: 0,
+    padding: '90px 0 0',
+    maxWidth: 440
+  }
 })
 
 export const Headline = styled.h2(props => ({
@@ -30,7 +50,7 @@ export const Headline = styled.h2(props => ({
   letterSpacing: 0,
   fontWeight: 600,
   lineHeight: '56px',
-  marginBottom: '24px'
+  marginBottom: 24
 }))
 
 export const Description = styled.div({

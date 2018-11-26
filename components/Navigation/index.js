@@ -8,6 +8,7 @@ import {
   Nav,
   NavLink,
   Root,
+  Logo,
   Wrapper
 } from './styles'
 
@@ -34,7 +35,7 @@ export default withRouter(({ router, router: { asPath } }) => {
           </Nav>
           <Link route="/">
             <LogoLink>
-              <img src="/static/img/logo.svg" />
+              <Logo src="/static/img/logo.svg" />
             </LogoLink>
           </Link>
           <ButtonContainer>
