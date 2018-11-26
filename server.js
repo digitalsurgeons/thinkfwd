@@ -11,8 +11,35 @@ const handler = routes.getRequestHandler(app, ({ req, res, route, query }) => {
   app.render(req, res, route.page, query)
 })
 
+const robotsOptions = {
+  root: __dirname + '/static/',
+  headers: {
+    'Content-Type': 'text/plain;charset=UTF-8'
+  }
+}
+
+const sitemapOptions = {
+  root: __dirname + '/static/',
+  headers: {
+    'Content-Type': 'text/xml;charset=UTF-8'
+  }
+}
+
+const faviconOptions = {
+  root: __dirname + '/static/'
+}
+
 app.prepare().then(() => {
   express()
+    .get('/robots.txt', (req, res) =>
+      res.status(200).sendFile('robots.txt', robotsOptions)
+    )
+    .get('/sitemap.xml', (req, res) =>
+      res.status(200).sendFile('sitemap.xml', sitemapOptions)
+    )
+    .get('/favicon.ico', (req, res) =>
+      res.status(200).sendFile('favicon.ico', faviconOptions)
+    )
     .use(handler)
     .listen(PORT, () =>
       process.stdout.write(`Point your browser to: http://localhost:${PORT}\n`)
