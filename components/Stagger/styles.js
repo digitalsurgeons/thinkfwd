@@ -9,7 +9,7 @@ export const Root = styled.div({
   margin: '40px 0 0',
   [mq[2]]: {
     padding: '0 0 140px',
-    margin: '150px 0 0'
+    margin: '240px 0 0'
   }
 })
 
