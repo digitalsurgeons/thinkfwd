@@ -38,19 +38,23 @@ export const Body = styled.div({
   marginBottom: 40,
   [mq[2]]: {
     marginBottom: 0,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
     padding: '90px 0 0',
     maxWidth: 440
   }
 })
 
 export const Headline = styled.h2(props => ({
-  fontSize: '36px',
+  fontSize: '40px',
   color: colors.white,
   fontFamily: fonts.secondary,
   letterSpacing: 0,
   fontWeight: 600,
-  lineHeight: '56px',
-  marginBottom: 24
+  lineHeight: '60px',
+  marginBottom: 40,
+  maxWidth: 355
 }))
 
 export const Description = styled.div({

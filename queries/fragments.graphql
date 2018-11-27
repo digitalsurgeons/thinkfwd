@@ -49,6 +49,12 @@ fragment Stagger on PageBodyStagger {
       ... on _FileLink {
         url
       }
+      ... on Page {
+        _meta {
+          type
+          uid
+        }
+      }
     }
     link_text
   }

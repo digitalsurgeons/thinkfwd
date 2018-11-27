@@ -7,21 +7,30 @@ import { Body, Description, Headline, Image, Root, Wrapper } from './styles'
 export default ({
   primary: { image, headline, description, link, link_text }
 }) => {
+  console.log(headline)
   return (
     <Root>
       <Container>
         <Wrapper>
           <Image src={image.url} />
           <Body>
-            <Headline
-              dangerouslySetInnerHTML={highlightPrice(headline[0].text)}
-            />
-            <Description>
-              {RichText.render(description, linkResolver)}
-            </Description>
-            <Button as="a" href={link.url}>
-              {link_text[0].text}
-            </Button>
+            {headline && (
+              <Headline
+                dangerouslySetInnerHTML={highlightPrice(headline[0].text)}
+              />
+            )}
+            {description && (
+              <Description>
+                {RichText.render(description, linkResolver)}
+              </Description>
+            )}
+            {link && (
+              <Button
+                as="a"
+                href={link._meta ? linkResolver(link._meta) : link.url}>
+                {link_text[0].text}
+              </Button>
+            )}
           </Body>
         </Wrapper>
       </Container>
