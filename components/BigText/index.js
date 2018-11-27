@@ -1,3 +1,8 @@
-import { Root } from './styles'
+import { Text } from './styles'
+import { Container } from '../../lib/helpers'
 
-export default ({ primary: { heading } }) => <Root>{heading[0].text}</Root>
+export default ({ primary: { heading } }) => (
+  <Container>
+    <Text>{heading[0].text}</Text>
+  </Container>
+)
