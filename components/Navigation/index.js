@@ -11,6 +11,7 @@ import {
   Logo,
   Wrapper
 } from './styles'
+import { prefetch } from '../../lib/helpers'
 
 export default withRouter(({ router, router: { asPath } }) => {
   return (
@@ -24,7 +25,11 @@ export default withRouter(({ router, router: { asPath } }) => {
               </NavLink>
             </Link>
             <Link route="/toolkit" passHref>
-              <NavLink isActive={asPath.includes('toolkit')}>Toolkit</NavLink>
+              <NavLink
+                onMouseOver={() => prefetch('/page?slug=toolkit')}
+                isActive={asPath.includes('toolkit')}>
+                Toolkit
+              </NavLink>
             </Link>
             <Link route="/blog" passHref>
               <NavLink isActive={asPath.includes('blug')}>Blog</NavLink>

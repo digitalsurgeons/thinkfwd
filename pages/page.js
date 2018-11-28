@@ -5,8 +5,9 @@ import ErrorMessage from '../components/ErrorMessage'
 import Loader from '../components/Loader'
 import { getComponent, throw404 } from '../lib/helpers'
 import pageQuery from '../queries/page.graphql'
+import withApolloClient from '../lib/with-apollo-client'
 
-export default withRouter(({ router: { query } }) => {
+const Page = withRouter(({ router: { query } }) => {
   return (
     <Query query={pageQuery} variables={{ lang: 'en-us', uid: query.slug }}>
       {({ loading, error, data: { page } }) => {
@@ -25,3 +26,5 @@ export default withRouter(({ router: { query } }) => {
     </Query>
   )
 })
+
+export default withApolloClient(Page)
