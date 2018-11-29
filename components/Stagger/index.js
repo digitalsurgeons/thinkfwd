@@ -7,7 +7,6 @@ import { Body, Description, Headline, Image, Root, Wrapper } from './styles'
 export default ({
   primary: { image, headline, description, link, link_text }
 }) => {
-  console.log(headline)
   return (
     <Root>
       <Container>

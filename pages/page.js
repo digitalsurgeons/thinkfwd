@@ -27,4 +27,4 @@ const Page = withRouter(({ router: { query } }) => {
   )
 })
 
-export default withApolloClient(Page)
+export default Page

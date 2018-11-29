@@ -6,7 +6,7 @@ import Loader from '../components/Loader'
 import { getComponent, throw404 } from '../lib/helpers'
 import pageQuery from '../queries/page.graphql'
 
-export default withRouter(({ router: { query } }) => {
+export default () => {
   return (
     <Query query={pageQuery} variables={{ lang: 'en-us', uid: 'home' }}>
       {({ loading, error, data: { page } }) => {
@@ -24,4 +24,4 @@ export default withRouter(({ router: { query } }) => {
       }}
     </Query>
   )
-})
+}
