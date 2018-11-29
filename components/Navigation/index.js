@@ -13,7 +13,7 @@ import {
 } from './styles'
 import { prefetch } from '../../lib/helpers'
 
-export default withRouter(({ router, router: { asPath } }) => {
+export default withRouter(({ router: { asPath } }) => {
   return (
     <Root>
       <Container>
@@ -38,7 +38,7 @@ export default withRouter(({ router, router: { asPath } }) => {
               <NavLink isActive={asPath.includes('about')}>About</NavLink>
             </Link>
           </Nav>
-          <Link route="/">
+          <Link route="/" passHref>
             <LogoLink>
               <Logo src="/static/img/logo.svg" />
             </LogoLink>

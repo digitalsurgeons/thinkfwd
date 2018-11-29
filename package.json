@@ -6,7 +6,7 @@
     "build": "next build",
     "postinstall": "npm run build",
     "start": "NODE_ENV=production node server.js",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./ -p 6006",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
