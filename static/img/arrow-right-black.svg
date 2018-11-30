@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="24px" viewBox="0 0 36 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="001-Home-Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-Page" transform="translate(-744.000000, -2013.000000)" fill="#000000">
+            <g id="Attend-Event" transform="translate(239.000000, 1809.000000)">
+                <g id="Call-to-action" transform="translate(260.000000, 0.000000)">
+                    <g id="Copy-and-Icon" transform="translate(32.000000, 144.000000)">
+                        <g id="icon/ui/arrow" transform="translate(206.000000, 48.000000)">
+                            <path d="M37.9029437,22.8 L29.1514719,14.0485281 C28.6828427,13.579899 28.6828427,12.820101 29.1514719,12.3514719 C29.620101,11.8828427 30.379899,11.8828427 30.8485281,12.3514719 L41.7899495,23.2928932 C42.1804738,23.6834175 42.1804738,24.3165825 41.7899495,24.7071068 L30.8485281,35.6485281 C30.379899,36.1171573 29.620101,36.1171573 29.1514719,35.6485281 C28.6828427,35.179899 28.6828427,34.420101 29.1514719,33.9514719 L37.9029437,25.2 L18,25.2 C17.3372583,25.2 16.8,24.6627417 16.8,24 C16.8,23.3372583 17.3372583,22.8 18,22.8 L37.9029437,22.8 Z M7.2,24 C7.2,23.3372583 7.7372583,22.8 8.4,22.8 L10.8,22.8 C11.4627417,22.8 12,23.3372583 12,24 C12,24.6627417 11.4627417,25.2 10.8,25.2 L8.4,25.2 C7.7372583,25.2 7.2,24.6627417 7.2,24 Z" id="Icon"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
