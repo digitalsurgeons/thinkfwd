@@ -4,14 +4,13 @@ import { mq } from '../../lib/helpers'
 
 export const Root = styled.article({
   [mq[2]]: {
-    maxWidth: '592px'
+    maxWidth: 600
   }
 })
 
 export const Image = styled.img({
   objectFit: 'cover',
   objectPosition: 'center',
-  height: '100%',
   height: '412px',
   width: '100%',
   minWidth: '100%',
