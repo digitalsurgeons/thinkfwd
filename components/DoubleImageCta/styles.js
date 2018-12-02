@@ -11,7 +11,7 @@ export const Wrapper = styled.div({
   display: 'flex',
   flexWrap: 'wrap',
   flexDirection: 'column',
-  [`@media (min-width: ${breakpoints[2]}px)`]: {
+  [`@media (min-width: ${breakpoints[4]}px)`]: {
     alignItems: 'flex-end',
     flexDirection: 'row'
   }
@@ -21,7 +21,13 @@ export const Image1 = styled.img({
   height: 130,
   width: '50%',
   objectFit: 'cover',
+  [`@media (min-width: ${breakpoints[1]}px)`]: {
+    height: 200
+  },
   [`@media (min-width: ${breakpoints[2]}px)`]: {
+    height: 300
+  },
+  [`@media (min-width: ${breakpoints[4]}px)`]: {
     height: 423,
     width: 'auto'
   }
@@ -33,7 +39,13 @@ export const Image2 = styled.img({
   width: '50%',
   alignSelf: 'flex-end',
   objectFit: 'cover',
+  [`@media (min-width: ${breakpoints[1]}px)`]: {
+    height: 200
+  },
   [`@media (min-width: ${breakpoints[2]}px)`]: {
+    height: 300
+  },
+  [`@media (min-width: ${breakpoints[4]}px)`]: {
     height: 423,
     width: 'auto',
     position: 'relative',
@@ -42,13 +54,13 @@ export const Image2 = styled.img({
 })
 
 export const Box = styled.a({
-  width: 171,
+  width: 'calc(50% - 17px)',
   height: 150,
   marginLeft: 17,
   display: 'flex',
   backgroundColor: colors.yellow,
   position: 'relative',
-  [`@media (min-width: ${breakpoints[2]}px)`]: {
+  [`@media (min-width: ${breakpoints[4]}px)`]: {
     marginLeft: 0,
     width: 310,
     height: 272,
@@ -68,7 +80,7 @@ export const BoxWrapper = styled.div({
   display: 'flex',
   alignItems: 'flex-end',
   zIndex: 1,
-  [`@media (min-width: ${breakpoints[2]}px)`]: {
+  [`@media (min-width: ${breakpoints[4]}px)`]: {
     padding: '30px 40px',
     fontSize: 36,
     lineHeight: '48px'
