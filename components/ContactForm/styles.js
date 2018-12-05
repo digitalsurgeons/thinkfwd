@@ -4,6 +4,8 @@ export const Root = styled.div({
   padding: '0 20px'
 })
 
+export const Form = styled.form({})
+
 export const Field = styled.div({
   display: 'flex',
   flexDirection: 'column'
