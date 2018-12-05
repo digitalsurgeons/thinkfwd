@@ -1,7 +1,7 @@
 import { Root, Form, Field, Label, Input, Textarea } from './styles'
 import Select from 'react-select'
 import axios from 'axios'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 const options = [
   {
@@ -12,56 +12,37 @@ const options = [
   { value: 'Another one', label: 'Another one' }
 ]
 
-const useHubspotApi = () => {
+const useHubspotApi = endpoint => {
   const [data, setData] = useState()
-  const [url, setUrl] = useState()
-  const [event, setEvent] = useState()
+  const [url, setUrl] = useState(endpoint)
+  const [form, setForm] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
 
   const fetchData = async () => {
     setIsError(false)
     setIsLoading(true)
-
     try {
-      console.log('hi')
-      console.log(event)
+      const formData = new FormData(form)
+      const data = {
+        fields: []
+      }
+      for (var pair of formData.entries()) {
+        data.fields.push({ name: pair[0], value: pair[1] })
+      }
       const result = await axios({
         method: 'post',
         url,
-        data: {
-          fields: [
-            {
-              name: 'subject',
-              value: event.target.subject.value
-            },
-            {
-              name: 'firstname',
-              value: event.target.firstname.value
-            },
-            {
-              name: 'lastname',
-              value: event.target.lastname.value
-            },
-            {
-              name: 'email',
-              value: event.target.email.value
-            },
-            {
-              name: 'message',
-              value: event.target.message.value
-            }
-          ]
-        },
+        data,
         headers: {
           'Content-Type': 'application/json'
         }
       })
-      console.log(result)
       setData(result)
+      setForm(false)
     } catch (e) {
-      console.log('hm', e)
       setIsError(true)
+      setForm(false)
     }
 
     setIsLoading(false)
@@ -69,30 +50,29 @@ const useHubspotApi = () => {
 
   useEffect(
     () => {
-      return () => {
+      if (form) {
         fetchData()
       }
     },
-    [url, event]
+    [form]
   )
 
-  const doGet = event => {
-    setUrl(
-      'https://api.hsforms.com/submissions/v3/integration/submit/5120491/e286d489-7558-49cb-9f14-5dc4466d90b4'
-    )
-    setEvent(event)
-    event.preventDefault()
+  const handleSubmit = e => {
+    e.preventDefault()
+    setForm(e.target)
   }
 
-  return { data, isLoading, isError, doGet }
+  return { data, isLoading, isError, handleSubmit }
 }
 
 export default () => {
-  const { data, isLoading, isError, doGet } = useHubspotApi()
-  console.log(data, isLoading, isError)
+  const { data, isLoading, isError, handleSubmit } = useHubspotApi(
+    'https://api.hsforms.com/submissions/v3/integration/submit/5120491/e286d489-7558-49cb-9f14-5dc4466d90b4'
+  )
+
   return (
     <Root>
-      <Form onSubmit={event => doGet(event)}>
+      <Form onSubmit={e => handleSubmit(e)}>
         <Field>
           <Label>I want to know more about...</Label>
           <Select name="subject" options={options} />
