@@ -1,20 +1,34 @@
-import { Root, Form, Field, Label, Input, Textarea } from './styles'
 import Select from 'react-select'
 import axios from 'axios'
 import React, { useState, useEffect, useRef } from 'react'
+import { Root, Form, FieldRow, Field, Label, Input, Textarea } from './styles'
+import Button from '../Button'
 
 const options = [
   {
-    value: 'Solving my business challenges',
-    label: 'Solving my business challenges'
+    value: 'I’m interesting in joining the community!',
+    label: 'I’m interesting in joining the community!'
   },
-  { value: 'Some other option', label: 'Some other option' },
-  { value: 'Another one', label: 'Another one' }
+  {
+    value: 'I’m interested in hosting/sponsoring an event.',
+    label: 'I’m interested in hosting/sponsoring an event.'
+  },
+  {
+    value: 'I’m interesting in attending an event.',
+    label: 'I’m interesting in attending an event.'
+  },
+  {
+    value: 'I’d like to book a thinksprint.',
+    label: 'I’d like to book a thinksprint.'
+  },
+  { value: 'I have a press/media query.', label: 'I have a press/media query.' }
 ]
 
-const useHubspotApi = endpoint => {
+const useHubspotApi = ({ portalId, formId }) => {
   const [data, setData] = useState()
-  const [url, setUrl] = useState(endpoint)
+  const [url, setUrl] = useState(
+    `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`
+  )
   const [form, setForm] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
@@ -66,9 +80,10 @@ const useHubspotApi = endpoint => {
 }
 
 export default () => {
-  const { data, isLoading, isError, handleSubmit } = useHubspotApi(
-    'https://api.hsforms.com/submissions/v3/integration/submit/5120491/e286d489-7558-49cb-9f14-5dc4466d90b4'
-  )
+  const { data, isLoading, isError, handleSubmit } = useHubspotApi({
+    portalId: '5120491',
+    formId: 'e286d489-7558-49cb-9f14-5dc4466d90b4'
+  })
 
   return (
     <Root>
@@ -79,8 +94,10 @@ export default () => {
         </Field>
         <Field>
           <Label>Hi, my name is</Label>
-          <Input name="firstname" type="text" placeholder="first name" />
-          <Input name="lastname" type="text" placeholder="last name" />
+          <FieldRow>
+            <Input name="firstname" type="text" placeholder="first name" />
+            <Input name="lastname" type="text" placeholder="last name" />
+          </FieldRow>
         </Field>
         <Field>
           <Label>My email is</Label>
@@ -88,9 +105,17 @@ export default () => {
         </Field>
         <Field>
           <Label>How can we help you?</Label>
-          <Input name="message" as="textarea" type="text" />
+          <Input
+            name="message"
+            rows="1"
+            as="textarea"
+            placeholder="Ex. I need to ship products and features faster then my team is currently able to. "
+            type="text"
+          />
         </Field>
-        <button type="submit">Submit</button>
+        <Button secondary type="submit">
+          Submit
+        </Button>
       </Form>
     </Root>
   )
