@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { breakpoints, fonts } from '../../lib/settings'
 import { mq } from '../../lib/helpers'
 
@@ -68,6 +68,7 @@ export const NavLink = styled.a(props => ({
 export const ButtonContainer = styled.div({
   width: '100%',
   display: 'none',
+  alignItems: 'center',
   justifyContent: 'flex-end',
   [mq[2]]: {
     display: 'flex'

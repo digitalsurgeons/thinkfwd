@@ -1,4 +1,11 @@
 {
   "presets": ["next/babel"],
-  "plugins": ["styled-components"]
+  "env": {
+    "production": {
+      "plugins": ["emotion"]
+    },
+    "development": {
+      "plugins": [["emotion", { "sourceMap": true }]]
+    }
+  }
 }

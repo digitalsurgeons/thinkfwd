@@ -19,23 +19,11 @@ export default withRouter(({ router: { asPath } }) => {
       <Container>
         <Wrapper>
           <Nav>
-            <Link route="/education" passHref>
-              <NavLink isActive={asPath.includes('education')}>
-                Education
-              </NavLink>
-            </Link>
-            <Link route="/toolkit" passHref>
-              <NavLink
-                onMouseOver={() => prefetch('/page?slug=toolkit')}
-                isActive={asPath.includes('toolkit')}>
-                Toolkit
-              </NavLink>
-            </Link>
             <Link route="/blog" passHref>
-              <NavLink isActive={asPath.includes('blug')}>Blog</NavLink>
+              <NavLink isActive={asPath.includes('events')}>Events</NavLink>
             </Link>
-            <Link route="/about" passHref>
-              <NavLink isActive={asPath.includes('about')}>About</NavLink>
+            <Link route="/sprints" passHref>
+              <NavLink isActive={asPath.includes('sprints')}>Sprints</NavLink>
             </Link>
           </Nav>
           <Link route="/" passHref>
@@ -44,6 +32,16 @@ export default withRouter(({ router: { asPath } }) => {
             </LogoLink>
           </Link>
           <ButtonContainer>
+            <Link route="/toolkit" passHref>
+              <NavLink
+                onMouseOver={() => prefetch('/page?slug=toolkit')}
+                isActive={asPath.includes('toolkit')}>
+                Toolkit
+              </NavLink>
+            </Link>
+            <Link route="/about" passHref>
+              <NavLink isActive={asPath.includes('about')}>About</NavLink>
+            </Link>
             <Button as="a" secondary>
               Get In Touch
             </Button>

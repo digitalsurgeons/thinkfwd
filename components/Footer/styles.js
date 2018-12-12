@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { fonts, colors } from '../../lib/settings'
 
 export const Wrapper = styled.div({

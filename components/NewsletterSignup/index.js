@@ -11,15 +11,18 @@ import {
   Wrapper
 } from './styles'
 
-export default ({ primary: { headline, subheadline } }) => {
+export default () => {
   return (
     <Root>
       <Container>
         <Wrapper>
           <Body>
-            <Image src="/static/img/flyingBox.svg" />
-            <Headline>{headline[0].text}</Headline>
-            <Subheadline>{subheadline[0].text}</Subheadline>
+            <Image src="/static/img/triangle.svg" />
+            <Headline>Like What We're Throwing Down</Headline>
+            <Subheadline>
+              Be the first to know when we release new tools, kits, and
+              resources.
+            </Subheadline>
           </Body>
           <Form>
             <Textfield floatingLabelText="Name" />

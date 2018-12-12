@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { screens, fonts } from '../../lib/settings'
 import { mq } from '../../lib/helpers'
 
@@ -39,9 +39,9 @@ export const Headline = styled.h2({
   fontWeight: 600,
   lineHeight: '60px',
   [mq[2]]: {
-    fontSize: '80px',
-    marginBottom: '16px',
-    lineHeight: '104px'
+    fontSize: 64,
+    marginBottom: 16,
+    lineHeight: '88px'
   }
 })
 
@@ -56,10 +56,10 @@ export const Subheadline = styled.h3({
 })
 
 export const Image = styled.img({
-  height: '255px',
-  width: '255px',
+  height: 84,
+  width: 457,
   top: '-150px',
-  marginLeft: '-135px',
+  marginLeft: '-125px',
   position: 'absolute',
   display: 'none',
   [mq[2]]: {

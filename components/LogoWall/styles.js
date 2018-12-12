@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { fonts, colors } from '../../lib/settings'
 import { mq } from '../../lib/helpers'
 
@@ -36,6 +36,7 @@ export const Logos = styled.div({
 export const Row = styled.div({
   display: 'flex',
   flexWrap: 'wrap',
+  alignItems: 'center',
   justifyContent: 'space-between',
   width: '100%',
   marginBottom: 120,
@@ -46,5 +47,5 @@ export const Row = styled.div({
 
 export const Logo = styled.img({
   display: 'flex',
-  width: '33%'
+  width: '120px'
 })

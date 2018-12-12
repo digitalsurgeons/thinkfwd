@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { colors, fonts } from '../../lib/settings'
 import { mq } from '../../lib/helpers'
 

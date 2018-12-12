@@ -4,7 +4,6 @@ fragment BigText on PageBodyBig_text {
     heading
   }
 }
-
 fragment FunkyCta on PageBodyFunky_cta {
   type
   primary {
@@ -20,7 +19,6 @@ fragment FunkyCta on PageBodyFunky_cta {
     link_text
   }
 }
-
 fragment FunkyHeadings on PageBodyFunky_headings {
   type
   primary {
@@ -28,11 +26,9 @@ fragment FunkyHeadings on PageBodyFunky_headings {
     subheading
   }
 }
-
 fragment Animation on PageBodyAnimation {
   type
 }
-
 fragment Stagger on PageBodyStagger {
   type
   primary {
@@ -59,19 +55,12 @@ fragment Stagger on PageBodyStagger {
     link_text
   }
 }
-
 fragment NewsletterSignup on PageBodyNewsletter_signup {
   type
-  primary {
-    headline
-    subheadline
-  }
 }
-
 fragment ToolkitGrid on PageBodyToolkit_grid {
   type
 }
-
 fragment Header on PageBodyHeader {
   type
   primary {
@@ -79,24 +68,27 @@ fragment Header on PageBodyHeader {
     headline
   }
 }
-
 fragment StaggeredCta on PageBodyStaggered_cta {
   type
   primary {
     link_text
   }
 }
-
 fragment LogoWall on PageBodyLogo_wall {
   type
   primary {
     heading
   }
+  fields {
+    logo
+  }
 }
-
 fragment EventsPanel on PageBodyEvents_panel {
   type
-  primary {
-    heading
-  }
+}
+fragment ImagePanelCta on PageBodyImage_panel_cta {
+  type
+}
+fragment ImageCardGrid on PageBodyImage_card_grid {
+  type
 }

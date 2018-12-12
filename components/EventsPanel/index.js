@@ -5,10 +5,7 @@ import { Link } from '../../lib/routes'
 import Card from '../Card'
 import { Heading, Root, StyledLink, Wrapper } from './styles'
 
-export default ({
-  events,
-  primary: { heading, card_one, card_two, card_three }
-}) => {
+export default () => {
   const [data, setData] = useState({ events: [] })
   const fetchData = async () => {
     const result = await axios(

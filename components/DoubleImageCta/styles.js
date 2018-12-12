@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { colors, fonts, breakpoints } from '../../lib/settings'
 
 export const Container = styled.div({

@@ -15,19 +15,19 @@ import {
 import { linkResolver } from '../../lib/helpers'
 import { Link } from '../../lib/routes'
 
-export default ({ primary: { link_text } }) => (
+export default () => (
   <Container>
     <Wrapper>
-      <Link passHref>
+      <Link route="/contact" passHref>
         <Box>
           <BoxWrapper>
-            {link_text[0].text}
+            Book a Thinksprint
             <Arrow src="/static/img/arrow-right-black.svg" />
           </BoxWrapper>
         </Box>
       </Link>
       <ImageContainer>
-        <Image src="/static/img/workshop1.jpg" />
+        <Image src="/static/img/workshop.jpg" />
         <Stars src="/static/img/stars-yellow.svg" />
         <Strip>
           <StripText>thinksprints</StripText>

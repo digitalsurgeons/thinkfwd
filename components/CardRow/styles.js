@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { breakpoints, colors, fonts } from '../../lib/settings'
 
 export const Root = styled.section({

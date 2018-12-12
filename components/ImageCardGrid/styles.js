@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 export const Wrapper = styled.div({
   '.my-masonry-grid': {
@@ -9,7 +9,7 @@ export const Wrapper = styled.div({
   '.my-masonry-grid_column': {
     paddingLeft: 30,
     backgroundClip: 'padding-box',
-    ':nth-child(2n)': {
+    ':nth-of-type(2n)': {
       marginTop: 280
     }
   },
