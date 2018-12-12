@@ -36,6 +36,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.7.0-alpha.2",
     "react-apollo": "^2.3.1",
+    "react-burger-menu": "^2.5.4",
     "react-dom": "^16.7.0-alpha.2",
     "react-hot-loader": "^4.5.3",
     "react-hubspot": "^1.0.1",
