@@ -4,7 +4,7 @@ import { mq } from '../../lib/helpers'
 
 export const Root = styled.article({
   [mq[2]]: {
-    maxWidth: '500px'
+    //maxWidth: '500px'
   }
 })
 

@@ -17,9 +17,13 @@ const Page = withRouter(({ router: { query } }) => {
         return (
           <>
             <Head>
-              <title>{page.meta_title[0].text}</title>
+              <title>
+                {page.meta_title[0].text
+                  ? page.meta_title[0].text
+                  : `thinkfwd | ${query.slug}`}
+              </title>
             </Head>
-            {page.body.map(component => getComponent(component))}
+            {page.body && page.body.map(component => getComponent(component))}
           </>
         )
       }}

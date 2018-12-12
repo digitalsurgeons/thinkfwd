@@ -8,14 +8,12 @@ export default ({ children }) => {
   return (
     <>
       <GlobalStyles />
-
       <div id="outer-container">
         <Menu
           right
           pageWrapId={'page-wrap'}
           outerContainerId={'outer-container'}
         />
-
         <main id="page-wrap">
           <Navigation />
           {children}

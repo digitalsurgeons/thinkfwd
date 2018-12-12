@@ -1,6 +1,11 @@
 import styled from '@emotion/styled'
-import { breakpoints } from '../../lib/settings'
+import { breakpoints, colors, fonts } from '../../lib/settings'
 import { mq } from '../../lib/helpers'
+
+export const Root = styled.section({
+  padding: '40px 0',
+  minHeight: '439px'
+})
 
 export const Wrapper = styled.div({
   display: 'flex',
@@ -22,4 +27,15 @@ export const StyledLink = styled.a({
   article: {
     padding: '0 16px'
   }
+})
+
+export const Heading = styled.h2({
+  fontFamily: fonts.secondary,
+  fontSize: '36px',
+  color: colors.black,
+  fontWeight: 600,
+  textAlign: 'center',
+  lineHeight: '56px',
+  flex: 1,
+  marginBottom: '76px'
 })

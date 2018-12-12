@@ -17,6 +17,7 @@ query page($lang: String!, $uid: String!) {
       ...LogoWall
       ...ImagePanelCta
       ...ImageCardGrid
+      ...EventsGrid
     }
   }
 }

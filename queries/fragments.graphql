@@ -36,15 +36,6 @@ fragment Stagger on PageBodyStagger {
     headline
     description
     link {
-      ... on _ExternalLink {
-        url
-      }
-      ... on _ImageLink {
-        url
-      }
-      ... on _FileLink {
-        url
-      }
       ... on Page {
         _meta {
           type
@@ -90,5 +81,9 @@ fragment ImagePanelCta on PageBodyImage_panel_cta {
   type
 }
 fragment ImageCardGrid on PageBodyImage_card_grid {
+  type
+}
+
+fragment EventsGrid on PageBodyEvents_grid {
   type
 }

@@ -19,7 +19,7 @@ export default withRouter(({ router: { asPath } }) => {
       <Container>
         <Wrapper>
           <Nav>
-            <Link route="/blog" passHref>
+            <Link route="/events" passHref>
               <NavLink isActive={asPath.includes('events')}>Events</NavLink>
             </Link>
             <Link route="/sprints" passHref>
@@ -42,9 +42,11 @@ export default withRouter(({ router: { asPath } }) => {
             <Link route="/about" passHref>
               <NavLink isActive={asPath.includes('about')}>About</NavLink>
             </Link>
-            <Button as="a" secondary>
-              Get In Touch
-            </Button>
+            <Link route="/contact" passHref>
+              <Button as="a" secondary>
+                Get In Touch
+              </Button>
+            </Link>
           </ButtonContainer>
         </Wrapper>
       </Container>
