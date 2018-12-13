@@ -4,10 +4,9 @@ import { Query } from 'react-apollo'
 import ErrorMessage from '../components/ErrorMessage'
 import Loader from '../components/Loader'
 import { getComponent, throw404 } from '../lib/helpers'
-import pageQuery from '../queries/page.graphql'
-import withApolloClient from '../lib/with-apollo-client'
+import pageQuery from '../queries/page1.graphql'
 
-const Page = withRouter(({ router: { query } }) => {
+export default () => {
   return (
     <Query query={pageQuery} variables={{ lang: 'en-us', uid: query.slug }}>
       {({ loading, error, data: { page } }) => {
@@ -29,6 +28,4 @@ const Page = withRouter(({ router: { query } }) => {
       }}
     </Query>
   )
-})
-
-export default Page
+}

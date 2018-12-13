@@ -13,7 +13,8 @@ export const Button = styled.button(props => ({
   letterSpacing: '1px',
   textAlign: 'center',
   padding: '16px 24px',
-  display: 'inline-block',
+  display: 'inline-flex',
+  alignItems: 'center',
   outline: 'none',
   ':hover': {},
   ':active': {}

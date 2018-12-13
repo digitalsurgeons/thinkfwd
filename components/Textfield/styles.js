@@ -38,7 +38,7 @@ export const Label = styled.label(props => ({
 export const Bar = styled.span(props => ({
   display: 'block',
   position: 'relative',
-  width: '325px',
+  width: '100%',
   ':before': {
     background: '#3FE3FA',
     bottom: 0,

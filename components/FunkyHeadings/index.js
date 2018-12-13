@@ -1,11 +1,18 @@
 import { Wrapper, Heading, Subheading } from './styles'
 import { Container } from '../../lib/helpers'
 
-export default ({ primary: { heading, subheading } }) => (
+export default () => (
   <Container>
     <Wrapper>
-      <Heading>{heading[0].text}</Heading>
-      <Subheading>{subheading[0].text}</Subheading>
+      <Heading>
+        We empower leaders and their teams to think and act forward.
+      </Heading>
+      <Subheading>
+        Thinkfwd provides the tools and education needed to deliver innovation
+        for your brand or business whether you're leading a team or contributing
+        to one. It's part curriculum, part community; all focused on creating
+        the way forward.
+      </Subheading>
     </Wrapper>
   </Container>
 )

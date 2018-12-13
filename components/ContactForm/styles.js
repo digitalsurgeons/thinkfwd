@@ -69,7 +69,7 @@ export const FieldRow = styled.div({
   display: 'flex',
   input: {
     width: '50%',
-    ':first-child': {
+    ':first-of-type': {
       marginRight: 20
     }
   }

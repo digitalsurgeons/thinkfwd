@@ -4,14 +4,14 @@ import { Container } from '../../lib/helpers'
 export default ({ primary: { heading }, fields }) => {
   const rows = []
   const size = 3
-  while (fields.length > 0) {
+  while (fields && fields.length > 0) {
     rows.push(fields.splice(0, size))
   }
   return (
     <Container>
       <Wrapper>
         <Heading>{heading[0].text}</Heading>
-        <Logos>
+        {/* <Logos>
           {rows.map((row, i) => (
             <Row key={i}>
               {row.map((field, i) => (
@@ -19,7 +19,7 @@ export default ({ primary: { heading }, fields }) => {
               ))}
             </Row>
           ))}
-        </Logos>
+        </Logos> */}
       </Wrapper>
     </Container>
   )

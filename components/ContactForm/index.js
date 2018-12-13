@@ -1,4 +1,5 @@
 import Select from 'react-select'
+import CircularProgress from '@material-ui/core/CircularProgress'
 import {
   Wrapper,
   Header,
@@ -54,6 +55,7 @@ export default () => {
           <Field>
             <Label>I want to know more about...</Label>
             <Select
+              instanceId="test"
               styles={customSelectStyles}
               name="subject"
               options={options}
@@ -80,7 +82,13 @@ export default () => {
             />
           </Field>
           <Button secondary type="submit">
-            Submit
+            {isLoading && (
+              <CircularProgress
+                style={{ marginRight: 8, color: colors.pink }}
+                size={16}
+              />
+            )}
+            <span>Submit</span>
           </Button>
         </Form>
       </Wrapper>

@@ -23,21 +23,22 @@ export default () => {
       <Container>
         <Heading>Upcoming Meetups & Events</Heading>
         <Wrapper>
-          {data.length &&
-            data.map((event, i) => (
-              <Link key={i} route={event.url} passHref>
-                <StyledLink target="_blank" rel="noopener noreferrer">
-                  <Card
-                    image={event.logo.original.url}
-                    title={event.name.text}
-                    date={event.start.local}
-                    subtitle={`${event.venue.address.city}, ${
-                      event.venue.address.region
-                    }`}
-                  />
-                </StyledLink>
-              </Link>
-            ))}
+          {data.length
+            ? data.map((event, i) => (
+                <Link key={i} route={event.url} passHref>
+                  <StyledLink target="_blank" rel="noopener noreferrer">
+                    <Card
+                      image={event.logo.original.url}
+                      title={event.name.text}
+                      date={event.start.local}
+                      subtitle={`${event.venue.address.city}, ${
+                        event.venue.address.region
+                      }`}
+                    />
+                  </StyledLink>
+                </Link>
+              ))
+            : 'No upcoming events'}
         </Wrapper>
       </Container>
     </Root>

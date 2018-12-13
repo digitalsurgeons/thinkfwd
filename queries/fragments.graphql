@@ -1,8 +1,20 @@
+fragment Animation on PageBodyAnimation {
+  type
+}
 fragment BigText on PageBodyBig_text {
   type
   primary {
     heading
   }
+}
+fragment ContactForm on PageBodyContact_form {
+  type
+}
+fragment EventsGrid on PageBodyEvents_grid {
+  type
+}
+fragment EventsPanel on PageBodyEvents_panel {
+  type
 }
 fragment FunkyCta on PageBodyFunky_cta {
   type
@@ -26,7 +38,27 @@ fragment FunkyHeadings on PageBodyFunky_headings {
     subheading
   }
 }
-fragment Animation on PageBodyAnimation {
+
+fragment Header on PageBodyHeader {
+  type
+  primary {
+    title
+    headline
+  }
+}
+fragment ImageCardGrid on PageBodyImage_card_grid {
+  type
+}
+fragment ImagePanelCta on PageBodyImage_panel_cta {
+  type
+}
+fragment LogoWall on PageBodyLogo_wall {
+  type
+  primary {
+    heading
+  }
+}
+fragment NewsletterSignup on PageBodyNewsletter_signup {
   type
 }
 fragment Stagger on PageBodyStagger {
@@ -46,44 +78,12 @@ fragment Stagger on PageBodyStagger {
     link_text
   }
 }
-fragment NewsletterSignup on PageBodyNewsletter_signup {
-  type
-}
-fragment ToolkitGrid on PageBodyToolkit_grid {
-  type
-}
-fragment Header on PageBodyHeader {
-  type
-  primary {
-    title
-    headline
-  }
-}
 fragment StaggeredCta on PageBodyStaggered_cta {
   type
   primary {
     link_text
   }
 }
-fragment LogoWall on PageBodyLogo_wall {
-  type
-  primary {
-    heading
-  }
-  fields {
-    logo
-  }
-}
-fragment EventsPanel on PageBodyEvents_panel {
-  type
-}
-fragment ImagePanelCta on PageBodyImage_panel_cta {
-  type
-}
-fragment ImageCardGrid on PageBodyImage_card_grid {
-  type
-}
-
-fragment EventsGrid on PageBodyEvents_grid {
+fragment ToolkitGrid on PageBodyToolkit_grid {
   type
 }
