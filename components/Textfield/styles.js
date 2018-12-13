@@ -12,6 +12,7 @@ export const Input = styled.input(props => ({
   borderBottom: '4px solid',
   borderColor: '#d8d8d8',
   color: colors.black,
+  borderRadius: 0,
   display: 'block',
   fontWeight: 600,
   fontSize: '24px',

@@ -1,4 +1,3 @@
-import moment from 'moment'
 import { Image, Root, Wrapper, Text, Title, Subtitle } from './styles'
 
 export default ({ title, subtitle, image }) => {

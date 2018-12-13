@@ -1,12 +1,18 @@
 import styled from '@emotion/styled'
 import { fonts, colors } from '../../lib/settings'
 
-export const Wrapper = styled.div({
+export const Row = styled.div({
   display: 'flex',
   alignItems: 'center',
   width: '100%',
   justifyContent: 'space-between',
-  padding: '60px 0'
+  ':first-of-type': {
+    paddingTop: 40,
+    marginBottom: 80
+  },
+  ':last-of-type': {
+    marginBottom: 64
+  }
 })
 
 export const LogoLink = styled.a({
@@ -27,12 +33,10 @@ export const Social = styled.div({
 
 export const Copyright = styled.div({
   fontFamily: fonts.secondary,
-  fontSize: '14px',
-  fontWeight: '600',
+  fontSize: '12px',
+  fontWeight: '500',
   color: colors.black,
-  lineHeight: '20px',
-  flex: 1,
-  textAlign: 'center'
+  lineHeight: '20px'
 })
 
 export const SocialLink = styled.a({
@@ -40,4 +44,18 @@ export const SocialLink = styled.a({
   ':last-child': {
     marginRight: 0
   }
+})
+
+export const Logos = styled.div({
+  display: 'flex',
+  alignItems: 'center'
+})
+
+export const MadeIn = styled.div({
+  fontFamily: fonts.secondary,
+  fontWeight: 600,
+  marginRight: 24,
+  fontSize: 14,
+  color: colors.darkGray,
+  lineHeight: '20px'
 })

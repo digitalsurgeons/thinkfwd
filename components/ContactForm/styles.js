@@ -5,13 +5,22 @@ import { mq } from '../../lib/helpers'
 export const Wrapper = styled.div({
   display: 'flex',
   justifyContent: 'space-between',
-  padding: '100px 0'
+  padding: '40px 0',
+  flexDirection: 'column',
+  [mq[2]]: {
+    padding: '100px 0',
+    flexDirection: 'row'
+  }
 })
 
 export const Header = styled.header({
   display: 'flex',
   flexDirection: 'column',
-  maxWidth: 575
+  maxWidth: 575,
+  marginBottom: 40,
+  [mq[2]]: {
+    marginBottom: 0
+  }
 })
 
 export const Title = styled.h2({
@@ -38,8 +47,10 @@ export const Headline = styled.h2({
 })
 
 export const Form = styled.form({
-  maxWidth: 415,
-  width: '100%'
+  width: '100%',
+  [mq[2]]: {
+    maxWidth: 415
+  }
 })
 
 export const Field = styled.div({

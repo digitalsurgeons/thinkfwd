@@ -1,14 +1,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import ImageCard from './index'
+import CaseStudyCard from './index'
 
-describe('ImageCard', () => {
+describe('CaseStudyCard', () => {
   it('renders correctly', () => {
-    const component = renderer.create(
-      <ImageCard />
-    )
+    const component = renderer.create(<CaseStudyCard />)
     let tree = component.toJSON()
     expect(tree).toMatchSnapshot()
   })
 })
-

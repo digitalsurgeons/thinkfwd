@@ -1,7 +1,16 @@
-import { Root } from './styles'
+import { Image, Root, Wrapper, Text, Title, Subtitle, Bio } from './styles'
 
-export default () => (
-  <Root>
-    Hello World
-  </Root>
-)
+export default ({ children, title, subtitle, image, ...other }) => {
+  return (
+    <Root {...other}>
+      <Image src={image} alt={title} />
+      <Wrapper>
+        <Text>
+          <Title>{title}</Title>
+          <Subtitle>{subtitle}</Subtitle>
+        </Text>
+      </Wrapper>
+      <Bio>{children}</Bio>
+    </Root>
+  )
+}

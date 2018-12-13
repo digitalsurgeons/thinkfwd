@@ -42,10 +42,10 @@ fragment g on PageBodyHeader {
     headline
   }
 }
-fragment h on PageBodyImage_card_grid {
+fragment h on PageBodyCase_study_grid {
   type
   fields {
-    image_card {
+    case_study {
       ... on Case_study {
         description
         title

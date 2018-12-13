@@ -1,48 +1,56 @@
 import { Link } from '../../lib/routes'
 import {
-  Wrapper,
+  Row,
   Copyright,
   LogoLink,
   Logo,
   Social,
-  SocialLink
+  SocialLink,
+  MadeIn,
+  Logos
 } from './styles'
-import { FaYoutube, FaTwitter, FaFacebook, FaSoundcloud } from 'react-icons/fa'
+import { FaYoutube, FaTwitter, FaInstagram } from 'react-icons/fa'
 import { Container } from '../../lib/helpers'
 
 export default () => {
   return (
     <Container>
-      <Wrapper>
+      <Row>
         <Link route="/" passHref>
           <LogoLink>
             <Logo src="/static/img/logo.svg" />
           </LogoLink>
         </Link>
-        <Copyright>©2018 thinkfwd. All rights reserved.</Copyright>
+
         <Social>
-          <Link route="/" passHref>
-            <SocialLink>
+          <Link route="https://youtube.com/digitalsurgeons" passHref>
+            <SocialLink target="_blank" rel="noopener noreferrer">
               <FaYoutube size="20px" />
             </SocialLink>
           </Link>
-          <Link route="/" passHref>
-            <SocialLink>
+          <Link route="https://twitter.com/digitalsurgeons" passHref>
+            <SocialLink target="_blank" rel="noopener noreferrer">
               <FaTwitter size="20px" />
             </SocialLink>
           </Link>
-          <Link route="/" passHref>
+          <Link route="https://instagram.com/digitalsurgeons" passHref>
             <SocialLink>
-              <FaFacebook size="20px" />
-            </SocialLink>
-          </Link>
-          <Link route="/" passHref>
-            <SocialLink>
-              <FaSoundcloud size="20px" />
+              <FaInstagram size="20px" />
             </SocialLink>
           </Link>
         </Social>
-      </Wrapper>
+      </Row>
+      <Row>
+        <Copyright>©2018 thinkfwd. All rights reserved.</Copyright>
+        <Logos>
+          <MadeIn>Made in CT</MadeIn>
+          <img
+            style={{ marginRight: 24 }}
+            src="/static/img/digitalsurgeons.svg"
+          />
+          <img src="/static/img/district.svg" />
+        </Logos>
+      </Row>
     </Container>
   )
 }

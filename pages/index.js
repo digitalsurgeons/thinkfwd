@@ -17,7 +17,7 @@ export default () => {
             <Head>
               <title>
                 {`thinkfwd | ${
-                  page.meta_title[0].text ? page.meta_title[0].text : query.slug
+                  page.meta_title ? page.meta_title[0].text : query.slug
                 }`}
               </title>
             </Head>

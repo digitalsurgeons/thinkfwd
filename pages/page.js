@@ -18,9 +18,12 @@ export default withRouter(({ router: { query } }) => {
             <Head>
               <title>
                 {`thinkfwd | ${
-                  page.meta_title[0].text ? page.meta_title[0].text : query.slug
+                  page.meta_title ? page.meta_title[0].text : query.slug
                 }`}
               </title>
+              {page.meta_description && (
+                <meta description={page.meta_description[0].text} />
+              )}
             </Head>
             {page.body && page.body.map(component => getComponent(component))}
           </>

@@ -19,9 +19,9 @@ export const Wrapper = styled.div({
 export const LogoLink = styled.a({
   display: 'block',
   cursor: 'pointer',
-  width: '100%',
   [mq[2]]: {
-    textAlign: 'center'
+    textAlign: 'center',
+    width: '100%'
   }
 })
 

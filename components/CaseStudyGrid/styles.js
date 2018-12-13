@@ -13,7 +13,7 @@ export const Wrapper = styled.div({
       marginTop: 280
     }
   },
-  '.my-masonry-grid_column > div': {
-    marginBottom: 30
+  '.my-masonry-grid_column > article': {
+    marginBottom: 120
   }
 })

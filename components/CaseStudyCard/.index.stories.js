@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import ImageCard from './index'
+import CaseStudyCard from './index'
 
 const mockData = {
   title: 'District',
@@ -10,4 +10,6 @@ const mockData = {
   image: '/static/img/district.jpg'
 }
 
-storiesOf('ImageCard', module).add('default', () => <ImageCard {...mockData} />)
+storiesOf('CaseStudyCard', module).add('default', () => (
+  <CaseStudyCard {...mockData} />
+))

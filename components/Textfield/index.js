@@ -28,7 +28,7 @@ export default class extends React.Component {
   }
 
   render() {
-    const { inverse = false } = this.props
+    const { inverse = false, ...other } = this.props
     return (
       <TextField inverse={inverse}>
         <Input
@@ -38,6 +38,7 @@ export default class extends React.Component {
           onFocus={this.onFocus}
           onBlur={this.onBlur}
           required
+          {...other}
         />
         <Bar focused={this.state.focused} />
         <Label
