@@ -7,9 +7,6 @@ fragment BigText on PageBodyBig_text {
     heading
   }
 }
-fragment ContactForm on PageBodyContact_form {
-  type
-}
 fragment EventsGrid on PageBodyEvents_grid {
   type
 }
@@ -56,6 +53,9 @@ fragment LogoWall on PageBodyLogo_wall {
   type
   primary {
     heading
+  }
+  fields {
+    logo
   }
 }
 fragment NewsletterSignup on PageBodyNewsletter_signup {

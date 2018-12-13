@@ -11,7 +11,7 @@ export default ({ primary: { heading }, fields }) => {
     <Container>
       <Wrapper>
         <Heading>{heading[0].text}</Heading>
-        {/* <Logos>
+        <Logos>
           {rows.map((row, i) => (
             <Row key={i}>
               {row.map((field, i) => (
@@ -19,7 +19,7 @@ export default ({ primary: { heading }, fields }) => {
               ))}
             </Row>
           ))}
-        </Logos> */}
+        </Logos>
       </Wrapper>
     </Container>
   )

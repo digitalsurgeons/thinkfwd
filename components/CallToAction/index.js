@@ -58,9 +58,11 @@ export default ({ primary: { heading, link, link_text } }) => {
       </Svg>
       <Wrapper>
         <Title>{heading[0].text}</Title>
-        <Link route={linkResolver(link._meta)} passHref>
-          <Button as="a">{link_text[0].text}</Button>
-        </Link>
+        {link && (
+          <Link route={linkResolver(link._meta)} passHref>
+            <Button as="a">{link_text[0].text}</Button>
+          </Link>
+        )}
       </Wrapper>
     </Container>
   )

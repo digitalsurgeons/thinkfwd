@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { withRouter } from 'next/router'
 import { Query } from 'react-apollo'
 import ErrorMessage from '../components/ErrorMessage'
 import Loader from '../components/Loader'
@@ -17,9 +16,9 @@ export default () => {
           <>
             <Head>
               <title>
-                {page.meta_title[0].text
-                  ? page.meta_title[0].text
-                  : `thinkfwd | ${query.slug}`}
+                {`thinkfwd | ${
+                  page.meta_title[0].text ? page.meta_title[0].text : query.slug
+                }`}
               </title>
             </Head>
             {page.body && page.body.map(component => getComponent(component))}

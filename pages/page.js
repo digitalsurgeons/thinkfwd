@@ -4,9 +4,9 @@ import { Query } from 'react-apollo'
 import ErrorMessage from '../components/ErrorMessage'
 import Loader from '../components/Loader'
 import { getComponent, throw404 } from '../lib/helpers'
-import pageQuery from '../queries/page1.graphql'
+import pageQuery from '../queries/page.graphql'
 
-export default () => {
+export default withRouter(({ router: { query } }) => {
   return (
     <Query query={pageQuery} variables={{ lang: 'en-us', uid: query.slug }}>
       {({ loading, error, data: { page } }) => {
@@ -17,9 +17,9 @@ export default () => {
           <>
             <Head>
               <title>
-                {page.meta_title[0].text
-                  ? page.meta_title[0].text
-                  : `thinkfwd | ${query.slug}`}
+                {`thinkfwd | ${
+                  page.meta_title[0].text ? page.meta_title[0].text : query.slug
+                }`}
               </title>
             </Head>
             {page.body && page.body.map(component => getComponent(component))}
@@ -28,4 +28,4 @@ export default () => {
       }}
     </Query>
   )
-}
+})

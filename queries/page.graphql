@@ -6,7 +6,6 @@ query page($lang: String!, $uid: String!) {
     body {
       ...Animation
       ...BigText
-      ...ContactForm
       ...EventsGrid
       ...EventsPanel
       ...FunkyCta
