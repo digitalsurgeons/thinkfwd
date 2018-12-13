@@ -1,19 +1,19 @@
-fragment Animation on PageBodyAnimation {
+fragment a on PageBodyAnimation {
   type
 }
-fragment BigText on PageBodyBig_text {
+fragment b on PageBodyBig_text {
   type
   primary {
     heading
   }
 }
-fragment EventsGrid on PageBodyEvents_grid {
+fragment c on PageBodyEvents_grid {
   type
 }
-fragment EventsPanel on PageBodyEvents_panel {
+fragment d on PageBodyEvents_panel {
   type
 }
-fragment FunkyCta on PageBodyFunky_cta {
+fragment e on PageBodyFunky_cta {
   type
   primary {
     image
@@ -28,28 +28,36 @@ fragment FunkyCta on PageBodyFunky_cta {
     link_text
   }
 }
-fragment FunkyHeadings on PageBodyFunky_headings {
+fragment f on PageBodyFunky_headings {
   type
   primary {
     heading
     subheading
   }
 }
-
-fragment Header on PageBodyHeader {
+fragment g on PageBodyHeader {
   type
   primary {
     title
     headline
   }
 }
-fragment ImageCardGrid on PageBodyImage_card_grid {
+fragment h on PageBodyImage_card_grid {
+  type
+  fields {
+    image_card {
+      ... on Case_study {
+        description
+        title
+        image
+      }
+    }
+  }
+}
+fragment i on PageBodyImage_panel_cta {
   type
 }
-fragment ImagePanelCta on PageBodyImage_panel_cta {
-  type
-}
-fragment LogoWall on PageBodyLogo_wall {
+fragment j on PageBodyLogo_wall {
   type
   primary {
     heading
@@ -58,10 +66,10 @@ fragment LogoWall on PageBodyLogo_wall {
     logo
   }
 }
-fragment NewsletterSignup on PageBodyNewsletter_signup {
+fragment k on PageBodyNewsletter_signup {
   type
 }
-fragment Stagger on PageBodyStagger {
+fragment l on PageBodyStagger {
   type
   primary {
     image
@@ -78,12 +86,12 @@ fragment Stagger on PageBodyStagger {
     link_text
   }
 }
-fragment StaggeredCta on PageBodyStaggered_cta {
+fragment m on PageBodyStaggered_cta {
   type
   primary {
     link_text
   }
 }
-fragment ToolkitGrid on PageBodyToolkit_grid {
+fragment n on PageBodyToolkit_grid {
   type
 }
