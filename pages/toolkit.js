@@ -1,12 +1,12 @@
 import { withRouter } from 'next/router'
 import { Query } from 'react-apollo'
 import ErrorMessage from '../components/ErrorMessage'
-import Head from 'next/head'
 import Loader from '../components/Loader'
 import Masthead from '../components/Masthead'
 import ToolkitArticle from '../components/ToolkitArticle'
 import { getComponent, throw404 } from '../lib/helpers'
 import toolkitQuery from '../queries/toolkit.graphql'
+import Layout from '../components/Layout'
 
 export default withRouter(({ router: { query } }) => {
   return (
@@ -26,19 +26,11 @@ export default withRouter(({ router: { query } }) => {
           meta_description
         } = toolkit
         return (
-          <>
-            <Head>
-              <title>
-                {`thinkfwd | ${meta_title ? meta_title[0].text : query.slug}`}
-              </title>
-              {meta_description && (
-                <meta description={meta_description[0].text} />
-              )}
-            </Head>
+          <Layout title={meta_title} description={meta_description}>
             <Masthead image={image} title={title} description={description} />
             <ToolkitArticle aside={aside} main={main} />
             {body && body.map(component => getComponent(component))}
-          </>
+          </Layout>
         )
       }}
     </Query>

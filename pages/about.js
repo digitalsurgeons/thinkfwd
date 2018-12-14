@@ -1,17 +1,13 @@
-import Head from 'next/head'
 import BigTextSmallText from '../components/BigTextSmallText'
 import FullWidthImage from '../components/FullWidthImage'
 import PersonGrid from '../components/PersonGrid'
-
+import Layout from '../components/Layout'
 export default () => {
   return (
-    <>
-      <Head>
-        <title>thinkfwd | About</title>
-      </Head>
+    <Layout title={'thinkfwd | about'} description="">
       <BigTextSmallText />
       <FullWidthImage url="/static/img/audience.jpg" />
       <PersonGrid />
-    </>
+    </Layout>
   )
 }

@@ -1,15 +1,13 @@
 import Head from 'next/head'
 import ContactForm from '../components/ContactForm'
 import FullWidthImage from '../components/FullWidthImage'
+import Layout from '../components/Layout'
 
 export default () => {
   return (
-    <>
-      <Head>
-        <title>thinkfwd | Contact</title>
-      </Head>
+    <Layout title="thinkfwd | contact" description="">
       <ContactForm />
       <FullWidthImage url="/static/img/jamie-and-amy.jpg" />
-    </>
+    </Layout>
   )
 }

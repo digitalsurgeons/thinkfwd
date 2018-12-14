@@ -3,7 +3,6 @@ import Head from 'next/head'
 import React from 'react'
 import { ApolloProvider } from 'react-apollo'
 import { IconContext } from 'react-icons'
-import Layout from '../components/Layout'
 import withApolloClient from '../lib/with-apollo-client'
 
 class MyApp extends App {
@@ -16,9 +15,7 @@ class MyApp extends App {
         </Head>
         <ApolloProvider client={apolloClient}>
           <IconContext.Provider value={{ color: 'black' }}>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
+            <Component {...pageProps} />
           </IconContext.Provider>
         </ApolloProvider>
       </Container>

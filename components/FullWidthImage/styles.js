@@ -6,6 +6,7 @@ export const Image = styled.img({
   objectPosition: 'center',
   width: '100%',
   height: 300,
+  marginBottom: 40,
   [mq[2]]: {
     height: 640
   }

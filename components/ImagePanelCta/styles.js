@@ -110,11 +110,11 @@ export const Box = styled.a({
 
 export const BoxWrapper = styled.div({
   fontFamily: fonts.secondary,
-  fontSize: 24,
+  fontSize: 18,
   color: colors.offBlack,
   padding: '10px 20px',
   bottom: 30,
-  lineHeight: '36px',
+  lineHeight: '28px',
   fontWeight: 600,
   display: 'flex',
   alignItems: 'flex-end',
@@ -127,5 +127,11 @@ export const BoxWrapper = styled.div({
 })
 
 export const Arrow = styled.img({
-  marginBottom: 10
+  marginBottom: 10,
+  width: '20px',
+  height: '20px',
+  [`@media (min-width: ${breakpoints[2]}px)`]: {
+    width: 'auto',
+    height: 'auto'
+  }
 })

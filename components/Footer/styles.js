@@ -2,6 +2,10 @@ import styled from '@emotion/styled'
 import { fonts, colors } from '../../lib/settings'
 import { mq } from '../../lib/helpers'
 
+export const Root = styled.div({
+  marginTop: 40
+})
+
 export const Row = styled.div({
   display: 'flex',
   alignItems: 'center',

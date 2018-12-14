@@ -13,7 +13,7 @@ export const Wrapper = styled.div({
 })
 
 export const StyledLink = styled.a({
-  margin: '0 16px 120px',
+  margin: '0 16px',
   flex: 1,
   width: '33.333%'
 })
