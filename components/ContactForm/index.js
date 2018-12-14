@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import Select from 'react-select'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import {
@@ -39,9 +40,10 @@ const options = [
 ]
 
 export default () => {
+  const formEl = useRef(null)
   const { data, isLoading, isError, handleSubmit } = useForm({
-    portalId: '5120491',
-    formId: 'e286d489-7558-49cb-9f14-5dc4466d90b4'
+    portalId: '521132',
+    formId: 'f00058cd-eada-4106-8858-fd0c9882357b'
   })
 
   return (
@@ -51,7 +53,7 @@ export default () => {
           <Title>// Contact</Title>
           <Headline>Got a question? We love questions!</Headline>
         </Header>
-        <Form onSubmit={handleSubmit}>
+        <Form ref={formEl} onSubmit={handleSubmit}>
           <Field>
             <Label>I want to know more about...</Label>
             <Select

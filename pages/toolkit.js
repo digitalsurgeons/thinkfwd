@@ -15,11 +15,25 @@ export default withRouter(({ router: { query } }) => {
         if (error) return <ErrorMessage message="Error loading page." />
         if (loading) return <Loader loading />
         if (!toolkit) return throw404()
-        const { title, description, image, aside, main, body } = toolkit
+        const {
+          title,
+          description,
+          image,
+          aside,
+          main,
+          body,
+          meta_title,
+          meta_description
+        } = toolkit
         return (
           <>
             <Head>
-              <title>{toolkit.meta_title[0].text}</title>
+              <title>
+                {`thinkfwd | ${meta_title ? meta_title[0].text : query.slug}`}
+              </title>
+              {meta_description && (
+                <meta description={meta_description[0].text} />
+              )}
             </Head>
             <Masthead image={image} title={title} description={description} />
             <ToolkitArticle aside={aside} main={main} />

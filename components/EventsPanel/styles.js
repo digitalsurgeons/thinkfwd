@@ -7,6 +7,12 @@ export const Root = styled.section({
   minHeight: '439px'
 })
 
+export const Header = styled.div({
+  display: 'flex',
+  justifyContent: 'space-between',
+  marginBottom: 40
+})
+
 export const Wrapper = styled.div({
   display: 'flex',
   flexWrap: 'wrap',

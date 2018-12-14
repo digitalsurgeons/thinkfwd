@@ -16,7 +16,7 @@ export const Wrapper = styled.div({
   alignItems: 'center',
   justifyContent: 'flex-end',
   padding: '80px 180px',
-  backgroundColor: colors.eggplant
+  backgroundColor: colors.offBlack
 })
 
 export const Svg = styled.svg({

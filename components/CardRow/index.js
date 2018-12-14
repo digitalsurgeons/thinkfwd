@@ -21,7 +21,7 @@ export default ({ primary: { heading, card_one, card_two, card_three } }) => {
             </Link>
           )}
           {card_two && (
-            <Link route={`/toolkit/${card_one._meta.uid}`} passHref>
+            <Link route={`/toolkit/${card_two._meta.uid}`} passHref>
               <StyledLink>
                 <Card
                   title={card_two.title[0].text}
@@ -32,7 +32,7 @@ export default ({ primary: { heading, card_one, card_two, card_three } }) => {
             </Link>
           )}
           {card_three && (
-            <Link route={`/toolkit/${card_one._meta.uid}`} passHref>
+            <Link route={`/toolkit/${card_three._meta.uid}`} passHref>
               <StyledLink>
                 <Card
                   title={card_three.title[0].text}

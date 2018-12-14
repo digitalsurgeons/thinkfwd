@@ -3,7 +3,7 @@ import { colors, fonts, breakpoints } from '../../lib/settings'
 
 export const Container = styled.div({
   maxWidth: `${breakpoints[4]}px`,
-  margin: '100px auto',
+  margin: '135px auto 100px',
   padding: 0
 })
 

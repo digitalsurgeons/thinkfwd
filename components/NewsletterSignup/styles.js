@@ -55,6 +55,16 @@ export const Subheadline = styled.h3({
   }
 })
 
+export const FieldRow = styled.div({
+  display: 'flex',
+  ' > div': {
+    width: '50%',
+    ':first-of-type': {
+      marginRight: 20
+    }
+  }
+})
+
 export const Image = styled.img({
   height: 84,
   width: 457,

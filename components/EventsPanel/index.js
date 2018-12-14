@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Container } from '../../lib/helpers'
 import { Link } from '../../lib/routes'
 import Card from '../Card'
-import { Heading, Root, StyledLink, Wrapper } from './styles'
+import { Header, Heading, Root, StyledLink, Wrapper } from './styles'
 
 export default () => {
   const [data, setData] = useState({ events: [] })
@@ -21,7 +21,9 @@ export default () => {
   return (
     <Root>
       <Container>
-        <Heading>Upcoming Meetups & Events</Heading>
+        <Header>
+          <Heading>Upcoming Meetups & Events</Heading>
+        </Header>
         <Wrapper>
           {data.length
             ? data.map((event, i) => (
