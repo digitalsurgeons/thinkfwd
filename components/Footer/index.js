@@ -6,11 +6,13 @@ import {
   Logo,
   Social,
   SocialLink,
+  LogosContainer,
   MadeIn,
   Logos
 } from './styles'
 import { FaYoutube, FaTwitter, FaInstagram } from 'react-icons/fa'
 import { Container } from '../../lib/helpers'
+import { css } from '@emotion/core'
 
 export default () => {
   return (
@@ -42,14 +44,16 @@ export default () => {
       </Row>
       <Row>
         <Copyright>©2018 thinkfwd. All rights reserved.</Copyright>
-        <Logos>
+        <LogosContainer>
           <MadeIn>Made in CT</MadeIn>
-          <img
-            style={{ marginRight: 24 }}
-            src="/static/img/digitalsurgeons.svg"
-          />
-          <img src="/static/img/district.svg" />
-        </Logos>
+          <Logos>
+            <img
+              style={{ marginRight: 24 }}
+              src="/static/img/digitalsurgeons.svg"
+            />
+            <img src="/static/img/district.svg" />
+          </Logos>
+        </LogosContainer>
       </Row>
     </Container>
   )

@@ -1,5 +1,14 @@
-import { Root, Wrapper, Stars, Box, BoxWrapper, Arrow, Image } from './styles'
-import { Container, linkResolver } from '../../lib/helpers'
+import {
+  Root,
+  Container,
+  Wrapper,
+  Stars,
+  Box,
+  BoxWrapper,
+  Arrow,
+  Image
+} from './styles'
+import { linkResolver } from '../../lib/helpers'
 import { Link } from '../../lib/routes'
 
 export default ({ primary: { link, link_text, image } }) => {

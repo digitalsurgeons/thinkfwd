@@ -15,12 +15,14 @@ export const Wrapper = styled.div({
 
 export const Heading = styled.h2({
   fontFamily: fonts.secondary,
-  fontSize: '40px',
+  fontSize: 24,
   color: colors.black,
-  lineHeight: '64px',
+  lineHeight: '36px',
   fontWeight: 600,
   marginBottom: 80,
   [mq[2]]: {
+    fontSize: 40,
+    lineHeight: '64px',
     marginBottom: 0,
     maxWidth: 572
   }

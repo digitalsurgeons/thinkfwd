@@ -1,17 +1,24 @@
 import styled from '@emotion/styled'
 import { fonts, colors } from '../../lib/settings'
+import { mq } from '../../lib/helpers'
 
 export const Row = styled.div({
   display: 'flex',
   alignItems: 'center',
   width: '100%',
   justifyContent: 'space-between',
-  ':first-of-type': {
-    paddingTop: 40,
-    marginBottom: 80
-  },
-  ':last-of-type': {
-    marginBottom: 64
+  flexDirection: 'column',
+  marginBottom: 32,
+  width: '100%',
+  [mq[2]]: {
+    flexDirection: 'row',
+    ':first-of-type': {
+      paddingTop: 40,
+      marginBottom: 80
+    },
+    ':last-of-type': {
+      marginBottom: 64
+    }
   }
 })
 
@@ -22,7 +29,11 @@ export const LogoLink = styled.a({
 })
 
 export const Logo = styled.img({
-  width: '150px'
+  width: '150px',
+  marginBottom: 32,
+  [mq[2]]: {
+    marginBottom: 0
+  }
 })
 
 export const Social = styled.div({
@@ -36,7 +47,11 @@ export const Copyright = styled.div({
   fontSize: '12px',
   fontWeight: '500',
   color: colors.black,
-  lineHeight: '20px'
+  lineHeight: '20px',
+  order: 3,
+  [mq[2]]: {
+    order: 0
+  }
 })
 
 export const SocialLink = styled.a({
@@ -46,9 +61,22 @@ export const SocialLink = styled.a({
   }
 })
 
+export const LogosContainer = styled.div({
+  display: 'flex',
+  alignItems: 'center',
+  flexDirection: 'column',
+  [mq[2]]: {
+    flexDirection: 'row'
+  }
+})
+
 export const Logos = styled.div({
   display: 'flex',
-  alignItems: 'center'
+  alignItems: 'center',
+  marginBottom: 24,
+  [mq[2]]: {
+    marginBottom: 0
+  }
 })
 
 export const MadeIn = styled.div({
@@ -57,5 +85,9 @@ export const MadeIn = styled.div({
   marginRight: 24,
   fontSize: 14,
   color: colors.darkGray,
-  lineHeight: '20px'
+  lineHeight: '20px',
+  marginBottom: 16,
+  [mq[2]]: {
+    marginBottom: 0
+  }
 })

@@ -41,7 +41,7 @@ export const Body = styled.div({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    padding: '90px 0 0',
+    padding: '90px 0 0 40px',
     maxWidth: 440
   }
 })

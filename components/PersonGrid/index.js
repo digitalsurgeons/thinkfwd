@@ -7,7 +7,6 @@ export default () => (
   <Container>
     <Wrapper>
       <Masonry
-        isOriginLeft={false}
         breakpointCols={{
           default: 2,
           960: 1

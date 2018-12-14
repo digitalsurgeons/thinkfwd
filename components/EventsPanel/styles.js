@@ -29,11 +29,17 @@ export const StyledLink = styled.a({
 
 export const Heading = styled.h2({
   fontFamily: fonts.secondary,
-  fontSize: '36px',
+  fontSize: 24,
   color: colors.black,
   fontWeight: 600,
-  textAlign: 'center',
-  lineHeight: '56px',
+  textAlign: 'left',
+  lineHeight: '36px',
   flex: 1,
-  marginBottom: '76px'
+  marginBottom: '76px',
+  [mq[2]]: {
+    fontSize: 36,
+    lineHeight: '56px',
+    margin: '0 -16px',
+    flexDirection: 'row'
+  }
 })
