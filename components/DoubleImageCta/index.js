@@ -10,12 +10,12 @@ import {
 import { linkResolver } from '../../lib/helpers'
 import { Link } from '../../lib/routes'
 
-export default ({ primary: { link_text } }) => (
+export default ({ primary: { image_1, image_2, link, link_text } }) => (
   <Container>
     <Wrapper>
-      <Image1 src="/static/img/workshop1.jpg" />
-      <Image2 src="/static/img/workshop2.jpg" />
-      <Link passHref>
+      <Image1 src={image_1.url} />
+      <Image2 src={image_2.url} />
+      <Link route={linkResolver(link._meta)} passHref>
         <Box>
           <BoxWrapper>
             {link_text[0].text}

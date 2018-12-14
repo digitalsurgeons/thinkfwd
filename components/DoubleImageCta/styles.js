@@ -3,15 +3,18 @@ import { colors, fonts, breakpoints } from '../../lib/settings'
 
 export const Container = styled.div({
   maxWidth: `${breakpoints[4]}px`,
-  margin: '100px auto',
-  padding: 0
+  margin: '100px auto 50px',
+  padding: 0,
+  [`@media (min-width: ${breakpoints[3]}px)`]: {
+    margin: '100px auto 423px'
+  }
 })
 
 export const Wrapper = styled.div({
   display: 'flex',
   flexWrap: 'wrap',
   flexDirection: 'column',
-  [`@media (min-width: ${breakpoints[4]}px)`]: {
+  [`@media (min-width: ${breakpoints[3]}px)`]: {
     alignItems: 'flex-end',
     flexDirection: 'row'
   }
@@ -27,9 +30,9 @@ export const Image1 = styled.img({
   [`@media (min-width: ${breakpoints[2]}px)`]: {
     height: 300
   },
-  [`@media (min-width: ${breakpoints[4]}px)`]: {
+  [`@media (min-width: ${breakpoints[3]}px)`]: {
     height: 423,
-    width: 'auto'
+    width: '33.33%'
   }
 })
 
@@ -45,9 +48,9 @@ export const Image2 = styled.img({
   [`@media (min-width: ${breakpoints[2]}px)`]: {
     height: 300
   },
-  [`@media (min-width: ${breakpoints[4]}px)`]: {
+  [`@media (min-width: ${breakpoints[3]}px)`]: {
     height: 423,
-    width: 'auto',
+    width: '33.33%',
     position: 'relative',
     top: 423
   }
@@ -60,12 +63,15 @@ export const Box = styled.a({
   display: 'flex',
   backgroundColor: colors.yellow,
   position: 'relative',
-  [`@media (min-width: ${breakpoints[4]}px)`]: {
+  [`@media (min-width: ${breakpoints[3]}px)`]: {
     marginLeft: 0,
-    width: 310,
+    width: '33.33%',
     height: 272,
     minWidth: 310,
     minHeight: 272
+  },
+  [`@media (min-width: ${breakpoints[4]}px)`]: {
+    width: 310
   }
 })
 
@@ -79,8 +85,10 @@ export const BoxWrapper = styled.div({
   fontWeight: 600,
   display: 'flex',
   alignItems: 'flex-end',
+  justifyContent: 'space-between',
+  width: '100%',
   zIndex: 1,
-  [`@media (min-width: ${breakpoints[4]}px)`]: {
+  [`@media (min-width: ${breakpoints[3]}px)`]: {
     padding: '30px 40px',
     fontSize: 36,
     lineHeight: '48px'

@@ -1,4 +1,4 @@
-import { Wrapper, Heading, Row, Logos, Logo } from './styles'
+import { Wrapper, Heading, Row, Logos, LogoContainer, Logo } from './styles'
 import { Container } from '../../lib/helpers'
 
 export default ({ primary: { heading }, fields }) => {
@@ -7,12 +7,10 @@ export default ({ primary: { heading }, fields }) => {
       <Wrapper>
         <Heading>{heading[0].text}</Heading>
         <Logos>
-          {splitIntoRows(3, fields).map((row, i) => (
-            <Row key={i}>
-              {row.map((field, i) => (
-                <Logo key={i} src={field.logo.url} />
-              ))}
-            </Row>
+          {fields.map((field, i) => (
+            <LogoContainer key={i}>
+              <Logo src={field.logo.url} />
+            </LogoContainer>
           ))}
         </Logos>
       </Wrapper>

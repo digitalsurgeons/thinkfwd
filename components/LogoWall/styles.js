@@ -4,11 +4,12 @@ import { mq } from '../../lib/helpers'
 
 export const Wrapper = styled.div({
   display: 'flex',
-  padding: '100px 0',
+  padding: '100px 0 0',
   justifyContent: 'space-between',
   alignItems: 'center',
   flexDirection: 'column',
   [mq[2]]: {
+    padding: '100px 0',
     flexDirection: 'row'
   }
 })
@@ -29,25 +30,34 @@ export const Heading = styled.h2({
 })
 
 export const Logos = styled.div({
-  width: '100%',
-  [mq[2]]: {
-    width: 528
-  }
-})
-
-export const Row = styled.div({
   display: 'flex',
   flexWrap: 'wrap',
   alignItems: 'center',
   justifyContent: 'space-between',
   width: '100%',
-  marginBottom: 120,
+  marginBottom: 60,
   ':last-child': {
     marginBottom: 0
+  },
+  [mq[2]]: {
+    height: 366,
+    width: 528
+  }
+})
+
+export const LogoContainer = styled.div({
+  display: 'flex',
+  justifyContent: 'center',
+  width: '50%',
+  [mq[2]]: {
+    width: '33.33%'
   }
 })
 
 export const Logo = styled.img({
-  display: 'flex',
-  width: '120px'
+  padding: '0 20px',
+  marginBottom: 120,
+  [mq[2]]: {
+    marginBottom: 0
+  }
 })
