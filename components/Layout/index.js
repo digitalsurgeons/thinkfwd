@@ -9,7 +9,7 @@ export default ({ title, description, children }) => {
   return (
     <>
       <Head>
-        <title>{`thinkfwd | ${title ? title[0].text : query.slug}`}</title>
+        <title>{title ? `thinkfwd | ${title[0].text}` : 'thinkfwd'}</title>
         {description && <meta description={description[0].text} />}
         <meta name="image" content="/static/img/social.jpg" />
 
