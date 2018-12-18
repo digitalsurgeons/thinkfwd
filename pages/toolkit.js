@@ -13,7 +13,12 @@ export default withRouter(({ router: { query } }) => {
     <Query query={toolkitQuery} variables={{ lang: 'en-us', uid: query.slug }}>
       {({ loading, error, data: { toolkit } }) => {
         if (error) return <ErrorMessage message="Error loading page." />
-        if (loading) return <Loader loading />
+        if (loading)
+          return (
+            <Layout>
+              <Loader loading />
+            </Layout>
+          )
         if (!toolkit) return throw404()
         const {
           title,
