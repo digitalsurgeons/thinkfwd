@@ -1,9 +1,9 @@
 import Color from 'color'
 import Ripples from 'react-ripples'
 import { colors } from '../../lib/settings'
-import { Button } from './styles'
+import { Container } from './styles'
 
-export default ({ children, secondary = false, ...other }) => {
+const Button = ({ children, secondary = false, ...other }) => {
   const primaryRippleColor = Color(colors.black)
     .fade(0.9)
     .string()
@@ -13,9 +13,15 @@ export default ({ children, secondary = false, ...other }) => {
 
   return (
     <Ripples color={secondary ? secondaryRippleColor : primaryRippleColor}>
-      <Button secondary={secondary} {...other}>
+      <Container secondary={secondary} {...other}>
         {children}
-      </Button>
+      </Container>
     </Ripples>
   )
 }
+
+Button.defaultProps = {
+  variant: 'default'
+}
+
+export default Button

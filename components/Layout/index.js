@@ -14,9 +14,9 @@ export default ({ title, description, children }) => {
         <meta name="image" content="/static/img/social.jpg" />
 
         {/* Schema.org for Google */}
-        <meta itemprop="name" content="thinkfwd" />
-        <meta itemprop="description" content="thinkfwd" />
-        <meta itemprop="image" content="/static/img/social.jpg" />
+        <meta itemProp="name" content="thinkfwd" />
+        <meta itemProp="description" content="thinkfwd" />
+        <meta itemProp="image" content="/static/img/social.jpg" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary" />

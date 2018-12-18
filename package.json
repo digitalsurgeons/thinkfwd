@@ -20,6 +20,7 @@
     "body-parser-graphql": "^1.1.0",
     "color": "^3.1.0",
     "data-prefetch-link": "^1.1.2",
+    "emotion-theming": "^10.0.5",
     "express": "^4.16.4",
     "graphql": "^14.0.2",
     "graphql-query-compress": "^1.1.0",
@@ -45,6 +46,7 @@
     "react-ripples": "^1.1.2",
     "react-select": "^2.1.2",
     "react-spinners": "^0.4.7",
+    "styled-theming": "^2.2.0",
     "url": "^0.11.0"
   },
   "author": "",
