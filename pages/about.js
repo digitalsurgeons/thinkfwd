@@ -4,7 +4,7 @@ import PersonGrid from '../components/PersonGrid'
 import Layout from '../components/Layout'
 export default () => {
   return (
-    <Layout title={'thinkfwd | about'} description="">
+    <Layout title={'thinkfwd | About'} description="About us">
       <BigTextSmallText />
       <FullWidthImage url="/static/img/audience.jpg" />
       <PersonGrid />

@@ -31,7 +31,9 @@ export default withRouter(({ router: { query } }) => {
           meta_description
         } = toolkit
         return (
-          <Layout title={meta_title} description={meta_description}>
+          <Layout
+            title={meta_title && `thinkfwd | ${meta_title[0].text}`}
+            description={meta_description && meta_description[0].text}>
             <Masthead image={image} title={title} description={description} />
             <ToolkitArticle aside={aside} main={main} />
             {body && body.map(component => getComponent(component))}

@@ -9,8 +9,8 @@ export default ({ title, description, children }) => {
   return (
     <>
       <Head>
-        <title>{title ? `thinkfwd | ${title[0].text}` : 'thinkfwd'}</title>
-        {description && <meta description={description[0].text} />}
+        <title>{title ? title : 'thinkfwd'}</title>
+        {description && <meta description={description} />}
         <meta name="image" content="/static/img/social.jpg" />
 
         {/* Schema.org for Google */}

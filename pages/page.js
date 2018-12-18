@@ -19,7 +19,11 @@ export default withRouter(({ router: { query } }) => {
           )
         if (!page) return throw404()
         return (
-          <Layout title={page.meta_title} description={page.meta_description}>
+          <Layout
+            title={page.meta_title && `thinkfwd | ${page.meta_title[0].text}`}
+            description={
+              page.meta_description && page.meta_description[0].text
+            }>
             {page.body && page.body.map(component => getComponent(component))}
           </Layout>
         )
