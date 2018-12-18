@@ -44,7 +44,7 @@ export const Container = styled.button(
     cursor: 'pointer',
     fontSize: '16px',
     fontWeight: '700',
-    minWidth: 150,
+    minWidth: 120,
     justifyContent: 'center',
     letterSpacing: '1px',
     textAlign: 'center',
