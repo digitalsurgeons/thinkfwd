@@ -46,6 +46,10 @@ export default () => {
     formId: 'f00058cd-eada-4106-8858-fd0c9882357b'
   })
 
+  if (data) {
+    formEl.current.reset()
+  }
+
   return (
     <Container>
       <Wrapper>
@@ -72,7 +76,12 @@ export default () => {
           </Field>
           <Field>
             <Label>My email is</Label>
-            <Input name="email" type="text" placeholder="your email" />
+            <Input
+              required
+              name="email"
+              type="email"
+              placeholder="your email"
+            />
           </Field>
           <Field>
             <Label>How can we help you?</Label>
@@ -83,13 +92,7 @@ export default () => {
               type="text"
             />
           </Field>
-          <Button secondary type="submit">
-            {isLoading && (
-              <CircularProgress
-                style={{ marginRight: 8, color: colors.pink }}
-                size={16}
-              />
-            )}
+          <Button variant="secondary" type="submit">
             <span>Submit</span>
           </Button>
         </Form>

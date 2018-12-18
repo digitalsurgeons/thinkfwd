@@ -43,7 +43,7 @@ export default withRouter(({ router: { asPath } }) => {
               <NavLink isActive={asPath.includes('about')}>About</NavLink>
             </Link>
             <Link route="/contact" passHref>
-              <Button as="a" secondary>
+              <Button as="a" variant="outline">
                 Get In Touch
               </Button>
             </Link>

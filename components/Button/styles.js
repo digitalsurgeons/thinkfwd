@@ -5,23 +5,30 @@ import { colors, fonts } from '../../lib/settings'
 const buttonStyles = theme.variants('mode', 'variant', {
   default: {
     light: {
-      backgroundColor: 'transparent',
-      color: colors.pink,
-      borderColor: colors.gray
+      backgroundColor: colors.yellow,
+      color: colors.black,
+      borderColor: colors.yellow
     }
   },
-  primary: {
+  secondary: {
     light: {
-      backgroundColor: colors.green,
-      color: colors.offBlack,
-      borderColor: colors.green
+      backgroundColor: colors.pink,
+      color: colors.white,
+      borderColor: colors.pink
+    }
+  },
+  tertiary: {
+    light: {
+      backgroundColor: colors.turquoise,
+      color: colors.black,
+      borderColor: colors.turquoise
     }
   },
   outline: {
     light: {
       backgroundColor: 'transparent',
-      color: colors.white,
-      borderColor: colors.white
+      color: colors.pink,
+      borderColor: colors.gray
     }
   }
 })
@@ -37,6 +44,8 @@ export const Container = styled.button(
     cursor: 'pointer',
     fontSize: '16px',
     fontWeight: '700',
+    minWidth: 150,
+    justifyContent: 'center',
     letterSpacing: '1px',
     textAlign: 'center',
     padding: '16px 24px',

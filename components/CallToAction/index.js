@@ -60,7 +60,9 @@ export default ({ primary: { heading, link, link_text } }) => {
         <Title>{heading[0].text}</Title>
         {link && (
           <Link route={linkResolver(link._meta)} passHref>
-            <Button as="a">{link_text[0].text}</Button>
+            <Button variant="tertiary" as="a">
+              {link_text[0].text}
+            </Button>
           </Link>
         )}
       </Wrapper>

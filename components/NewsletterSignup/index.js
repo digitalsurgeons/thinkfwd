@@ -24,7 +24,6 @@ export default () => {
   })
   if (data) {
     formEl.current.reset()
-    console.log(formEl.current.firstname.blur())
   }
   return (
     <Root>
@@ -43,15 +42,9 @@ export default () => {
               <Textfield name="firstname" placeholder="First Name" />
               <Textfield name="lastname" placeholder="Last Name" />
             </FieldRow>
-            <Textfield name="email" placeholder="Email" />
+            <Textfield required type="email" name="email" placeholder="Email" />
             <Textfield name="company" placeholder="Organization" />
-            <Button secondary type="submit">
-              {isLoading && (
-                <CircularProgress
-                  style={{ marginRight: 8, color: colors.pink }}
-                  size={16}
-                />
-              )}
+            <Button variant="secondary" type="submit">
               <span>Submit</span>
             </Button>
           </Form>
