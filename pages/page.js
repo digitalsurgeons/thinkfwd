@@ -5,18 +5,20 @@ import Loader from '../components/Loader'
 import { getComponent, throw404 } from '../lib/helpers'
 import pageQuery from '../queries/page.graphql'
 import Layout from '../components/Layout'
+import withApollo from '../lib/apollo'
 
-export default withRouter(({ router: { query } }) => {
+const Page = withRouter(({ router: { query } }) => {
   return (
     <Query query={pageQuery} variables={{ lang: 'en-us', uid: query.slug }}>
       {({ loading, error, data: { page } }) => {
         if (error) return <ErrorMessage message="Error loading page." />
-        if (loading)
+        if (loading) {
           return (
             <Layout>
               <Loader loading />
             </Layout>
           )
+        }
         if (!page) return throw404()
         return (
           <Layout
@@ -31,3 +33,5 @@ export default withRouter(({ router: { query } }) => {
     </Query>
   )
 })
+
+export default withApollo(Page)

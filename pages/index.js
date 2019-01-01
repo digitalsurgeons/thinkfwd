@@ -4,8 +4,9 @@ import Loader from '../components/Loader'
 import { getComponent, throw404 } from '../lib/helpers'
 import pageQuery from '../queries/page.graphql'
 import Layout from '../components/Layout'
+import withApollo from '../lib/apollo'
 
-export default () => {
+const Page = () => {
   return (
     <Query query={pageQuery} variables={{ lang: 'en-us', uid: 'home' }}>
       {({ loading, error, data: { page } }) => {
@@ -30,3 +31,5 @@ export default () => {
     </Query>
   )
 }
+
+export default withApollo(Page)

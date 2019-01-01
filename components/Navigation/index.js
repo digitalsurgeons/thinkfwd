@@ -23,7 +23,11 @@ export default withRouter(({ router: { asPath } }) => {
               <NavLink isActive={asPath.includes('events')}>Events</NavLink>
             </Link>
             <Link route="/sprints" passHref>
-              <NavLink isActive={asPath.includes('sprints')}>Sprints</NavLink>
+              <NavLink
+                onMouseOver={() => prefetch('/page?slug=sprints')}
+                isActive={asPath.includes('sprints')}>
+                Sprints
+              </NavLink>
             </Link>
           </Nav>
           <Link route="/" passHref>

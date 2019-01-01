@@ -7,8 +7,9 @@ import ToolkitArticle from '../components/ToolkitArticle'
 import { getComponent, throw404 } from '../lib/helpers'
 import toolkitQuery from '../queries/toolkit.graphql'
 import Layout from '../components/Layout'
+import withApollo from '../lib/apollo'
 
-export default withRouter(({ router: { query } }) => {
+const Page = withRouter(({ router: { query } }) => {
   return (
     <Query query={toolkitQuery} variables={{ lang: 'en-us', uid: query.slug }}>
       {({ loading, error, data: { toolkit } }) => {
@@ -43,3 +44,5 @@ export default withRouter(({ router: { query } }) => {
     </Query>
   )
 })
+
+export default withApollo(Page)
