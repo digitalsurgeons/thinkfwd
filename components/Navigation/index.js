@@ -20,12 +20,14 @@ export default withRouter(({ router: { asPath } }) => {
         <Wrapper>
           <Nav>
             <Link route="/events" passHref>
-              <NavLink isActive={asPath.includes('events')}>Events</NavLink>
+              <NavLink isActive={asPath && asPath.includes('events')}>
+                Events
+              </NavLink>
             </Link>
             <Link route="/sprints" passHref>
               <NavLink
                 onMouseOver={() => prefetch('/page?slug=sprints')}
-                isActive={asPath.includes('sprints')}>
+                isActive={asPath && asPath.includes('sprints')}>
                 Sprints
               </NavLink>
             </Link>
@@ -39,12 +41,14 @@ export default withRouter(({ router: { asPath } }) => {
             <Link route="/toolkit" passHref>
               <NavLink
                 onMouseOver={() => prefetch('/page?slug=toolkit')}
-                isActive={asPath.includes('toolkit')}>
+                isActive={asPath && asPath.includes('toolkit')}>
                 Toolkit
               </NavLink>
             </Link>
             <Link route="/about" passHref>
-              <NavLink isActive={asPath.includes('about')}>About</NavLink>
+              <NavLink isActive={asPath && asPath.includes('about')}>
+                About
+              </NavLink>
             </Link>
             <Link route="/contact" passHref>
               <Button as="a" variant="outline">
