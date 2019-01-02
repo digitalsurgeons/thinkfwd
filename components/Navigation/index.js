@@ -1,6 +1,7 @@
 import { withRouter } from 'next/router'
 import { Container } from '../../lib/helpers'
 import { Link } from '../../lib/routes'
+import { prefetch } from 'next-apollo'
 import Button from '../Button'
 import {
   ButtonContainer,
@@ -11,7 +12,6 @@ import {
   Logo,
   Wrapper
 } from './styles'
-import { prefetch } from '../../lib/helpers'
 
 export default withRouter(({ router: { asPath } }) => {
   return (
@@ -33,7 +33,7 @@ export default withRouter(({ router: { asPath } }) => {
             </Link>
           </Nav>
           <Link route="/" passHref>
-            <LogoLink onMouseOver={() => prefetch('/')}>
+            <LogoLink onMouseOver={() => prefetch('/page?slug=home')}>
               <Logo src="/static/img/logo.svg" />
             </LogoLink>
           </Link>

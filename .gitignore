@@ -4,7 +4,6 @@ dist
 
 # dependencies
 node_modules
-yarn.lock
 test/node_modules
 
 # logs & pids
