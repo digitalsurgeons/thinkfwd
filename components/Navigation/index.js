@@ -33,7 +33,7 @@ export default withRouter(({ router: { asPath } }) => {
             </Link>
           </Nav>
           <Link route="/" passHref>
-            <LogoLink>
+            <LogoLink onMouseOver={() => prefetch('/')}>
               <Logo src="/static/img/logo.svg" />
             </LogoLink>
           </Link>
