@@ -35,6 +35,7 @@
     "pascal-case": "^2.0.1",
     "prismic-reactjs": "^0.3.2",
     "prop-types": "^15.6.2",
+    "prop-types-exact": "^1.2.0",
     "react": "^16.7.0-alpha.2",
     "react-apollo": "^2.3.1",
     "react-burger-menu": "^2.5.4",
