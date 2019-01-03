@@ -4,22 +4,22 @@ fragment link on Page {
     uid
   }
 }
-fragment a on PageBodyAnimation {
+fragment bodyAnimation on PageBodyAnimation {
   type
 }
-fragment b on PageBodyBig_text {
+fragment bigText on PageBodyBig_text {
   type
   primary {
     heading
   }
 }
-fragment c on PageBodyEvents_grid {
+fragment eventsGrid on PageBodyEvents_grid {
   type
 }
-fragment d on PageBodyEvents_panel {
+fragment eventsPanel on PageBodyEvents_panel {
   type
 }
-fragment e on PageBodyFunky_cta {
+fragment funkyCta on PageBodyFunky_cta {
   type
   primary {
     image
@@ -29,21 +29,21 @@ fragment e on PageBodyFunky_cta {
     link_text
   }
 }
-fragment f on PageBodyFunky_headings {
+fragment funkyHeadings on PageBodyFunky_headings {
   type
   primary {
     heading
     subheading
   }
 }
-fragment g on PageBodyHeader {
+fragment header on PageBodyHeader {
   type
   primary {
     title
     headline
   }
 }
-fragment h on PageBodyCase_study_grid {
+fragment caseStudyGrid on PageBodyCase_study_grid {
   type
   fields {
     case_study {
@@ -55,10 +55,10 @@ fragment h on PageBodyCase_study_grid {
     }
   }
 }
-fragment i on PageBodyImage_panel_cta {
+fragment imagePanelCta on PageBodyImage_panel_cta {
   type
 }
-fragment j on PageBodyLogo_wall {
+fragment logoWall on PageBodyLogo_wall {
   type
   primary {
     heading
@@ -67,10 +67,10 @@ fragment j on PageBodyLogo_wall {
     logo
   }
 }
-fragment k on PageBodyNewsletter_signup {
+fragment newsletterSignup on PageBodyNewsletter_signup {
   type
 }
-fragment l on PageBodyStagger {
+fragment stagger on PageBodyStagger {
   type
   primary {
     image
@@ -82,16 +82,16 @@ fragment l on PageBodyStagger {
     link_text
   }
 }
-fragment m on PageBodyStaggered_cta {
+fragment staggeredCta on PageBodyStaggered_cta {
   type
   primary {
     link_text
   }
 }
-fragment n on PageBodyToolkit_grid {
+fragment toolkitGrid on PageBodyToolkit_grid {
   type
 }
-fragment o on PageBodyDouble_image_cta {
+fragment doubleImageCta on PageBodyDouble_image_cta {
   type
   primary {
     image_1

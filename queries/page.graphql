@@ -4,21 +4,21 @@ query page($lang: String!, $uid: String!) {
     meta_title
     meta_description
     body {
-      ...a
-      ...b
-      ...c
-      ...d
-      ...e
-      ...f
-      ...g
-      ...h
-      ...i
-      ...j
-      ...k
-      ...l
-      ...m
-      ...n
-      ...o
+      ...bodyAnimation
+      ...bigText
+      ...eventsGrid
+      ...eventsPanel
+      ...funkyCta
+      ...funkyHeadings
+      ...header
+      ...caseStudyGrid
+      ...imagePanelCta
+      ...logoWall
+      ...newsletterSignup
+      ...stagger
+      ...staggeredCta
+      ...toolkitGrid
+      ...doubleImageCta
     }
   }
 }
