@@ -31,7 +31,7 @@ export default withRouter(({ router: { asPath } }) => {
               </NavLink>
             </Link>
           </Nav>
-          <Link prefetch withData route="/home" passHref>
+          <Link prefetch withData route="/" passHref>
             <LogoLink>
               <Logo src="/static/img/logo.svg" />
             </LogoLink>
