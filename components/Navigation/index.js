@@ -31,7 +31,7 @@ export default withRouter(({ router: { asPath } }) => {
               </NavLink>
             </Link>
           </Nav>
-          <Link prefetch withData route="/" passHref>
+          <Link prefetch withData route="/home" passHref>
             <LogoLink>
               <Logo src="/static/img/logo.svg" />
             </LogoLink>
@@ -42,12 +42,12 @@ export default withRouter(({ router: { asPath } }) => {
                 Toolkit
               </NavLink>
             </Link>
-            <Link route="/about" passHref>
+            <Link prefetch withData route="/about" passHref>
               <NavLink isActive={asPath && asPath.includes('about')}>
                 About
               </NavLink>
             </Link>
-            <Link route="/contact" passHref>
+            <Link prefetch withData route="/contact" passHref>
               <Button as="a" variant="outline">
                 Get In Touch
               </Button>

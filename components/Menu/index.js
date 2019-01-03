@@ -5,7 +5,7 @@ import { StyledLink, bmBugerStyles } from './styles'
 export default ({ ...props }) => (
   <Menu isOpen={false} {...props} styles={bmBugerStyles}>
     <div>
-      <Link prefetch withData route="/" passHref>
+      <Link prefetch withData route="/home" passHref>
         <StyledLink>Home</StyledLink>
       </Link>
     </div>
@@ -25,12 +25,12 @@ export default ({ ...props }) => (
       </Link>
     </div>
     <div>
-      <Link route="/about" passHref>
+      <Link prefetch withData route="/about" passHref>
         <StyledLink>About</StyledLink>
       </Link>
     </div>
     <div>
-      <Link route="/contact" passHref>
+      <Link prefetch withData route="/contact" passHref>
         <StyledLink>Get in touch</StyledLink>
       </Link>
     </div>
