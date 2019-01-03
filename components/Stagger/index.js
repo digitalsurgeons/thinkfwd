@@ -3,7 +3,7 @@ import { Container, linkResolver } from '../../lib/helpers'
 import { colors } from '../../lib/settings'
 import Button from '../Button'
 import { Body, Description, Headline, Image, Root, Wrapper } from './styles'
-import { Link } from '../../routes'
+import { Link } from '../../lib/routes'
 
 export default ({
   primary: { image, headline, description, link, link_text }
