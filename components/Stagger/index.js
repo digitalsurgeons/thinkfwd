@@ -3,6 +3,7 @@ import { Container, linkResolver } from '../../lib/helpers'
 import { colors } from '../../lib/settings'
 import Button from '../Button'
 import { Body, Description, Headline, Image, Root, Wrapper } from './styles'
+import { Link } from '../../routes'
 
 export default ({
   primary: { image, headline, description, link, link_text }
@@ -24,11 +25,11 @@ export default ({
               </Description>
             )}
             {link && (
-              <Button
-                as="a"
-                href={link._meta ? linkResolver(link._meta) : link.url}>
-                {link_text[0].text}
-              </Button>
+              <Link
+                route={link._meta ? linkResolver(link._meta) : link.url}
+                passHref>
+                <Button as="a">{link_text[0].text}</Button>
+              </Link>
             )}
           </Body>
         </Wrapper>
