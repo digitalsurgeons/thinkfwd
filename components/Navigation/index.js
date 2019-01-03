@@ -1,7 +1,6 @@
 import { withRouter } from 'next/router'
 import { Container } from '../../lib/helpers'
 import { Link } from '../../lib/routes'
-import { prefetch } from 'next-apollo'
 import Button from '../Button'
 import {
   ButtonContainer,
@@ -19,12 +18,12 @@ export default withRouter(({ router: { asPath } }) => {
       <Container>
         <Wrapper>
           <Nav>
-            <Link route="/events" passHref>
+            <Link prefetch withData route="/events" passHref>
               <NavLink isActive={asPath && asPath.includes('events')}>
                 Events
               </NavLink>
             </Link>
-            <Link route="/sprints" passHref>
+            <Link prefetch withData route="/sprints" passHref>
               <NavLink
                 onMouseOver={() => prefetch('/page?slug=sprints')}
                 isActive={asPath && asPath.includes('sprints')}>
@@ -32,16 +31,14 @@ export default withRouter(({ router: { asPath } }) => {
               </NavLink>
             </Link>
           </Nav>
-          <Link route="/" passHref>
-            <LogoLink onMouseOver={() => prefetch('/page?slug=home')}>
+          <Link prefetch withData route="/" passHref>
+            <LogoLink>
               <Logo src="/static/img/logo.svg" />
             </LogoLink>
           </Link>
           <ButtonContainer>
-            <Link route="/toolkit" passHref>
-              <NavLink
-                onMouseOver={() => prefetch('/page?slug=toolkit')}
-                isActive={asPath && asPath.includes('toolkit')}>
+            <Link prefetch withData route="/toolkit" passHref>
+              <NavLink isActive={asPath && asPath.includes('toolkit')}>
                 Toolkit
               </NavLink>
             </Link>

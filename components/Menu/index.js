@@ -4,6 +4,7 @@ import { StyledLink, bmBugerStyles } from './styles'
 
 export default ({ ...props }) => (
   <Menu isOpen={false} {...props} styles={bmBugerStyles}>
+    <StyledLink onClick={() => Router.pushRoute('/')}>Home</StyledLink>
     <StyledLink onClick={() => Router.pushRoute('/events')}>Events</StyledLink>
     <StyledLink onClick={() => Router.pushRoute('/sprints')}>
       Sprints

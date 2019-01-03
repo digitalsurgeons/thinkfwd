@@ -1,4 +1,5 @@
 import { Query } from 'react-apollo'
+import { prefetch } from 'next-apollo'
 import { Container } from '../../lib/helpers'
 import allToolkits from '../../queries/allToolkits.graphql'
 import { Link } from '../../lib/routes'
@@ -20,7 +21,10 @@ export default () => {
                     key={i}
                     route={`/toolkit/${toolkit.node._meta.uid}`}
                     passHref>
-                    <StyledLink>
+                    <StyledLink
+                      onMouseOver={() =>
+                        prefetch(`/toolkit?slug=${toolkit.node._meta.uid}`)
+                      }>
                       <Card
                         title={toolkit.node.title[0].text}
                         subtitle={toolkit.node.description[0].text}
