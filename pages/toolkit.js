@@ -21,6 +21,7 @@ const Page = withRouter(({ router: { query } }) => {
             </Layout>
           )
         if (!toolkit) return throw404()
+
         const {
           title,
           description,
@@ -31,10 +32,12 @@ const Page = withRouter(({ router: { query } }) => {
           meta_title,
           meta_description
         } = toolkit
+
+        const metaTitle = meta_title && `thinkfwd | ${meta_title[0].text}`
+        const metaDescription = meta_description && meta_description[0].text
+
         return (
-          <Layout
-            title={meta_title && `thinkfwd | ${meta_title[0].text}`}
-            description={meta_description && meta_description[0].text}>
+          <Layout title={metaTitle} description={metaDescription}>
             <Masthead image={image} title={title} description={description} />
             <ToolkitArticle aside={aside} main={main} />
             {body && body.map(component => getComponent(component))}
