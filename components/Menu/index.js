@@ -1,20 +1,38 @@
-import { Router } from '../../lib/routes'
+import { Link } from '../../lib/routes'
 import { stack as Menu } from 'react-burger-menu'
 import { StyledLink, bmBugerStyles } from './styles'
 
 export default ({ ...props }) => (
   <Menu isOpen={false} {...props} styles={bmBugerStyles}>
-    <StyledLink onClick={() => Router.pushRoute('/')}>Home</StyledLink>
-    <StyledLink onClick={() => Router.pushRoute('/events')}>Events</StyledLink>
-    <StyledLink onClick={() => Router.pushRoute('/sprints')}>
-      Sprints
-    </StyledLink>
-    <StyledLink onClick={() => Router.pushRoute('/toolkit')}>
-      Toolkit
-    </StyledLink>
-    <StyledLink onClick={() => Router.pushRoute('/about')}>About</StyledLink>
-    <StyledLink onClick={() => Router.pushRoute('/contact')}>
-      Get in touch
-    </StyledLink>
+    <div>
+      <Link prefetch withData route="/" passHref>
+        <StyledLink>Home</StyledLink>
+      </Link>
+    </div>
+    <div>
+      <Link prefetch withData route="/events" passHref>
+        <StyledLink>Events</StyledLink>
+      </Link>
+    </div>
+    <div>
+      <Link prefetch withData route="/sprints" passHref>
+        <StyledLink>Sprints</StyledLink>
+      </Link>
+    </div>
+    <div>
+      <Link prefetch withData route="/toolkit" passHref>
+        <StyledLink>Toolkit</StyledLink>
+      </Link>
+    </div>
+    <div>
+      <Link route="/about" passHref>
+        <StyledLink>About</StyledLink>
+      </Link>
+    </div>
+    <div>
+      <Link route="/contact" passHref>
+        <StyledLink>Get in touch</StyledLink>
+      </Link>
+    </div>
   </Menu>
 )
