@@ -18,12 +18,14 @@ const Page = () => {
             </Layout>
           )
         if (!page) return throw404()
+
+        const metaTitle =
+          page.meta_title && `thinkfwd | ${page.meta_title[0].text}`
+        const metaDescription =
+          page.meta_description && page.meta_description[0].text
+
         return (
-          <Layout
-            title={page.meta_title && `thinkfwd | ${page.meta_title[0].text}`}
-            description={
-              page.meta_description && page.meta_description[0].text
-            }>
+          <Layout title={metaTitle} description={metaDescription}>
             {page.body && page.body.map(component => getComponent(component))}
           </Layout>
         )
