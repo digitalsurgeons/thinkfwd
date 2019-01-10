@@ -91,6 +91,28 @@ fragment staggeredCta on PageBodyStaggered_cta {
 fragment toolkitGrid on PageBodyToolkit_grid {
   type
 }
+fragment contactForm on PageBodyContact_form {
+  type
+}
+fragment fullWidthImage on PageBodyFull_width_image {
+  type
+  primary {
+    image
+  }
+}
+fragment personGrid on PageBodyPerson_grid {
+  type
+  fields {
+    person {
+      ... on Person {
+        portrait
+        full_name
+        role
+        bio
+      }
+    }
+  }
+}
 fragment doubleImageCta on PageBodyDouble_image_cta {
   type
   primary {
@@ -100,5 +122,12 @@ fragment doubleImageCta on PageBodyDouble_image_cta {
       ...link
     }
     link_text
+  }
+}
+fragment bigTextSmallText on PageBodyBig_text_small_text {
+  type
+  primary {
+    heading
+    description
   }
 }

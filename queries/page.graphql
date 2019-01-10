@@ -19,6 +19,10 @@ query page($lang: String!, $uid: String!) {
       ...staggeredCta
       ...toolkitGrid
       ...doubleImageCta
+      ...contactForm
+      ...fullWidthImage
+      ...personGrid
+      ...bigTextSmallText
     }
   }
 }
