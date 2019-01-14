@@ -5,6 +5,15 @@ query toolkit($lang: String!, $uid: String!) {
     image
     aside
     main
+    download_link {
+      ... on _ImageLink {
+        url
+      }
+      ... on _FileLink {
+        url
+      }
+    }
+    download_link_text
     meta_title
     meta_description
     body {

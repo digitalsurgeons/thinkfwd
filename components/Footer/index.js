@@ -27,17 +27,17 @@ export default () => {
           </Link>
 
           <Social>
-            <Link route="https://youtube.com/digitalsurgeons" passHref>
+            {/* <Link route="https://youtube.com/think.fwd/" passHref>
               <SocialLink target="_blank" rel="noopener noreferrer">
                 <FaYoutube size="20px" />
               </SocialLink>
-            </Link>
-            <Link route="https://twitter.com/digitalsurgeons" passHref>
+            </Link> */}
+            <Link route="https://twitter.com/thinkfwdco" passHref>
               <SocialLink target="_blank" rel="noopener noreferrer">
                 <FaTwitter size="20px" />
               </SocialLink>
             </Link>
-            <Link route="https://instagram.com/digitalsurgeons" passHref>
+            <Link route="https://instagram.com/think.fwd/" passHref>
               <SocialLink>
                 <FaInstagram size="20px" />
               </SocialLink>

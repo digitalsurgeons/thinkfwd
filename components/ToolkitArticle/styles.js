@@ -6,6 +6,7 @@ export const Wrapper = styled.div({
   display: 'flex',
   flexWrap: 'wrap',
   flexDirection: 'column',
+  marginBottom: 80,
   [mq[2]]: {
     flexDirection: 'row'
   }

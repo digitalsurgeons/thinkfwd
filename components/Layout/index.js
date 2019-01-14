@@ -1,43 +1,30 @@
 import Head from 'next/head'
+import NextSeo from 'next-seo'
 import Navigation from '../Navigation'
 import GlobalStyles from '../../lib/styles'
 import { fonts } from '../../lib/settings'
 import Footer from '../Footer'
 import Menu from '../Menu'
 
-export default ({ title, description, children }) => {
+export default ({ title, description, children, image }) => {
+  const config = {
+    title: title,
+    description: description,
+    openGraph: {
+      title: title,
+      description: description,
+      // Multiple Open Graph images is only available in version `7.0.0-canary.0`+ of next (see note top of README.md)
+      images: [
+        {
+          url: image ? image.url : 'https://thinkfwd.co/static/img/social.jpg',
+          alt: image ? image.alt : 'thinkfwd'
+        }
+      ]
+    }
+  }
   return (
     <>
-      <Head>
-        <title>{title ? title : 'thinkfwd'}</title>
-        {description && <meta description={description} />}
-        <meta name="image" content="/static/img/social.jpg" />
-
-        {/* Schema.org for Google */}
-        <meta itemProp="name" content="thinkfwd" />
-        <meta itemProp="description" content="thinkfwd" />
-        <meta itemProp="image" content="/static/img/social.jpg" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="thinkfwd" />
-        <meta name="twitter:description" content="thinkfwd" />
-        <meta name="twitter:site" content="@thinkfwdco" />
-        <meta
-          name="twitter:image:src"
-          content="https://thinkfwd.co/static/img/social.jpg"
-        />
-
-        {/* Open Graph general (Facebook, Pinterest) */}
-        <meta name="og:title" content="thinkfwd" />
-        <meta name="og:description" content="thinkfwd" />
-        <meta
-          name="og:image"
-          content="https://thinkfwd.co/static/img/social.jpg"
-        />
-        <meta name="og:url" content="https://www.thinkfwd.co" />
-        <meta name="og:type" content="website" />
-      </Head>
+      <NextSeo config={config} />
       <GlobalStyles />
       <div id="outer-container">
         <Menu

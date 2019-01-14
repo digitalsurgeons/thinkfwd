@@ -30,16 +30,28 @@ const Page = withRouter(({ router: { query } }) => {
           main,
           body,
           meta_title,
-          meta_description
+          meta_description,
+          download_link,
+          download_link_text
         } = toolkit
 
-        const metaTitle = meta_title && `thinkfwd | ${meta_title[0].text}`
-        const metaDescription = meta_description && meta_description[0].text
+        const metaTitle = meta_title ? meta_title[0].text : title[0].text
+        const metaDescription = meta_description
+          ? meta_description[0].text
+          : description[0].text
 
         return (
-          <Layout title={metaTitle} description={metaDescription}>
+          <Layout
+            title={metaTitle}
+            description={metaDescription}
+            image={image.url}>
             <Masthead image={image} title={title} description={description} />
-            <ToolkitArticle aside={aside} main={main} />
+            <ToolkitArticle
+              aside={aside}
+              main={main}
+              downloadLink={download_link}
+              downloadLinkText={download_link_text}
+            />
             {body && body.map(component => getComponent(component))}
           </Layout>
         )

@@ -21,8 +21,7 @@ const Page = withRouter(({ router: { query } }) => {
         }
         if (!page) return throw404()
 
-        const metaTitle =
-          page.meta_title && `thinkfwd | ${page.meta_title[0].text}`
+        const metaTitle = page.meta_title && page.meta_title[0].text
         const metaDescription =
           page.meta_description && page.meta_description[0].text
 
