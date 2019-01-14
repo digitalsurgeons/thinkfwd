@@ -1,5 +1,6 @@
 import { withRouter } from 'next/router'
 import { Query } from 'react-apollo'
+import Fade from 'react-reveal/Fade'
 import ErrorMessage from '../components/ErrorMessage'
 import Loader from '../components/Loader'
 import { getComponent, throw404 } from '../lib/helpers'
@@ -27,7 +28,9 @@ const Page = withRouter(({ router: { query } }) => {
 
         return (
           <Layout title={metaTitle} description={metaDescription}>
-            {page.body && page.body.map(component => getComponent(component))}
+            <Fade>
+              {page.body && page.body.map(component => getComponent(component))}
+            </Fade>
           </Layout>
         )
       }}

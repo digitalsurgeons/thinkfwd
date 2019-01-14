@@ -1,5 +1,6 @@
 import { withRouter } from 'next/router'
 import { Query } from 'react-apollo'
+import Fade from 'react-reveal/Fade'
 import ErrorMessage from '../components/ErrorMessage'
 import Loader from '../components/Loader'
 import Masthead from '../components/Masthead'
@@ -45,14 +46,15 @@ const Page = withRouter(({ router: { query } }) => {
             title={metaTitle}
             description={metaDescription}
             image={image.url}>
-            <Masthead image={image} title={title} description={description} />
-            <ToolkitArticle
-              aside={aside}
-              main={main}
-              downloadLink={download_link}
-              downloadLinkText={download_link_text}
-            />
-            {body && body.map(component => getComponent(component))}
+            <Fade>
+              <Masthead image={image} title={title} description={description} />
+              <ToolkitArticle
+                aside={aside}
+                main={main}
+                downloadLink={download_link}
+                downloadLinkText={download_link_text}
+              />
+            </Fade>
           </Layout>
         )
       }}

@@ -10,6 +10,7 @@ import theme from '../lib/settings'
 class MyApp extends App {
   render() {
     const { Component, pageProps, apolloClient } = this.props
+
     return (
       <Container>
         <Head>

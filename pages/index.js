@@ -1,6 +1,7 @@
 import { Query } from 'react-apollo'
 import ErrorMessage from '../components/ErrorMessage'
 import Loader from '../components/Loader'
+import Fade from 'react-reveal/Fade'
 import { getComponent, throw404 } from '../lib/helpers'
 import pageQuery from '../queries/page.graphql'
 import Layout from '../components/Layout'
@@ -25,7 +26,9 @@ const Page = () => {
 
         return (
           <Layout title={metaTitle} description={metaDescription}>
-            {page.body && page.body.map(component => getComponent(component))}
+            <Fade>
+              {page.body && page.body.map(component => getComponent(component))}
+            </Fade>
           </Layout>
         )
       }}
