@@ -47,13 +47,20 @@ const Page = withRouter(({ router: { query } }) => {
             description={metaDescription}
             image={image.url}>
             <Fade>
-              <Masthead image={image} title={title} description={description} />
-              <ToolkitArticle
-                aside={aside}
-                main={main}
-                downloadLink={download_link}
-                downloadLinkText={download_link_text}
-              />
+              <div>
+                <Masthead
+                  image={image}
+                  title={title}
+                  description={description}
+                />
+                <ToolkitArticle
+                  aside={aside}
+                  main={main}
+                  downloadLink={download_link}
+                  downloadLinkText={download_link_text}
+                />
+                {body && body.map(component => getComponent(component))}
+              </div>
             </Fade>
           </Layout>
         )
