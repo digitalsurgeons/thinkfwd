@@ -17,9 +17,9 @@ export default ({ fields }) => (
         {fields.map(({ person: { portrait, full_name, role, bio } }, i) => (
           <PersonCard
             key={i}
-            image={portrait.url}
-            title={full_name[0].text}
-            subtitle={role[0].text}>
+            image={portrait ? portrait.url : ''}
+            title={full_name ? full_name[0].text : ''}
+            subtitle={role ? role[0].text : ''}>
             {bio && RichText.render(bio, linkResolver)}
           </PersonCard>
         ))}
