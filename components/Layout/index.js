@@ -16,7 +16,7 @@ export default ({ title, description, children, image }) => {
       // Multiple Open Graph images is only available in version `7.0.0-canary.0`+ of next (see note top of README.md)
       images: [
         {
-          url: image ? image.url : 'https://thinkfwd.co/static/img/logo.jpg',
+          url: image ? image.url : 'https://thinkfwd.co/static/img/logo.png',
           alt: image ? image.alt : 'thinkfwd'
         }
       ]
