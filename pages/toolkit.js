@@ -10,7 +10,7 @@ import toolkitQuery from '../queries/toolkit.graphql'
 import Layout from '../components/Layout'
 import withApollo from '../lib/apollo'
 
-const Page = withRouter(({ router: { query } }) => {
+const Page = withRouter(({ router: { query, asPath } }) => {
   return (
     <Query query={toolkitQuery} variables={{ lang: 'en-us', uid: query.slug }}>
       {({ loading, error, data: { toolkit } }) => {
@@ -42,7 +42,11 @@ const Page = withRouter(({ router: { query } }) => {
           : description[0].text
 
         return (
-          <Layout title={metaTitle} description={metaDescription} image={image}>
+          <Layout
+            title={metaTitle}
+            description={metaDescription}
+            image={image}
+            url={`https://thinkfwd.co/${asPath}`}>
             <Fade>
               <div>
                 <Masthead

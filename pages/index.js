@@ -1,4 +1,5 @@
 import { Query } from 'react-apollo'
+import { withRouter } from 'next/router'
 import ErrorMessage from '../components/ErrorMessage'
 import Loader from '../components/Loader'
 import Fade from 'react-reveal/Fade'
@@ -7,7 +8,7 @@ import pageQuery from '../queries/page.graphql'
 import Layout from '../components/Layout'
 import withApollo from '../lib/apollo'
 
-const Page = () => {
+const Page = withRouter(({ router: { asPath } }) => {
   return (
     <Query query={pageQuery} variables={{ lang: 'en-us', uid: 'home' }}>
       {({ loading, error, data: { page } }) => {
@@ -25,7 +26,10 @@ const Page = () => {
           page.meta_description && page.meta_description[0].text
 
         return (
-          <Layout title={metaTitle} description={metaDescription}>
+          <Layout
+            title={metaTitle}
+            description={metaDescription}
+            url={`https://thinkfwd.co/${asPath}`}>
             <Fade>
               {page.body && page.body.map(component => getComponent(component))}
             </Fade>
@@ -34,6 +38,6 @@ const Page = () => {
       }}
     </Query>
   )
-}
+})
 
 export default withApollo(Page)

@@ -6,13 +6,14 @@ import { fonts } from '../../lib/settings'
 import Footer from '../Footer'
 import Menu from '../Menu'
 
-export default ({ title, description, children, image }) => {
+export default ({ title, description, children, image, url }) => {
   const config = {
     title: title,
     description: description,
     openGraph: {
       title: title,
       description: description,
+      url: url ? url : 'https://thinkfwd.co',
       // Multiple Open Graph images is only available in version `7.0.0-canary.0`+ of next (see note top of README.md)
       images: [
         {

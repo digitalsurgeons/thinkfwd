@@ -8,7 +8,7 @@ import pageQuery from '../queries/page.graphql'
 import Layout from '../components/Layout'
 import withApollo from '../lib/apollo'
 
-const Page = withRouter(({ router: { query } }) => {
+const Page = withRouter(({ router: { query, asPath } }) => {
   return (
     <Query query={pageQuery} variables={{ lang: 'en-us', uid: query.slug }}>
       {({ loading, error, data: { page } }) => {
@@ -27,7 +27,10 @@ const Page = withRouter(({ router: { query } }) => {
           page.meta_description && page.meta_description[0].text
 
         return (
-          <Layout title={metaTitle} description={metaDescription}>
+          <Layout
+            title={metaTitle}
+            description={metaDescription}
+            url={`https://thinkfwd.co/${asPath}`}>
             <Fade>
               {page.body && page.body.map(component => getComponent(component))}
             </Fade>
