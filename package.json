@@ -57,6 +57,7 @@
     "babel-loader": "8.0.4",
     "babel-plugin-emotion": "10.0.4",
     "babel-plugin-import-graphql": "2.6.2",
+    "react-hot-loader": "^4.6.3",
     "react-test-renderer": "16.6.3"
   }
 }

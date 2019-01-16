@@ -1,10 +1,13 @@
-import { configure } from '@storybook/react'
+// import { configure } from '@storybook/react'
+// import { setConfig } from 'react-hot-loader'
 
-// automatically import all files ending in *.stories.js
-const req = require.context('../components', true, /.stories.js$/)
+// setConfig({ pureSFC: true })
 
-function loadStories() {
-  req.keys().forEach(filename => req(filename))
-}
-// Disable stories (not compatible with react hooks yet)
-//configure(loadStories, module)
+// // automatically import all files ending in *.stories.js
+// const req = require.context('../components', true, /.stories.js$/)
+
+// function loadStories() {
+//   req.keys().forEach(filename => req(filename))
+// }
+
+// configure(loadStories, module)
