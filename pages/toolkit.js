@@ -42,10 +42,7 @@ const Page = withRouter(({ router: { query } }) => {
           : description[0].text
 
         return (
-          <Layout
-            title={metaTitle}
-            description={metaDescription}
-            image={image.url}>
+          <Layout title={metaTitle} description={metaDescription} image={image}>
             <Fade>
               <div>
                 <Masthead
