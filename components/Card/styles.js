@@ -37,6 +37,7 @@ export const Title = styled.h2({
 export const Subtitle = styled.h3({
   fontSize: '15px',
   color: colors.pink,
+  fontWeight: 600,
   letterSpacing: '5px',
   textTransform: 'uppercase',
   marginBottom: 8,
