@@ -53,6 +53,7 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "7.1.6",
+    "@storybook/react": "^4.2.0-alpha.5",
     "babel-loader": "8.0.4",
     "babel-plugin-emotion": "10.0.4",
     "babel-plugin-import-graphql": "2.6.2",

@@ -6,5 +6,5 @@ const req = require.context('../components', true, /.stories.js$/)
 function loadStories() {
   req.keys().forEach(filename => req(filename))
 }
-
-configure(loadStories, module)
+// Disable stories (not compatible with react hooks yet)
+//configure(loadStories, module)
