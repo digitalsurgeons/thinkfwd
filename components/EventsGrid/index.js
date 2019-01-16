@@ -9,7 +9,7 @@ export default () => {
   const [data, setData] = useState({ events: [] })
   const fetchData = async () => {
     const result = await axios(
-      'https://www.eventbriteapi.com/v3/events/search/?token=6FVOFKSA3XN5CBW3MJZY&organizer.id=9268848926&expand=organizer,venue'
+      'https://www.eventbriteapi.com/v3/events/search/?token=6FVOFKSA3XN5CBW3MJZY&organizer.id=18540611103&expand=organizer,venue'
     )
     setData(result.data.events)
   }
@@ -22,7 +22,7 @@ export default () => {
     <Root>
       <Container>
         <Wrapper>
-          {data.length &&
+          {!!data.length &&
             data.map((event, i) => (
               <Link key={i} route={event.url} passHref>
                 <StyledLink target="_blank" rel="noopener noreferrer">
@@ -30,7 +30,7 @@ export default () => {
                     image={event.logo.original.url}
                     title={event.name.text}
                     date={event.start.local}
-                    subtitle={`${event.venue.address.city}, ${
+                    description={`${event.venue.address.city}, ${
                       event.venue.address.region
                     }`}
                   />
@@ -38,6 +38,11 @@ export default () => {
               </Link>
             ))}
         </Wrapper>
+        {!data.length && (
+          <p style={{ fontSize: 24, lineHeight: '32px' }}>
+            There are no upcoming events. Stay tuned!
+          </p>
+        )}
       </Container>
     </Root>
   )

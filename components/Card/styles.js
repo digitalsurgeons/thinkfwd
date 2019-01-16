@@ -2,11 +2,7 @@ import styled from '@emotion/styled'
 import { colors, fonts } from '../../lib/settings'
 import { mq } from '../../lib/helpers'
 
-export const Root = styled.article({
-  [mq[2]]: {
-    //maxWidth: '500px'
-  }
-})
+export const Root = styled.article()
 
 export const Image = styled.img({
   objectFit: 'cover',
@@ -15,7 +11,7 @@ export const Image = styled.img({
   height: '320px',
   width: '100%',
   minWidth: '100%',
-  marginBottom: '20px',
+  marginBottom: '24px',
   [mq[2]]: {
     height: '260px'
   }
@@ -39,6 +35,16 @@ export const Title = styled.h2({
 })
 
 export const Subtitle = styled.h3({
+  fontFamily: 'Gilroy-ExtraBold',
+  fontSize: '15px',
+  color: colors.pink,
+  letterSpacing: '5px',
+  textTransform: 'uppercase',
+  marginBottom: 8,
+  lineHeight: '16px'
+})
+
+export const Description = styled.div({
   opacity: 0.6,
   fontSize: '16px',
   color: colors.black,
@@ -55,7 +61,7 @@ export const DateContainer = styled.div({
 
 export const Month = styled.div({
   fontFamily: fonts.secondary,
-  fontSize: '15px',
+  fontSize: '16px',
   textTransform: 'uppercase',
   color: colors.pink,
   letterSpacing: '6px',

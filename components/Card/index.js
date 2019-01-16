@@ -4,6 +4,7 @@ import {
   Root,
   Wrapper,
   Text,
+  Description,
   DateContainer,
   Month,
   Date,
@@ -11,7 +12,7 @@ import {
   Subtitle
 } from './styles'
 
-export default ({ title, subtitle, image, date }) => {
+export default ({ title, subtitle, description, image, date }) => {
   return (
     <Root>
       <Image src={image} alt={title} />
@@ -23,8 +24,9 @@ export default ({ title, subtitle, image, date }) => {
           </DateContainer>
         )}
         <Text>
+          {subtitle && <Subtitle>{subtitle}</Subtitle>}
           <Title>{title}</Title>
-          <Subtitle>{subtitle}</Subtitle>
+          <Description>{description}</Description>
         </Text>
       </Wrapper>
     </Root>

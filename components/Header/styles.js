@@ -10,7 +10,7 @@ export const Root = styled.header({
 })
 
 export const Title = styled.h2({
-  fontSize: '16px',
+  fontSize: '24px',
   color: colors.pink,
   fontWeight: 600,
   marginBottom: '16px',
@@ -21,7 +21,7 @@ export const Title = styled.h2({
 })
 
 export const Headline = styled.h2({
-  fontSize: '24px',
+  fontSize: '32px',
   lineHeight: '40px',
   color: '#000000',
   fontWeight: 600,

@@ -33,7 +33,7 @@ export default () => {
                       image={event.logo.original.url}
                       title={event.name.text}
                       date={event.start.local}
-                      subtitle={`${event.venue.address.city}, ${
+                      description={`${event.venue.address.city}, ${
                         event.venue.address.region
                       }`}
                     />

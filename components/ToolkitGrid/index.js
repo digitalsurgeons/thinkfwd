@@ -27,7 +27,8 @@ export default () => {
                       }>
                       <Card
                         title={toolkit.node.title[0].text}
-                        subtitle={toolkit.node.description[0].text}
+                        subtitle="Warmup"
+                        description={toolkit.node.description[0].text}
                         image={toolkit.node.image.url}
                       />
                     </StyledLink>

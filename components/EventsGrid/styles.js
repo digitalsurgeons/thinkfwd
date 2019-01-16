@@ -10,7 +10,6 @@ export const Root = styled.section({
 export const Wrapper = styled.div({
   display: 'flex',
   flexWrap: 'wrap',
-  minHeight: '439px',
   [mq[2]]: {
     margin: '0 -16px'
   }
