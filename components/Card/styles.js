@@ -35,7 +35,6 @@ export const Title = styled.h2({
 })
 
 export const Subtitle = styled.h3({
-  fontFamily: 'Gilroy-ExtraBold',
   fontSize: '15px',
   color: colors.pink,
   letterSpacing: '5px',
