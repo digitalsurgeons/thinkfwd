@@ -6,6 +6,7 @@ import { Link } from '../../lib/routes'
 import Card from '../Card'
 import ErrorMessage from '../ErrorMessage'
 import { StyledLink, Wrapper } from './styles'
+import { colors } from '../../lib/settings'
 
 export default () => {
   return (
@@ -31,6 +32,11 @@ export default () => {
                           toolkit.node.category
                             ? toolkit.node.category.title[0].text
                             : ''
+                        }
+                        color={
+                          toolkit.node.category
+                            ? toolkit.node.category.color
+                            : colors.pink
                         }
                         description={toolkit.node.description[0].text}
                         image={toolkit.node.image.url}

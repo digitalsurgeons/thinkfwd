@@ -12,6 +12,7 @@ query {
         category {
           ... on Toolkit_category {
             title
+            color
           }
         }
       }

@@ -12,7 +12,7 @@ import {
   Subtitle
 } from './styles'
 
-export default ({ title, subtitle, description, image, date }) => {
+export default ({ title, subtitle, description, image, date, color }) => {
   return (
     <Root>
       <Image src={image} alt={title} />
@@ -24,7 +24,7 @@ export default ({ title, subtitle, description, image, date }) => {
           </DateContainer>
         )}
         <Text>
-          {subtitle && <Subtitle>{subtitle}</Subtitle>}
+          {subtitle && <Subtitle style={{ color }}>{subtitle}</Subtitle>}
           <Title>{title}</Title>
           <Description>{description}</Description>
         </Text>
