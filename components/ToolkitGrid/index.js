@@ -27,7 +27,11 @@ export default () => {
                       }>
                       <Card
                         title={toolkit.node.title[0].text}
-                        subtitle="Warmup"
+                        subtitle={
+                          toolkit.node.category
+                            ? toolkit.node.category.title[0].text
+                            : ''
+                        }
                         description={toolkit.node.description[0].text}
                         image={toolkit.node.image.url}
                       />

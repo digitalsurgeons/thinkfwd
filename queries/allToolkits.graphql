@@ -9,6 +9,11 @@ query {
         title
         description
         image
+        category {
+          ... on Toolkit_category {
+            title
+          }
+        }
       }
     }
   }
