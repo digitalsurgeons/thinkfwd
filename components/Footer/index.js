@@ -38,7 +38,7 @@ export default () => {
               </SocialLink>
             </Link>
             <Link route="https://instagram.com/think.fwd/" passHref>
-              <SocialLink>
+              <SocialLink target="_blank" rel="noopener noreferrer">
                 <FaInstagram size="20px" />
               </SocialLink>
             </Link>
