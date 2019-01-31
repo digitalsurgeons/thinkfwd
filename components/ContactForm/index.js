@@ -1,6 +1,7 @@
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import Select from 'react-select'
 import CircularProgress from '@material-ui/core/CircularProgress'
+import Fade from 'react-reveal/Fade'
 import {
   Wrapper,
   Header,
@@ -12,6 +13,7 @@ import {
   Label,
   Input,
   Textarea,
+  ButtonContainer,
   customSelectStyles
 } from './styles'
 import { fonts, colors } from '../../lib/settings'
@@ -46,9 +48,23 @@ export default () => {
     formId: 'f00058cd-eada-4106-8858-fd0c9882357b'
   })
 
-  if (data) {
-    formEl.current.reset()
-  }
+  const [submitted, setSubmitted] = useState(false)
+
+  useEffect(
+    () => {
+      if (data) {
+        setSubmitted(true)
+        formEl.current.reset()
+        let timer = setTimeout(() => {
+          setSubmitted(false)
+        }, 2500)
+        return () => {
+          clearTimeout(timer)
+        }
+      }
+    },
+    [data]
+  )
 
   return (
     <Container>
@@ -92,9 +108,22 @@ export default () => {
               type="text"
             />
           </Field>
-          <Button variant="secondary" type="submit">
-            <span>Submit</span>
-          </Button>
+          <ButtonContainer>
+            <Button variant="secondary" type="submit">
+              <span>Submit</span>
+            </Button>
+            <Fade in={submitted}>
+              <div
+                style={{
+                  marginLeft: '16px',
+                  fontSize: '14px',
+                  lineHeight: '22px',
+                  flex: 1
+                }}>
+                Thanks for reaching out! We'll get back to you shortly.
+              </div>
+            </Fade>
+          </ButtonContainer>
         </Form>
       </Wrapper>
     </Container>

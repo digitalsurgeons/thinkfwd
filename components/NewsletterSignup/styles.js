@@ -76,3 +76,8 @@ export const Image = styled.img({
     display: 'block'
   }
 })
+
+export const ButtonContainer = styled.div({
+  display: 'flex',
+  alignItems: 'center'
+})

@@ -1,6 +1,7 @@
+import { useRef, useState, useEffect } from 'react'
 import { useForm } from 'react-hubspot'
-import { useRef } from 'react'
 import CircularProgress from '@material-ui/core/CircularProgress'
+import Fade from 'react-reveal/Fade'
 import { Container } from '../../lib/helpers'
 import Button from '../Button'
 import Textfield from '../Textfield'
@@ -12,7 +13,8 @@ import {
   FieldRow,
   Root,
   Subheadline,
-  Wrapper
+  Wrapper,
+  ButtonContainer
 } from './styles'
 import { colors } from '../../lib/settings'
 
@@ -22,9 +24,23 @@ export default () => {
     portalId: '521132',
     formId: '52ac8db0-2e99-4418-a322-0222c315d8c6'
   })
-  if (data) {
-    formEl.current.reset()
-  }
+  const [submitted, setSubmitted] = useState(false)
+
+  useEffect(
+    () => {
+      if (data) {
+        setSubmitted(true)
+        formEl.current.reset()
+        let timer = setTimeout(() => {
+          setSubmitted(false)
+        }, 2500)
+        return () => {
+          clearTimeout(timer)
+        }
+      }
+    },
+    [data]
+  )
   return (
     <Root>
       <Container>
@@ -44,9 +60,22 @@ export default () => {
             </FieldRow>
             <Textfield required type="email" name="email" placeholder="Email" />
             <Textfield name="company" placeholder="Organization" />
-            <Button variant="secondary" type="submit">
-              <span>Submit</span>
-            </Button>
+            <ButtonContainer>
+              <Button variant="secondary" type="submit">
+                <span>Submit</span>
+              </Button>
+              <Fade in={submitted}>
+                <div
+                  style={{
+                    marginLeft: '16px',
+                    fontSize: '14px',
+                    lineHeight: '22px',
+                    flex: 1
+                  }}>
+                  Thanks for reaching out! We'll get back to you shortly.
+                </div>
+              </Fade>
+            </ButtonContainer>
           </Form>
         </Wrapper>
       </Container>
