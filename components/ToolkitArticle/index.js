@@ -59,51 +59,68 @@ export default ({ aside, main, downloadLink, downloadLinkText }) => {
       </Wrapper>
 
       <Modal open={open} onClose={() => setOpen(false)} center>
-        <Form ref={formEl} onSubmit={handleSubmit}>
-          <Field>
-            <Label>Hi, my name is</Label>
-            <FieldRow>
-              <Input name="firstname" type="text" placeholder="first name" />
-              <Input name="lastname" type="text" placeholder="last name" />
-            </FieldRow>
-          </Field>
-          <Field>
-            <Label>My email is</Label>
-            <Input
-              required
-              name="email"
-              type="email"
-              placeholder="your email"
-            />
-          </Field>
-          {downloadLink && (
-            <ButtonContainer>
-              <Button variant="secondary" type="submit">
-                <span>
-                  {downloadLinkText ? downloadLinkText[0].text : 'Download'}
-                </span>
-              </Button>
-              <Fade in={submitted}>
-                <div
-                  style={{
-                    marginLeft: '16px',
-                    fontSize: '16px',
-                    lineHeight: '24px',
-                    flex: 1
-                  }}>
-                  <a
-                    style={{ fontWeight: 600, color: colors.pink }}
-                    href={downloadLink.url}
-                    target="__blank">
-                    {' '}
-                    Click here
-                  </a>{' '}
-                  to download.
-                </div>
-              </Fade>
-            </ButtonContainer>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            width: 396,
+            height: 358
+          }}>
+          {submitted && (
+            <Fade in={submitted}>
+              <div
+                style={{
+                  width: '100%',
+                  fontSize: 24,
+                  lineHeight: '34px',
+                  textAlign: 'center'
+                }}>
+                Thanks for your submission.
+                <a
+                  style={{ fontWeight: 600, color: colors.pink }}
+                  href={downloadLink.url}
+                  target="__blank">
+                  <br />
+                  Click here
+                </a>{' '}
+                to download.
+              </div>
+            </Fade>
           )}
-        </Form>
+          {!submitted && (
+            <Form ref={formEl} onSubmit={handleSubmit}>
+              <Field>
+                <Label>Hi, my name is</Label>
+                <FieldRow>
+                  <Input
+                    name="firstname"
+                    type="text"
+                    placeholder="first name"
+                  />
+                  <Input name="lastname" type="text" placeholder="last name" />
+                </FieldRow>
+              </Field>
+              <Field>
+                <Label>My email is</Label>
+                <Input
+                  required
+                  name="email"
+                  type="email"
+                  placeholder="your email"
+                />
+              </Field>
+              {downloadLink && (
+                <ButtonContainer>
+                  <Button variant="secondary" type="submit">
+                    <span>
+                      {downloadLinkText ? downloadLinkText[0].text : 'Download'}
+                    </span>
+                  </Button>
+                </ButtonContainer>
+              )}
+            </Form>
+          )}
+        </div>
       </Modal>
     </Container>
   )
