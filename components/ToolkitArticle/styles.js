@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { fonts, breakpoints } from '../../lib/settings'
+import { colors, fonts, breakpoints } from '../../lib/settings'
 import { mq } from '../../lib/helpers'
 
 export const Wrapper = styled.div({
@@ -74,4 +74,44 @@ export const Main = styled.div({
   [mq[2]]: {
     width: '66.666%'
   }
+})
+
+export const Form = styled.form({})
+
+export const Field = styled.div({
+  display: 'flex',
+  flexDirection: 'column',
+  marginBottom: 40
+})
+
+export const Label = styled.label({
+  fontFamily: fonts.secondary,
+  fontSize: 24,
+  color: colors.black,
+  lineHeight: '36px',
+  marginBottom: 15
+})
+
+export const Input = styled.input({
+  border: 0,
+  borderBottom: '2px solid #616161',
+  color: 'rgba(0, 0, 0, 0.6)',
+  fontSize: 20,
+  lineHeight: '28px',
+  paddingBottom: 10
+})
+
+export const FieldRow = styled.div({
+  display: 'flex',
+  input: {
+    width: '50%',
+    ':first-of-type': {
+      marginRight: 20
+    }
+  }
+})
+
+export const ButtonContainer = styled.div({
+  display: 'flex',
+  alignItems: 'center'
 })
