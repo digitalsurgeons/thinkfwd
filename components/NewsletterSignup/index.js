@@ -18,7 +18,7 @@ import {
 } from './styles'
 import { colors } from '../../lib/settings'
 
-export default () => {
+export default ({ primary: { headline, subheadline } }) => {
   const formEl = useRef(null)
   const { data, isLoading, isError, handleSubmit } = useForm({
     portalId: '521132',
@@ -26,32 +26,26 @@ export default () => {
   })
   const [submitted, setSubmitted] = useState(false)
 
-  useEffect(
-    () => {
-      if (data) {
-        setSubmitted(true)
-        formEl.current.reset()
-        let timer = setTimeout(() => {
-          setSubmitted(false)
-        }, 2500)
-        return () => {
-          clearTimeout(timer)
-        }
+  useEffect(() => {
+    if (data) {
+      setSubmitted(true)
+      formEl.current.reset()
+      let timer = setTimeout(() => {
+        setSubmitted(false)
+      }, 2500)
+      return () => {
+        clearTimeout(timer)
       }
-    },
-    [data]
-  )
+    }
+  }, [data])
   return (
     <Root>
       <Container>
         <Wrapper>
           <Body>
             <Image src="/static/img/triangle.svg" />
-            <Headline>Like What We're Throwing Down</Headline>
-            <Subheadline>
-              Be the first to know when we release new tools, kits, and
-              resources.
-            </Subheadline>
+            <Headline>{headline[0].text}</Headline>
+            <Subheadline>{subheadline[0].text}</Subheadline>
           </Body>
           <Form ref={formEl} onSubmit={handleSubmit}>
             <FieldRow>

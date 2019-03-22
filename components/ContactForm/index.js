@@ -50,28 +50,25 @@ export default () => {
 
   const [submitted, setSubmitted] = useState(false)
 
-  useEffect(
-    () => {
-      if (data) {
-        setSubmitted(true)
-        formEl.current.reset()
-        let timer = setTimeout(() => {
-          setSubmitted(false)
-        }, 2500)
-        return () => {
-          clearTimeout(timer)
-        }
+  useEffect(() => {
+    if (data) {
+      setSubmitted(true)
+      formEl.current.reset()
+      let timer = setTimeout(() => {
+        setSubmitted(false)
+      }, 2500)
+      return () => {
+        clearTimeout(timer)
       }
-    },
-    [data]
-  )
+    }
+  }, [data])
 
   return (
     <Container>
       <Wrapper>
         <Header>
           <Title>// Contact</Title>
-          <Headline>Got a question? We love questions!</Headline>
+          <Headline>Have a question? We love questions!</Headline>
         </Header>
         <Form ref={formEl} onSubmit={handleSubmit}>
           <Field>
@@ -84,14 +81,14 @@ export default () => {
             />
           </Field>
           <Field>
-            <Label>Hi, my name is</Label>
+            <Label>Hi, my name is...</Label>
             <FieldRow>
               <Input name="firstname" type="text" placeholder="first name" />
               <Input name="lastname" type="text" placeholder="last name" />
             </FieldRow>
           </Field>
           <Field>
-            <Label>My email is</Label>
+            <Label>My email is...</Label>
             <Input
               required
               name="email"

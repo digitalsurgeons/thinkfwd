@@ -53,8 +53,7 @@ export const Headline = styled.h2(props => ({
   letterSpacing: 0,
   fontWeight: 600,
   lineHeight: '60px',
-  marginBottom: 40,
-  maxWidth: 355
+  marginBottom: 40
 }))
 
 export const Description = styled.div({

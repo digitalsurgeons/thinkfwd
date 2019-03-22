@@ -69,6 +69,10 @@ fragment logoWall on PageBodyLogo_wall {
 }
 fragment newsletterSignup on PageBodyNewsletter_signup {
   type
+  primary {
+    headline
+    subheadline
+  }
 }
 fragment stagger on PageBodyStagger {
   type

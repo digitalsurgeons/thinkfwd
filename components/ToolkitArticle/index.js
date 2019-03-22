@@ -90,7 +90,7 @@ export default ({ aside, main, downloadLink, downloadLinkText }) => {
           {!submitted && (
             <Form ref={formEl} onSubmit={handleSubmit}>
               <Field>
-                <Label>Hi, my name is</Label>
+                <Label>Hi, my name is...</Label>
                 <FieldRow>
                   <Input
                     name="firstname"
@@ -101,7 +101,7 @@ export default ({ aside, main, downloadLink, downloadLinkText }) => {
                 </FieldRow>
               </Field>
               <Field>
-                <Label>My email is</Label>
+                <Label>My email is...</Label>
                 <Input
                   required
                   name="email"

@@ -45,7 +45,6 @@ export const Text = styled.div({
     marginBottom: 40
   },
   [mq[2]]: {
-    maxWidth: 518,
-    paddingRight: 80
+    maxWidth: 518
   }
 })

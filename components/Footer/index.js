@@ -45,15 +45,27 @@ export default () => {
           </Social>
         </Row>
         <Row>
-          <Copyright>©2018 thinkfwd. All rights reserved.</Copyright>
+          <Copyright>
+            ©{new Date().getFullYear()} thinkfwd. All rights reserved.
+          </Copyright>
           <LogosContainer>
             <MadeIn>Made in CT</MadeIn>
             <Logos>
-              <img
-                style={{ marginRight: 24 }}
-                src="/static/img/digitalsurgeons.svg"
-              />
-              <img src="/static/img/district.svg" />
+              <a
+                href="https://digitalsurgeons.com"
+                target="_blank"
+                rel="noopener noreferrer">
+                <img
+                  style={{ marginRight: 24 }}
+                  src="/static/img/digitalsurgeons.svg"
+                />
+              </a>
+              <a
+                href="http://districtnhv.com/"
+                target="_blank"
+                rel="noopener noreferrer">
+                <img src="/static/img/district.svg" />
+              </a>
             </Logos>
           </LogosContainer>
         </Row>

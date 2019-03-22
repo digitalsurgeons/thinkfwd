@@ -43,7 +43,7 @@ export const Container = styled.button(
     borderColor: 'transparent',
     cursor: 'pointer',
     fontSize: '16px',
-    fontWeight: '700',
+    fontWeight: '600',
     minWidth: 120,
     justifyContent: 'center',
     letterSpacing: '1px',

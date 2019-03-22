@@ -21,13 +21,13 @@ export default () => (
       <Link route="/contact" passHref>
         <Box>
           <BoxWrapper>
-            Book a Thinksprint
+            Book a thinksprint
             <Arrow src="/static/img/arrow-right-black.svg" />
           </BoxWrapper>
         </Box>
       </Link>
       <ImageContainer>
-        <Image src="/static/img/workshop.jpg" />
+        <Image src="/static/img/workshop-maz.jpg" />
         <Stars src="/static/img/stars-yellow.svg" />
         <Strip>
           <StripText>thinksprints</StripText>
@@ -35,8 +35,10 @@ export default () => (
       </ImageContainer>
       <Panel>
         <PanelText>
-          We’ll help you conceptualize and explore solutions for your problem.
-          Wonder if this is for you? Here’s a few of the problems we’ve solved:
+          We partner with you to transform your business problem into an
+          opportunity for innovation and then explore a range of market-viable
+          solutions. Wonder if this is for you? Here's a few of the solutions
+          we've helped manifest:
         </PanelText>
       </Panel>
     </Wrapper>
