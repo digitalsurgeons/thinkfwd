@@ -47,7 +47,7 @@ export default withRouter(({ router: { asPath } }) => {
             </Link>
             <Link prefetch withData route="/contact" passHref>
               <Button as="a" variant="outline">
-                Get In touch
+                Get in touch
               </Button>
             </Link>
           </ButtonContainer>
