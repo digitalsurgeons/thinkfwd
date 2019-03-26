@@ -17,6 +17,11 @@ export default withRouter(({ router: { asPath } }) => {
     <Root>
       <Container>
         <Wrapper>
+          <Link prefetch withData route="/" passHref>
+            <LogoLink>
+              <Logo src="/static/img/logo.svg" />
+            </LogoLink>
+          </Link>
           <Nav>
             <Link prefetch withData route="/events" passHref>
               <NavLink isActive={asPath && asPath.includes('events')}>
@@ -28,13 +33,6 @@ export default withRouter(({ router: { asPath } }) => {
                 Sprints
               </NavLink>
             </Link>
-          </Nav>
-          <Link prefetch withData route="/" passHref>
-            <LogoLink>
-              <Logo src="/static/img/logo.svg" />
-            </LogoLink>
-          </Link>
-          <ButtonContainer>
             <Link prefetch withData route="/toolkit" passHref>
               <NavLink isActive={asPath && asPath.includes('toolkit')}>
                 Toolkit
@@ -50,7 +48,7 @@ export default withRouter(({ router: { asPath } }) => {
                 Get in touch
               </Button>
             </Link>
-          </ButtonContainer>
+          </Nav>
         </Wrapper>
       </Container>
     </Root>

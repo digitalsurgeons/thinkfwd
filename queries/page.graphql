@@ -11,6 +11,7 @@ query page($lang: String!, $uid: String!) {
       ...funkyCta
       ...funkyHeadings
       ...header
+      ...headings
       ...caseStudyGrid
       ...imagePanelCta
       ...logoWall

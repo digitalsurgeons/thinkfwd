@@ -36,6 +36,13 @@ fragment funkyHeadings on PageBodyFunky_headings {
     subheading
   }
 }
+fragment headings on PageBodyHeadings {
+  type
+  primary {
+    heading
+    subheading
+  }
+}
 fragment header on PageBodyHeader {
   type
   primary {

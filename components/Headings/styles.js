@@ -3,45 +3,49 @@ import { fonts, colors } from '../../lib/settings'
 import { mq } from '../../lib/helpers'
 
 export const Wrapper = styled.div({
-  maxWidth: 800,
-  margin: '0 auto 140px',
-  [mq[2]]: {
-    margin: '180px auto'
-  }
+  margin: '80px 0 100px'
 })
 
 export const Heading = styled.h2({
   fontFamily: fonts.secondary,
   fontSize: 40,
   fontWeight: 600,
+  display: 'flex',
+  justifyContent: 'space-between',
   color: colors.black,
   lineHeight: '64px',
   marginBottom: 56,
+  width: '100%',
   position: 'relative',
   [mq[2]]: {
-    fontSize: 64,
-    lineHeight: '88px',
-    marginBottom: 140
+    fontSize: 56,
+    lineHeight: '72px',
+    marginBottom: 40
   }
+})
+
+export const HeadingText = styled.div({
+  maxWidth: 895
 })
 
 export const Subheading = styled.h3({
+  maxWidth: 761,
   fontSize: 20,
-  color: 'rgba(0, 0, 0, 0.6)',
+  color: 'rgba(0, 0, 0, 0.8)',
   lineHeight: '40px',
   position: 'relative',
   [mq[2]]: {
-    fontSize: 28,
-    lineHeight: '48px'
+    fontSize: 24,
+    lineHeight: '40px'
   }
 })
 
-export const FlyingBox = styled.img({
+export const Stars = styled.img({
   position: 'absolute',
-  top: -120,
-  right: -220,
-  width: 226,
-  height: 257,
+  top: -40,
+  right: -200,
+  width: 250,
+  height: 187,
   display: 'none',
   [mq[2]]: {
     display: 'block'
@@ -50,10 +54,11 @@ export const FlyingBox = styled.img({
 
 export const FlyingComet = styled.img({
   position: 'absolute',
-  bottom: -40,
-  left: -380,
-  width: 302,
-  height: 85,
+  top: '50%',
+  transform: 'translateY(-50%)',
+  left: -300,
+  width: 210,
+  height: 59,
   display: 'none',
   [mq[2]]: {
     display: 'block'

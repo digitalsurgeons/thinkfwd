@@ -18,25 +18,13 @@ export const Wrapper = styled.div({
 
 export const LogoLink = styled.a({
   display: 'block',
-  cursor: 'pointer',
-  [mq[2]]: {
-    textAlign: 'center',
-    width: '100%'
-  }
+  cursor: 'pointer'
 })
 
 export const Logo = styled.img({
   width: 150,
   [mq[2]]: {
     width: 'initial'
-  }
-})
-
-export const Nav = styled.div({
-  display: 'none',
-  width: '100%',
-  [mq[2]]: {
-    display: 'flex'
   }
 })
 
@@ -67,7 +55,7 @@ export const NavLink = styled.a(props => ({
   }
 }))
 
-export const ButtonContainer = styled.div({
+export const Nav = styled.div({
   width: '100%',
   display: 'none',
   alignItems: 'center',
