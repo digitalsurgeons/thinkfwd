@@ -4,7 +4,11 @@ import { mq } from '../../lib/helpers'
 
 export const Root = styled.nav({
   width: '100%',
-  padding: '24px 0',
+  padding: '16px 0',
+  position: 'sticky',
+  top: '0',
+  backgroundColor: 'white',
+  zIndex: '10',
   [mq[2]]: {
     padding: '56px 0'
   }
@@ -22,7 +26,7 @@ export const LogoLink = styled.a({
 })
 
 export const Logo = styled.img({
-  width: 150,
+  width: 120,
   [mq[2]]: {
     width: 'initial'
   }

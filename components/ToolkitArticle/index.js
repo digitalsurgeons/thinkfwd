@@ -48,7 +48,7 @@ export default ({ aside, main, downloadLink, downloadLinkText }) => {
             {downloadLink && (
               <Button
                 as="div"
-                style={{ width: '100%' }}
+                style={{ marginBottom: 40 }}
                 onClick={() => setOpen(true)}>
                 {downloadLinkText ? downloadLinkText[0].text : 'Download'}
               </Button>

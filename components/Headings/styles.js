@@ -7,11 +7,11 @@ export const Wrapper = styled.div({
 })
 
 export const Heading = styled.h2({
-  fontFamily: fonts.secondary,
   fontSize: 40,
   fontWeight: 600,
   display: 'flex',
   justifyContent: 'space-between',
+  fontFamily: fonts.secondary,
   color: colors.black,
   lineHeight: '64px',
   marginBottom: 56,
@@ -25,7 +25,8 @@ export const Heading = styled.h2({
 })
 
 export const HeadingText = styled.div({
-  maxWidth: 895
+  maxWidth: 900,
+  fontFamily: fonts.secondary
 })
 
 export const Subheading = styled.h3({
