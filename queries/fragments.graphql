@@ -101,6 +101,23 @@ fragment staggeredCta on PageBodyStaggered_cta {
 }
 fragment toolkitGrid on PageBodyToolkit_grid {
   type
+  fields {
+    toolkit {
+      ... on Toolkit {
+        _meta {
+          uid
+        }
+        title
+        description
+        image
+        category {
+          ... on Toolkit_category {
+            title
+          }
+        }
+      }
+    }
+  }
 }
 fragment contactForm on PageBodyContact_form {
   type

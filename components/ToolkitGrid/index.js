@@ -8,46 +8,27 @@ import ErrorMessage from '../ErrorMessage'
 import { StyledLink, Wrapper } from './styles'
 import { colors } from '../../lib/settings'
 
-export default () => {
+export default ({ fields }) => {
   return (
-    <Query query={allToolkits}>
-      {({ loading, error, data }) => {
-        if (error) return <ErrorMessage message="Error loading toolkits" />
-        return (
-          <Container>
-            <Wrapper>
-              {!loading &&
-                data.allToolkits.edges.map((toolkit, i) => (
-                  <Link
-                    key={i}
-                    route={`/toolkit/${toolkit.node._meta.uid}`}
-                    passHref>
-                    <StyledLink
-                      onMouseOver={() =>
-                        prefetch(`/toolkit?slug=${toolkit.node._meta.uid}`)
-                      }>
-                      <Card
-                        title={toolkit.node.title[0].text}
-                        subtitle={
-                          toolkit.node.category
-                            ? toolkit.node.category.title[0].text
-                            : ''
-                        }
-                        color={
-                          toolkit.node.category
-                            ? toolkit.node.category.color
-                            : colors.pink
-                        }
-                        description={toolkit.node.description[0].text}
-                        image={toolkit.node.image.url}
-                      />
-                    </StyledLink>
-                  </Link>
-                ))}
-            </Wrapper>
-          </Container>
-        )
-      }}
-    </Query>
+    <Container>
+      <Wrapper>
+        {fields.map(
+          ({ toolkit: { title, description, image, category, _meta } }, i) => (
+            <Link key={i} route={`/toolkit/${_meta.uid}`} passHref>
+              <StyledLink
+                onMouseOver={() => prefetch(`/toolkit?slug=${_meta.uid}`)}>
+                <Card
+                  title={title[0].text}
+                  subtitle={category ? category.title[0].text : ''}
+                  color={category ? category.color : colors.pink}
+                  description={description ? description[0].text : ''}
+                  image={image.url}
+                />
+              </StyledLink>
+            </Link>
+          )
+        )}
+      </Wrapper>
+    </Container>
   )
 }
