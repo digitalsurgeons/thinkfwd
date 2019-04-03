@@ -101,7 +101,7 @@ export default () => {
             <Input
               name="message"
               as="textarea"
-              placeholder="Ex. I need to ship products and features faster then my team is currently able to. "
+              placeholder="Ex. I need to ship products and features faster than my team is currently able to. "
               type="text"
             />
           </Field>

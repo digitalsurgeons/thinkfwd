@@ -10,6 +10,7 @@ export const Root = styled.nav({
   backgroundColor: 'white',
   zIndex: '10',
   [mq[2]]: {
+    position: 'relative',
     padding: '56px 0'
   }
 })
