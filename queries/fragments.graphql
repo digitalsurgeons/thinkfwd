@@ -15,6 +15,9 @@ fragment bigText on PageBodyBig_text {
 }
 fragment eventsGrid on PageBodyEvents_grid {
   type
+  fields {
+    event
+  }
 }
 fragment eventsPanel on PageBodyEvents_panel {
   type
