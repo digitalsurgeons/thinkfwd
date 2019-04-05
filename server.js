@@ -3,6 +3,8 @@ const routes = require('./lib/routes')
 const PORT = parseInt(process.env.PORT, 10) || 3000
 const express = require('express')
 const axios = require('axios')
+const moment = require('moment')
+
 const app = next({ dev: process.env.NODE_ENV !== 'production' })
 
 const handler = routes.getRequestHandler(
@@ -22,7 +24,7 @@ const handler = routes.getRequestHandler(
           title: event.name.text,
           image_url: event.logo.original.url,
           description: event.description.text,
-          last_update: event.changed,
+          last_update: parseInt(moment(new Date(event.changed)).format('x')),
           blob: event
         })
       })
