@@ -31,12 +31,16 @@ const options = [
     label: 'I’m interested in hosting/sponsoring an event.'
   },
   {
-    value: 'I’m interesting in attending an event.',
-    label: 'I’m interesting in attending an event.'
+    value: "I'm interested in attending/suggesting a future event.",
+    label: "I'm interested in attending/suggesting a future event."
   },
   {
     value: 'I’d like to book a thinksprint.',
     label: 'I’d like to book a thinksprint.'
+  },
+  {
+    value: 'I’m interesting in speaking at an event.',
+    label: 'I’m interesting in speaking at an event.'
   },
   { value: 'I have a press/media query.', label: 'I have a press/media query.' }
 ]
