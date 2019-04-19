@@ -101,6 +101,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-562C4XW');`
             }}
           />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.prismic = {
+    endpoint: 'https://thinkfwd.cdn.prismic.io/api/v2'
+  };`
+            }}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.prismic = { endpoint: 'https://thinkfwd.cdn.prismic.io/api/v2' };`
+            }}
+          />
+
+          <script
+            type="text/javascript"
+            src="https://static.cdn.prismic.io/prismic.min.js"
+          />
         </Head>
         <body>
           <noscript
