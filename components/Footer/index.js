@@ -20,9 +20,9 @@ export default () => {
     <Root>
       <Container>
         <Row>
-          <Link route="/" passHref>
+          <Link route='/' passHref>
             <LogoLink>
-              <Logo src="/static/img/logo.svg" />
+              <Logo src='/static/img/logo.svg' />
             </LogoLink>
           </Link>
 
@@ -32,39 +32,28 @@ export default () => {
                 <FaYoutube size="20px" />
               </SocialLink>
             </Link> */}
-            <Link route="https://twitter.com/thinkfwdco" passHref>
-              <SocialLink target="_blank" rel="noopener noreferrer">
-                <FaTwitter size="20px" />
+            <Link route='https://twitter.com/thinkfwdco' passHref>
+              <SocialLink target='_blank' rel='noopener noreferrer'>
+                <FaTwitter size='20px' />
               </SocialLink>
             </Link>
-            <Link route="https://instagram.com/think.fwd/" passHref>
-              <SocialLink target="_blank" rel="noopener noreferrer">
-                <FaInstagram size="20px" />
+            <Link route='https://www.instagram.com/thinkfwdco/' passHref>
+              <SocialLink target='_blank' rel='noopener noreferrer'>
+                <FaInstagram size='20px' />
               </SocialLink>
             </Link>
           </Social>
         </Row>
         <Row>
-          <Copyright>
-            ©{new Date().getFullYear()} thinkfwd. All rights reserved.
-          </Copyright>
+          <Copyright>©{new Date().getFullYear()} thinkfwd. All rights reserved.</Copyright>
           <LogosContainer>
             <MadeIn>Made in CT</MadeIn>
             <Logos>
-              <a
-                href="https://digitalsurgeons.com"
-                target="_blank"
-                rel="noopener noreferrer">
-                <img
-                  style={{ marginRight: 24 }}
-                  src="/static/img/digitalsurgeons.svg"
-                />
+              <a href='https://digitalsurgeons.com' target='_blank' rel='noopener noreferrer'>
+                <img style={{ marginRight: 24 }} src='/static/img/digitalsurgeons.svg' />
               </a>
-              <a
-                href="http://districtnhv.com/"
-                target="_blank"
-                rel="noopener noreferrer">
-                <img src="/static/img/district.svg" />
+              <a href='http://districtnhv.com/' target='_blank' rel='noopener noreferrer'>
+                <img src='/static/img/district.svg' />
               </a>
             </Logos>
           </LogosContainer>
