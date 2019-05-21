@@ -42,7 +42,15 @@ const options = [
     value: 'I’m interesting in speaking at an event.',
     label: 'I’m interesting in speaking at an event.'
   },
-  { value: 'I have a press/media query.', label: 'I have a press/media query.' }
+  { value: 'I have a press/media query.', label: 'I have a press/media query.' },
+  {
+    value: 'I’m interested in buying the full toolkit.',
+    label: 'I’m interested in buying the full toolkit.'
+  },
+  {
+    value: 'I’m interested in something else...',
+    label: 'I’m interested in something else...'
+  }
 ]
 
 export default () => {
@@ -78,39 +86,34 @@ export default () => {
           <Field>
             <Label>I want to know more about...</Label>
             <Select
-              instanceId="test"
+              instanceId='test'
               styles={customSelectStyles}
-              name="subject"
+              name='subject'
               options={options}
             />
           </Field>
           <Field>
             <Label>Hi, my name is...</Label>
             <FieldRow>
-              <Input name="firstname" type="text" placeholder="first name" />
-              <Input name="lastname" type="text" placeholder="last name" />
+              <Input name='firstname' type='text' placeholder='first name' />
+              <Input name='lastname' type='text' placeholder='last name' />
             </FieldRow>
           </Field>
           <Field>
             <Label>My email is...</Label>
-            <Input
-              required
-              name="email"
-              type="email"
-              placeholder="your email"
-            />
+            <Input required name='email' type='email' placeholder='your email' />
           </Field>
           <Field>
             <Label>How can we help you?</Label>
             <Input
-              name="message"
-              as="textarea"
-              placeholder="Ex. I need to ship products and features faster than my team is currently able to. "
-              type="text"
+              name='message'
+              as='textarea'
+              placeholder='Ex. I need to ship products and features faster than my team is currently able to. '
+              type='text'
             />
           </Field>
           <ButtonContainer>
-            <Button variant="secondary" type="submit">
+            <Button variant='secondary' type='submit'>
               <span>Submit</span>
             </Button>
             <Fade in={submitted}>
@@ -120,7 +123,8 @@ export default () => {
                   fontSize: '14px',
                   lineHeight: '22px',
                   flex: 1
-                }}>
+                }}
+              >
                 Thanks for reaching out! We'll get back to you shortly.
               </div>
             </Fade>
