@@ -162,3 +162,11 @@ fragment bigTextSmallText on PageBodyBig_text_small_text {
     description
   }
 }
+fragment iconTextRow on PageIcon_text_row {
+  type
+  fields {
+    icon
+    title
+    copy
+  }
+}
