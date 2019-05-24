@@ -1,5 +1,5 @@
 import { Container } from '../../lib/helpers'
-import { Row, Box, Title } from './styles'
+import { Row, Box, Title, Copy } from './styles'
 
 export default ({ fields }) => {
   return (
@@ -11,7 +11,7 @@ export default ({ fields }) => {
             <Box key={i}>
               <img src={icon.url} />
               <Title color={color}>{title[0].text}</Title>
-              <p>{copy[0].text}</p>
+              <Copy>{copy[0].text}</Copy>
             </Box>
           )
         })}
