@@ -17,9 +17,9 @@ export const StyledLink = styled.a({
   [mq[2]]: {
     marginBottom: 40,
     width: '33.33%',
-    maxWidth: '33.33%'
-  },
-  article: {
-    padding: '0 16px'
+    maxWidth: '33.33%',
+    article: {
+      padding: '0 16px'
+    }
   }
 })
