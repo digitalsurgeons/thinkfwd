@@ -1,13 +1,21 @@
 import { Container } from '../../lib/helpers'
+import { Row, Box, Title } from './styles'
 
 export default ({ fields }) => {
   return (
     <Container>
-      {fields.map((field, i) => (
-        <div key={i}>
-          <p>{field.copy}</p>
-        </div>
-      ))}
+      <Row>
+        {fields.map((field, i) => {
+          const { icon, title, copy, color } = field
+          return (
+            <Box key={i}>
+              <img src={icon.url} />
+              <Title color={color}>{title[0].text}</Title>
+              <p>{copy[0].text}</p>
+            </Box>
+          )
+        })}
+      </Row>
     </Container>
   )
 }

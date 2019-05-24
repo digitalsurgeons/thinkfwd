@@ -162,11 +162,12 @@ fragment bigTextSmallText on PageBodyBig_text_small_text {
     description
   }
 }
-fragment iconTextRow on PageIcon_text_row {
+fragment iconTextRow on PageBodyIconText_row {
   type
   fields {
     icon
     title
     copy
+    color
   }
 }
