@@ -20,7 +20,7 @@ export const Heading = styled.h2({
   [mq[2]]: {
     fontSize: 56,
     lineHeight: '72px',
-    marginBottom: 40
+    marginBottom: 30
   }
 })
 
@@ -34,6 +34,7 @@ export const Subheading = styled.h3({
   fontSize: 20,
   color: 'rgba(0, 0, 0, 0.8)',
   lineHeight: '40px',
+  marginBottom: '40px',
   position: 'relative',
   [mq[2]]: {
     fontSize: 24,

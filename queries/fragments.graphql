@@ -162,3 +162,16 @@ fragment bigTextSmallText on PageBodyBig_text_small_text {
     description
   }
 }
+fragment iconTextRow on PageBodyIconText_row {
+  type
+  fields {
+    toolkit_category {
+      ... on Toolkit_category {
+        title
+        icon
+        description
+        color
+      }
+    }
+  }
+}
