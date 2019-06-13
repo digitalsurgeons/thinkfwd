@@ -17,6 +17,11 @@ fragment eventsGrid on PageBodyEvents_grid {
   type
   fields {
     event
+    coverage_link {
+      ... on _ExternalLink {
+        url
+      }
+    }
   }
 }
 fragment eventsPanel on PageBodyEvents_panel {
