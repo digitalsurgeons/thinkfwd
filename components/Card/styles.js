@@ -2,28 +2,56 @@ import styled from '@emotion/styled'
 import { colors, fonts } from '../../lib/settings'
 import { mq } from '../../lib/helpers'
 
-export const Root = styled.article()
+export const Root = styled.article({
+  ':hover': {
+    '.imageTitle': {
+      opacity: 1,
+      transition: 'opacity .5s'
+    }
+  }
+})
 
-export const Image = styled.img({
+export const Image = styled.img(props => ({
+  opacity: props.opaque ? 0.1 : 1,
   objectFit: 'cover',
   objectPosition: 'center',
   height: '100%',
   height: '320px',
   width: '100%',
   minWidth: '100%',
-  marginBottom: '24px',
   [mq[2]]: {
     height: '260px'
   }
-})
+}))
 
-export const Wrapper = styled.div({
-  display: 'flex'
-})
+export const Wrapper = styled.div(props => ({
+  display: 'flex',
+  opacity: props.opaque ? 0.1 : 1
+}))
 
 export const Text = styled.div({
   display: 'flex',
   flexDirection: 'column'
+})
+
+export const ImageContainer = styled.div({
+  marginBottom: '24px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+})
+
+export const ImageTitle = styled.div({
+  position: 'absolute',
+  maxWidth: 280,
+  margin: '0 auto',
+  lineHeight: '24px',
+  textAlign: 'center',
+  color: colors.pink,
+  fontWeight: 500,
+  zIndex: 2,
+  opacity: 0,
+  transition: 'opacity .5s'
 })
 
 export const Title = styled.h2({
