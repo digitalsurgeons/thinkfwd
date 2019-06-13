@@ -15,14 +15,14 @@ const handler = routes.getRequestHandler(
     }
     if (query.slug === 'eventbrite') {
       let result = await axios(
-        'https://www.eventbriteapi.com/v3/events/search/?token=6FVOFKSA3XN5CBW3MJZY&organizer.id=18540611103&expand=organizer,venue'
+        `https://www.eventbriteapi.com/v3/users/me/events/?token=LNQKPABZUHSPRUPOWZCD&expand=organizer,venue&status=live,canceled,started,ended`
       )
       let newResults = []
       result.data.events.map(event => {
         newResults.push({
           ...event,
           title: event.name.text,
-          image_url: event.logo.original.url,
+          image_url: event.logo ? event.logo.original.url : null,
           description: event.description.text,
           last_update: parseInt(moment(new Date(event.changed)).format('x')),
           blob: event

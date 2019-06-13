@@ -19,3 +19,5 @@ test/**/out
 .DS_Store
 
 index.stories.*
+
+now-secrets.json
