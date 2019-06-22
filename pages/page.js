@@ -32,7 +32,10 @@ const Page = withRouter(({ router: { query, asPath } }) => {
             description={metaDescription}
             url={`https://thinkfwd.co/${asPath}`}>
             <Fade>
-              {page.body && page.body.map(component => getComponent(component))}
+              <div>
+                {page.body &&
+                  page.body.map(component => getComponent(component))}
+              </div>
             </Fade>
           </Layout>
         )
