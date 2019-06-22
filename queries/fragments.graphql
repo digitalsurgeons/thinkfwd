@@ -24,6 +24,9 @@ fragment eventsGrid on PageBodyEvents_grid {
     }
   }
 }
+fragment eventsForm on PageBodyEvents_form {
+  type
+}
 fragment eventsPanel on PageBodyEvents_panel {
   type
 }
