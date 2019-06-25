@@ -109,6 +109,7 @@ export const Box = styled.a({
 })
 
 export const BoxWrapper = styled.div({
+  cursor: 'pointer',
   fontFamily: fonts.secondary,
   fontSize: 18,
   color: colors.offBlack,

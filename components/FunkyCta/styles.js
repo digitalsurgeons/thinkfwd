@@ -29,6 +29,7 @@ export const Stars = styled.img({
 })
 
 export const Box = styled.a({
+  cursor: 'pointer',
   width: 171,
   height: 150,
   minWidth: 171,

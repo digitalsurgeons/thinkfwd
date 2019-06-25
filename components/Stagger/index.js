@@ -28,7 +28,7 @@ export default ({
               <Link
                 route={link._meta ? linkResolver(link._meta) : link.url}
                 passHref>
-                <Button as="a">{link_text[0].text}</Button>
+                <Button>{link_text[0].text}</Button>
               </Link>
             )}
           </Body>

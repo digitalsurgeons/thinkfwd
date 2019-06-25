@@ -1,9 +1,11 @@
+import React from 'react'
 import Color from 'color'
 import Ripples from 'react-ripples'
 import { colors } from '../../lib/settings'
 import { Container } from './styles'
 
-const Button = ({ children, secondary = false, ...other }) => {
+const Button = React.forwardRef((props, ref) => {
+  const { children, secondary = false, ...other } = props
   const primaryRippleColor = Color(colors.black)
     .fade(0.9)
     .string()
@@ -18,7 +20,7 @@ const Button = ({ children, secondary = false, ...other }) => {
       </Container>
     </Ripples>
   )
-}
+})
 
 Button.defaultProps = {
   variant: 'default'
