@@ -1,5 +1,4 @@
-import { Query } from 'react-apollo'
-import { prefetch } from 'next-apollo'
+import { useQuery } from '@apollo/react-hooks'
 import { Container } from '../../lib/helpers'
 import allToolkits from '../../queries/allToolkits.graphql'
 import { Link } from '../../lib/routes'
@@ -15,8 +14,7 @@ export default ({ fields }) => {
         {fields.map(
           ({ toolkit: { title, description, image, category, _meta } }, i) => (
             <Link key={i} route={`/toolkit/${_meta.uid}`} passHref>
-              <StyledLink
-                onMouseOver={() => prefetch(`/toolkit?slug=${_meta.uid}`)}>
+              <StyledLink>
                 <Card
                   title={title[0].text}
                   subtitle={category ? category.title[0].text : ''}

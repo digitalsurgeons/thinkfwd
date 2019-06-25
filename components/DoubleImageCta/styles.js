@@ -57,6 +57,7 @@ export const Image2 = styled.img({
 })
 
 export const Box = styled.a({
+  cursor: 'pointer',
   width: 'calc(50% - 17px)',
   height: 150,
   marginLeft: 17,
