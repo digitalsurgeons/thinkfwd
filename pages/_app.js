@@ -5,26 +5,33 @@ import NextSeo from 'next-seo'
 import SEO from '../next-seo.config'
 import { IconContext } from 'react-icons'
 import { ThemeProvider } from 'emotion-theming'
+import { ApolloProvider } from '@apollo/react-hooks'
 import theme from '../lib/settings'
+import withApollo from '../lib/apollo'
 
 class MyApp extends App {
   render() {
-    const { Component, pageProps, apolloClient } = this.props
+    const { Component, pageProps, apollo } = this.props
 
     return (
       <Container>
-        <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-        </Head>
-        <ThemeProvider theme={{ mode: 'light' }}>
-          <IconContext.Provider value={{ color: 'black' }}>
-            <NextSeo config={SEO} />
-            <Component {...pageProps} />
-          </IconContext.Provider>
-        </ThemeProvider>
+        <ApolloProvider client={apollo}>
+          <Head>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
+          </Head>
+          <ThemeProvider theme={{ mode: 'light' }}>
+            <IconContext.Provider value={{ color: 'black' }}>
+              <NextSeo config={SEO} />
+              <Component {...pageProps} />
+            </IconContext.Provider>
+          </ThemeProvider>
+        </ApolloProvider>
       </Container>
     )
   }
 }
 
-export default MyApp
+export default withApollo(MyApp)

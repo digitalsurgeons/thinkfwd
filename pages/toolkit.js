@@ -8,7 +8,6 @@ import ToolkitArticle from '../components/ToolkitArticle'
 import { getComponent, throw404 } from '../lib/helpers'
 import toolkitQuery from '../queries/toolkit.graphql'
 import Layout from '../components/Layout'
-import withApollo from '../lib/apollo'
 
 const Page = () => {
   const router = useRouter()
@@ -76,4 +75,4 @@ const Page = () => {
   )
 }
 
-export default withApollo(Page)
+export default Page
