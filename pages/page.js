@@ -6,7 +6,6 @@ import Loader from '../components/Loader'
 import { getComponent, throw404 } from '../lib/helpers'
 import pageQuery from '../queries/page.graphql'
 import Layout from '../components/Layout'
-import withApollo from '../lib/apollo'
 
 const Page = () => {
   const router = useRouter()
@@ -52,4 +51,4 @@ const Page = () => {
   )
 }
 
-export default withApollo(Page)
+export default Page
