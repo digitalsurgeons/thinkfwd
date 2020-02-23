@@ -46,7 +46,7 @@ export default () => {
         </Row>
         <Row>
           <Copyright>
-            ©{new Date().getFullYear()} thinkfwd. All rights reserved.
+            ©{new Date().getFullYear()} thinkfwd. All rights reserved
           </Copyright>
           <LogosContainer>
             <MadeIn>Made in CT</MadeIn>
