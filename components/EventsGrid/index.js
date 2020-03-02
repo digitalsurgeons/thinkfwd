@@ -14,9 +14,9 @@ export default ({ fields }) => {
                 passHref>
                 <StyledLink target="_blank" rel="noopener noreferrer">
                   <Card
-                    opaque={false}
+                    opaque={true}
                     imageTitle={
-                      null
+                      "This event is in the past. We're about the future. See what you missed."
                     }
                     image="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F91295493%2F286199106473%2F1%2Foriginal.20200206-205207?auto=format%2Ccompress&q=75&sharp=10&s=7844376306e3b7a9f604f977096a317c"
                     title="Code:fwd - Animation"
