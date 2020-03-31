@@ -27,7 +27,7 @@
     "graphql-tools": "4.0.3",
     "isomorphic-unfetch": "3.0.0",
     "moment": "2.22.2",
-    "next": "^8.1.1-canary.57",
+    "next": "^9.3.2",
     "next-routes": "1.4.2",
     "next-seo": "^1.8.0",
     "next-with-apollo-hooks": "^3.4.0",
