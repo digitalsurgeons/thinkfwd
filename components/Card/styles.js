@@ -12,7 +12,7 @@ export const Root = styled.article({
 })
 
 export const Image = styled.img(props => ({
-  opacity: props.opaque ? 0.1 : 1,
+  opacity: props.opaque ? 0.4 : 1,
   objectFit: 'cover',
   objectPosition: 'center',
   height: '100%',
@@ -26,7 +26,7 @@ export const Image = styled.img(props => ({
 
 export const Wrapper = styled.div(props => ({
   display: 'flex',
-  opacity: props.opaque ? 0.1 : 1
+  opacity: props.opaque ? 0.4 : 1
 }))
 
 export const Text = styled.div({

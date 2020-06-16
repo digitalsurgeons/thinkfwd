@@ -6,11 +6,11 @@ export default ({ title, description, image }) => (
     <Wrapper>
       <Card>
         <CardWrapper>
-          <Title>{title[0].text}</Title>
-          <Description>{description[0].text}</Description>
+          <Title>{title}</Title>
+          <Description>{description}</Description>
         </CardWrapper>
       </Card>
-      <Image src={image.url} alt={image.alt} />
+      <Image src={image.mediaItemUrl} alt={image.altText} />
     </Wrapper>
   </Container>
 )

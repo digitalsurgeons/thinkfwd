@@ -1,20 +1,17 @@
 import { Container } from '../../lib/helpers'
 import { Root, Row, Box, Title, Copy } from './styles'
 
-export default ({ fields }) => {
+export default ({ primary:{toolkitCategories} }) => {
   return (
     <Root>
       <Container>
         <Row>
-          {fields.map((field, i) => {
-            const {
-              toolkit_category: { icon, title, description, color }
-            } = field
+          {toolkitCategories.map(({toolkitCategory:{id, title, toolkitCategory: {color, icon, description }}}) => {
             return (
-              <Box key={i}>
-                <img alt={icon.alt} src={icon.url} />
-                <Title color={color}>{title[0].text}</Title>
-                {description && <Copy>{description[0].text}</Copy>}
+              <Box key={id}>
+                <img alt={title} src={icon.mediaItemUrl} />
+                <Title color={color}>{title}</Title>
+                {description && <Copy>{description}</Copy>}
               </Box>
             )
           })}

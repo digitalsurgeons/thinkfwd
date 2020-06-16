@@ -12,7 +12,8 @@ export default ({ children, title, subtitle, image, ...other }) => {
               <Subtitle>{subtitle}</Subtitle>
             </Text>
           </Wrapper>
-          <Bio>{children}</Bio>
+          <Bio dangerouslySetInnerHTML={{
+              __html: children}} />
         </>
       )}
     </Root>
