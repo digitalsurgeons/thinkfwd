@@ -25,23 +25,20 @@ const Page = () => {
     notifyOnNetworkStatusChange: true
   })
   const page = data?.pageBy
+  // console.log("Page", page.seo)
 
   if (error) return <ErrorMessage message="Error loading page." />
   if (loading)
     return (
-      <Layout>
+      <Layout >
         <Loader loading />
       </Layout>
     )
   if (!page) return throw404()
 
-  const metaTitle = page.meta_title && page.meta_title[0].text
-  const metaDescription = page.meta_description && page.meta_description[0].text
-
   return (
     <Layout
-      title={metaTitle}
-      description={metaDescription}
+      seo={page?.seo}
       url={`https://thinkfwd.co/${asPath}`}>
       <Fade>
         <div>
