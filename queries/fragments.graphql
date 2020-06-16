@@ -206,28 +206,3 @@ fragment eventsGrid on Page_Pagecomponents_Components_Eventsgrid {
   }
 }
 
-# fragment seo on Page {
-#   title
-#   twitterDescription
-#   twitterTitle
-#   twitterImage {
-#     mediaItemUrl
-#   }
-#   focuskw
-#   metaDesc
-#   metaKeywords
-#   metaRobotsNofollow
-#   metaRobotsNoindex
-#   opengraphAuthor
-#   opengraphDescription
-#   opengraphImage {
-#     mediaItemUrl
-#   }
-#   opengraphTitle
-#   opengraphType
-#   opengraphUrl
-#   opengraphPublisher
-#   opengraphPublishedTime
-#   opengraphModifiedTime
-#   opengraphSiteName
-# }

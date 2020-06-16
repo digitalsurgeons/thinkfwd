@@ -1,8 +1,32 @@
 #import "./fragments.graphql"
 query page($uri: String!) {
   pageBy(uri: $uri) {
-    # meta_title
-    # meta_description
+    seo {
+      opengraphDescription
+      opengraphAuthor
+      title
+      focuskw
+      metaDesc
+      metaKeywords
+      metaRobotsNofollow
+      metaRobotsNoindex
+      canonical
+      opengraphUrl
+      opengraphType
+      opengraphTitle
+      opengraphSiteName
+      opengraphPublishedTime
+      opengraphModifiedTime
+      opengraphPublisher
+      twitterDescription
+      twitterTitle
+      twitterImage {
+        mediaItemUrl
+      }
+      opengraphImage {
+        mediaItemUrl
+      }
+    }
     pageComponents {
       components {
         ...funkyCta
@@ -22,11 +46,6 @@ query page($uri: String!) {
         ...toolkitGrid
         ...newsletterSignup
         ...eventsGrid
-        # ...allEvents
-        # ...staggeredCta
-        # ...bigText
-        # ...eventsForm
-        # ...eventsPanel
       }
     }
   }
