@@ -19,11 +19,13 @@ const Page = () => {
   const {
     loading,
     error,
-    data: { page }
+    data
   } = useQuery(pageQuery, {
-    variables: { lang: 'en-us', uid: 'home' },
+    variables: { uri: 'home' },
     notifyOnNetworkStatusChange: true
   })
+  const page = data?.pageBy
+
   if (error) return <ErrorMessage message="Error loading page." />
   if (loading)
     return (
@@ -43,7 +45,7 @@ const Page = () => {
       url={`https://thinkfwd.co/${asPath}`}>
       <Fade>
         <div>
-          {page.body && page.body.map(component => getComponent(component))}
+          { page.pageComponents?.components.map(component => getComponent(component))}
         </div>
       </Fade>
     </Layout>

@@ -1,8 +1,8 @@
-import { useRouter } from 'next/router'
 import { useQuery } from '@apollo/react-hooks'
-import Fade from 'react-reveal/Fade'
+import { useRouter } from 'next/router'
 import ErrorMessage from '../components/ErrorMessage'
 import Loader from '../components/Loader'
+import Fade from 'react-reveal/Fade'
 import { getComponent, throw404 } from '../lib/helpers'
 import pageQuery from '../queries/page.graphql'
 import Layout from '../components/Layout'
@@ -15,23 +15,24 @@ const Page = () => {
   if (!router) return null
 
   const { query, asPath } = router
+
   const {
     loading,
     error,
-    data: { page }
+    data
   } = useQuery(pageQuery, {
-    variables: { lang: 'en-us', uid: query.slug },
+    variables: { uri: query.slug },
     notifyOnNetworkStatusChange: true
   })
+  const page = data?.pageBy
+
   if (error) return <ErrorMessage message="Error loading page." />
-  if (loading) {
+  if (loading)
     return (
       <Layout>
         <Loader loading />
       </Layout>
     )
-  }
-
   if (!page) return throw404()
 
   const metaTitle = page.meta_title && page.meta_title[0].text
@@ -44,7 +45,7 @@ const Page = () => {
       url={`https://thinkfwd.co/${asPath}`}>
       <Fade>
         <div>
-          {page.body && page.body.map(component => getComponent(component))}
+          { page.pageComponents?.components.map(component => getComponent(component))}
         </div>
       </Fade>
     </Layout>
