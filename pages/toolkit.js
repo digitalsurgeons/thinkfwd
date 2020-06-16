@@ -21,11 +21,13 @@ const Page = () => {
   const {
     loading,
     error,
-    data: { toolkit }
+    data
   } = useQuery(toolkitQuery, {
-    variables: { lang: 'en-us', uid: query.slug },
+    variables: { slug: query.slug },
     notifyOnNetworkStatusChange: true
   })
+  const toolkit = data.toolkitBy
+
   if (error) return <ErrorMessage message="Error loading page." />
   if (loading)
     return (
@@ -37,26 +39,22 @@ const Page = () => {
 
   const {
     title,
+    toolkit:{
     description,
     image,
     aside,
-    main,
-    body,
-    meta_title,
-    meta_description,
-    download_link,
-    download_link_text
+    content,
+    downloadLink,
+    downloadlinktext
+    }
   } = toolkit
 
-  const metaTitle = meta_title ? meta_title[0].text : title[0].text
-  const metaDescription = meta_description
-    ? meta_description[0].text
-    : description[0].text
+
 
   return (
     <Layout
-      title={metaTitle}
-      description={metaDescription}
+      title={title}
+      description={description}
       image={image}
       url={`https://thinkfwd.co/${asPath}`}>
       <Fade>
@@ -64,11 +62,10 @@ const Page = () => {
           <Masthead image={image} title={title} description={description} />
           <ToolkitArticle
             aside={aside}
-            main={main}
-            downloadLink={download_link}
-            downloadLinkText={download_link_text}
+            main={content}
+            downloadLink={downloadLink?.uri}
+            downloadLinkText={downloadlinktext}
           />
-          {body && body.map(component => getComponent(component))}
         </div>
       </Fade>
     </Layout>
