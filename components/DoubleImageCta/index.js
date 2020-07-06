@@ -7,18 +7,17 @@ import {
   BoxWrapper,
   Arrow
 } from './styles'
-import { linkResolver } from '../../lib/helpers'
 import { Link } from '../../lib/routes'
 
-export default ({ primary: { image_1, image_2, link, link_text } }) => (
+export default ({ primary: { image1, image2, link} }) => (
   <Container>
     <Wrapper>
-      <Image1 src={image_1.url} />
-      <Image2 src={image_2.url} />
-      <Link route={linkResolver(link._meta)} passHref>
+      <Image1 src={image1.mediaItemUrl} />
+      <Image2 src={image2.mediaItemUrl} />
+      <Link route={link.url} passHref>
         <Box>
           <BoxWrapper>
-            {link_text[0].text}
+            {link.title}
             <Arrow src="/static/img/arrow-right-black.svg" />
           </BoxWrapper>
         </Box>

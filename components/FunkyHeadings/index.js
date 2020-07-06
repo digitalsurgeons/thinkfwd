@@ -5,11 +5,11 @@ export default ({ primary: { heading, subheading } }) => (
   <Container>
     <Wrapper>
       <Heading>
-        {heading[0].text}
+        {heading}
         <FlyingBox src="/static/img/flying-blue-box.svg" />
       </Heading>
       <Subheading>
-        {subheading[0].text}
+        {subheading}
         <FlyingComet src="/static/img/flying-yellow-comet.svg" />
       </Subheading>
     </Wrapper>

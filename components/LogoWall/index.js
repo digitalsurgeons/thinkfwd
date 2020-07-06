@@ -1,15 +1,15 @@
 import { Wrapper, Heading, Row, Logos, LogoContainer, Logo } from './styles'
 import { Container } from '../../lib/helpers'
 
-export default ({ primary: { heading }, fields }) => {
+export default ({ primary: { heading, logos }  }) => {
   return (
     <Container>
       <Wrapper>
-        <Heading>{heading[0].text}</Heading>
+        <Heading>{heading}</Heading>
         <Logos>
-          {fields.map((field, i) => (
+          {logos.map((item, i) => (
             <LogoContainer key={i}>
-              <Logo src={field.logo.url} />
+              <Logo src={item.logo.mediaItemUrl} />
             </LogoContainer>
           ))}
         </Logos>

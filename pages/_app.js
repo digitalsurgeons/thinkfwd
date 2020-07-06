@@ -5,7 +5,6 @@ import NextSeo from 'next-seo'
 import SEO from '../next-seo.config'
 import { IconContext } from 'react-icons'
 import { ThemeProvider } from 'emotion-theming'
-import { ApolloProvider } from '@apollo/react-hooks'
 import theme from '../lib/settings'
 import withApollo from '../lib/apollo'
 
@@ -14,8 +13,7 @@ class MyApp extends App {
     const { Component, pageProps, apollo } = this.props
 
     return (
-      <Container>
-        <ApolloProvider client={apollo}>
+      <>
           <Head>
             <meta
               name="viewport"
@@ -28,8 +26,7 @@ class MyApp extends App {
               <Component {...pageProps} />
             </IconContext.Provider>
           </ThemeProvider>
-        </ApolloProvider>
-      </Container>
+      </>
     )
   }
 }

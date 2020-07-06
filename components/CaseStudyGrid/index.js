@@ -3,7 +3,8 @@ import { Wrapper } from './styles'
 import { Container } from '../../lib/helpers'
 import CaseStudyCard from '../CaseStudyCard'
 
-export default ({ fields }) => (
+export default ({ primary: {caseStudies} }) =>
+(
   <Container>
     <Wrapper>
       <Masonry
@@ -13,12 +14,12 @@ export default ({ fields }) => (
         }}
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column">
-        {fields.map(({ case_study: { title, description, image } }, i) => (
+        {caseStudies.map(({ caseStudy: { caseStudy:{title, description, image}, id } }) => (
           <CaseStudyCard
-            key={i}
-            image={image.url}
-            title={title[0].text}
-            subtitle={description[0].text}
+            key={id}
+            image={image.mediaItemUrl}
+            title={title}
+            subtitle={description}
           />
         ))}
       </Masonry>

@@ -3,7 +3,6 @@ import {
   Heading,
   HeadingText,
   Stars,
-  FlyingComet,
   Subheading
 } from './styles'
 import Button from '../Button'
@@ -15,10 +14,10 @@ export default ({ primary: { heading, subheading } }) => {
     <Container>
       <Wrapper>
         <Heading>
-          <HeadingText>{heading[0].text}</HeadingText>
+          <HeadingText>{heading}</HeadingText>
           <Stars src="/static/img/stars-pink.svg" />
         </Heading>
-        <Subheading>{subheading[0].text}</Subheading>
+        <Subheading>{subheading}</Subheading>
         <Link route="/contact" passHref>
           <Button as="a">Join the Community!</Button>
         </Link>

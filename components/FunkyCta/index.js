@@ -11,21 +11,21 @@ import {
 import { linkResolver } from '../../lib/helpers'
 import { Link } from '../../lib/routes'
 
-export default ({ primary: { link, link_text, image } }) => {
+export default ({ primary: { link, image } }) => {
   return (
     <Root>
       <Container>
         <Wrapper>
           <Stars src="/static/img/stars.svg" />
-          <Link route={linkResolver(link._meta)} passHref>
+          <Link route={link.url} passHref>
             <Box>
               <BoxWrapper>
-                {link_text[0].text}
+                {link.title}
                 <Arrow src="/static/img/arrow-right.svg" />
               </BoxWrapper>
             </Box>
           </Link>
-          <Image src={image.url} />
+          <Image src={image.mediaItemUrl} />
         </Wrapper>
       </Container>
     </Root>

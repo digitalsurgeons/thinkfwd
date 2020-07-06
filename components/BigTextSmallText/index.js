@@ -1,15 +1,15 @@
 import { Wrapper, Header, Headline, Text } from './styles'
-import { Container, linkResolver } from '../../lib/helpers'
-import { RichText } from 'prismic-reactjs'
+import { Container } from '../../lib/helpers'
+
 
 export default ({ primary: { heading, description } }) => {
   return (
     <Container>
       <Wrapper>
         <Header>
-          <Headline>{heading[0].text}</Headline>
+          <Headline>{heading}</Headline>
         </Header>
-        <Text>{description && RichText.render(description, linkResolver)}</Text>
+        <Text dangerouslySetInnerHTML={{__html:description}} />
       </Wrapper>
     </Container>
   )

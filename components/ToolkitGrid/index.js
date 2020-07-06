@@ -7,20 +7,20 @@ import ErrorMessage from '../ErrorMessage'
 import { StyledLink, Wrapper } from './styles'
 import { colors } from '../../lib/settings'
 
-export default ({ fields }) => {
+export default ({ primary:{toolkits} }) => {
   return (
     <Container>
       <Wrapper>
-        {fields.map(
-          ({ toolkit: { title, description, image, category, _meta } }, i) => (
-            <Link key={i} route={`/toolkit/${_meta.uid}`} passHref>
+        {toolkits.map(
+          ({ toolkit: {title, slug, toolkit:{ description, image, category, id} } }) => (
+            <Link key={id} route={`/toolkit/${slug}`} passHref>
               <StyledLink>
                 <Card
-                  title={title[0].text}
-                  subtitle={category ? category.title[0].text : ''}
+                  title={title}
+                  subtitle={category?.title}
                   color={category ? category.color : colors.pink}
-                  description={description ? description[0].text : ''}
-                  image={image.url}
+                  description={description ? description: ''}
+                  image={image?.mediaItemUrl}
                 />
               </StyledLink>
             </Link>
