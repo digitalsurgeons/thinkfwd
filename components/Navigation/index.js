@@ -24,33 +24,33 @@ export default () => {
     <Root>
       <Container>
         <Wrapper>
-          <Link prefetch route="/" passHref>
+          <Link route="/" passHref>
             <LogoLink>
               <Logo src="/static/img/logo.svg" />
             </LogoLink>
           </Link>
           <Nav>
-            <Link prefetch route="/events" passHref>
+            <Link route="/events" passHref>
               <NavLink isActive={asPath && asPath.includes('events')}>
                 Events
               </NavLink>
             </Link>
-            <Link prefetch route="/sprints" passHref>
+            <Link route="/sprints" passHref>
               <NavLink isActive={asPath && asPath.includes('sprints')}>
                 Sprints
               </NavLink>
             </Link>
-            <Link prefetch route="/toolkit" passHref>
+            <Link route="/toolkit" passHref>
               <NavLink isActive={asPath && asPath.includes('toolkit')}>
                 Toolkit
               </NavLink>
             </Link>
-            <Link prefetch route="/about" passHref>
+            <Link route="/about" passHref>
               <NavLink isActive={asPath && asPath.includes('about')}>
                 About
               </NavLink>
             </Link>
-            <Link prefetch route="/contact" passHref>
+            <Link route="/contact" passHref>
               <Button as="a" variant="outline">
                 Get in touch
               </Button>

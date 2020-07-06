@@ -1,12 +1,12 @@
 import { Container } from '../../lib/helpers'
 import { Headline, Root, Title } from './styles'
 
-export default ({ primary: { title, headline } }) => {
+export default ({ primary: { heading, subheading } }) => {
   return (
     <Root>
       <Container>
-        <Title>// {title[0].text.toLowerCase()}</Title>
-        <Headline>{headline[0].text}</Headline>
+        <Title>// {heading.toLowerCase()}</Title>
+        <Headline>{subheading}</Headline>
       </Container>
     </Root>
   )

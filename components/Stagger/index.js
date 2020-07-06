@@ -1,34 +1,31 @@
-import { RichText } from 'prismic-reactjs'
-import { Container, linkResolver } from '../../lib/helpers'
+import { Container } from '../../lib/helpers'
 import { colors } from '../../lib/settings'
 import Button from '../Button'
 import { Body, Description, Headline, Image, Root, Wrapper } from './styles'
 import { Link } from '../../lib/routes'
 
 export default ({
-  primary: { image, headline, description, link, link_text }
+  primary: { image, headline, description, link, }
 }) => {
   return (
     <Root>
       <Container>
         <Wrapper>
-          <Image src={image.url} />
+          <Image src={image.mediaItemUrl} />
           <Body>
             {headline && (
               <Headline
-                dangerouslySetInnerHTML={highlightPrice(headline[0].text)}
+                dangerouslySetInnerHTML={highlightPrice(headline)}
               />
             )}
             {description && (
-              <Description>
-                {RichText.render(description, linkResolver)}
-              </Description>
+              <Description dangerouslySetInnerHTML={{__html:description}} />
             )}
             {link && (
               <Link
-                route={link._meta ? linkResolver(link._meta) : link.url}
+                route={link.url}
                 passHref>
-                <Button>{link_text[0].text}</Button>
+                <Button>{link.title}</Button>
               </Link>
             )}
           </Body>

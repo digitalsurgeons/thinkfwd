@@ -1,75 +1,32 @@
-query toolkit($lang: String!, $uid: String!) {
-  toolkit(lang: $lang, uid: $uid) {
+query toolkit($slug: String!) {
+  toolkitBy(slug: $slug) {
     title
-    description
-    image
-    aside
-    main
-    download_link {
-      ... on _ImageLink {
-        url
-      }
-      ... on _FileLink {
-        url
-      }
-    }
-    download_link_text
-    meta_title
-    meta_description
-    body {
-      ... on ToolkitBodyCall_to_action {
-        type
-        primary {
-          heading
-          link {
-            ... on Page {
-              _meta {
-                type
-                uid
-              }
-            }
-          }
-          link_text
-        }
-      }
-      ... on ToolkitBodyCard_row {
-        type
-        primary {
-          heading
-          card_one {
-            ... on Toolkit {
-              _meta {
-                uid
-                firstPublicationDate
-              }
-              image
-              title
-              description
-            }
-          }
-          card_two {
-            ... on Toolkit {
-              _meta {
-                uid
-                firstPublicationDate
-              }
-              image
-              title
-              description
-            }
-          }
-          card_three {
-            ... on Toolkit {
-              _meta {
-                uid
-                firstPublicationDate
-              }
-              image
-              title
-              description
+    toolkit {
+      aside
+      category {
+        ... on ToolkitCategory {
+          id
+          toolkitCategory {
+            color
+            description
+            fieldGroupName
+            icon {
+              altText
+              mediaItemUrl
             }
           }
         }
+      }
+      content
+      description
+      image {
+        mediaItemUrl
+        altText
+      }
+      downloadlinktext
+      downloadLink {
+        title
+        uri
       }
     }
   }

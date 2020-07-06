@@ -1,185 +1,208 @@
-fragment link on Page {
-  _meta {
-    type
-    uid
-  }
-}
-fragment bodyAnimation on PageBodyAnimation {
-  type
-}
-fragment bigText on PageBodyBig_text {
-  type
-  primary {
-    heading
-  }
-}
-fragment eventsGrid on PageBodyEvents_grid {
-  type
-  fields {
-    event
-    coverage_link {
-      ... on _ExternalLink {
-        url
-      }
-    }
-  }
-}
-fragment eventsForm on PageBodyEvents_form {
-  type
-}
-fragment eventsPanel on PageBodyEvents_panel {
-  type
-}
-fragment funkyCta on PageBodyFunky_cta {
-  type
-  primary {
-    image
-    link {
-      ...link
-    }
-    link_text
-  }
-}
-fragment funkyHeadings on PageBodyFunky_headings {
-  type
-  primary {
-    heading
-    subheading
-  }
-}
-fragment headings on PageBodyHeadings {
-  type
-  primary {
-    heading
-    subheading
-  }
-}
-fragment header on PageBodyHeader {
-  type
-  primary {
+fragment funkyCta on Page_Pagecomponents_Components_Funkycta {
+  fieldGroupName
+  link {
+    url
     title
-    headline
+    target
+  }
+  image {
+    mediaItemUrl
   }
 }
-fragment caseStudyGrid on PageBodyCase_study_grid {
-  type
-  fields {
-    case_study {
-      ... on Case_study {
-        description
-        title
-        image
+fragment funkyHeadings on Page_Pagecomponents_Components_Funkyheadings {
+  fieldGroupName
+  heading
+  subheading
+}
+fragment headings on Page_Pagecomponents_Components_Headings {
+  fieldGroupName
+  heading
+  subheading
+}
+fragment header on Page_Pagecomponents_Components_Header {
+  fieldGroupName
+  heading
+  subheading
+}
+
+fragment caseStudyGrid on Page_Pagecomponents_Components_Casestudygrid {
+  fieldGroupName
+  caseStudies {
+    caseStudy {
+      ... on CaseStudy {
+        id
+        caseStudy {
+          description
+          title
+          image {
+            mediaItemUrl
+          }
+          fieldGroupName
+        }
       }
     }
+    fieldGroupName
   }
 }
-fragment imagePanelCta on PageBodyImage_panel_cta {
-  type
-}
-fragment logoWall on PageBodyLogo_wall {
-  type
-  primary {
-    heading
-  }
-  fields {
-    logo
+fragment imagePanelCta on Page_Pagecomponents_Components_Imagepanelcta {
+  description
+  fieldGroupName
+  sideStrip
+  image {
+    mediaItemUrl
   }
 }
-fragment newsletterSignup on PageBodyNewsletter_signup {
-  type
-  primary {
-    headline
-    subheadline
-  }
-}
-fragment stagger on PageBodyStagger {
-  type
-  primary {
-    image
-    headline
-    description
-    link {
-      ...link
+fragment logoWall on Page_Pagecomponents_Components_Logowall {
+  fieldGroupName
+  heading
+  logos {
+    logo {
+      mediaItemUrl
     }
-    link_text
+    fieldGroupName
   }
 }
-fragment staggeredCta on PageBodyStaggered_cta {
-  type
-  primary {
-    link_text
+
+fragment stagger on Page_Pagecomponents_Components_Stagger {
+  description
+  fieldGroupName
+  headline
+  link {
+    url
+    title
+    target
+  }
+  image {
+    mediaItemUrl
   }
 }
-fragment toolkitGrid on PageBodyToolkit_grid {
-  type
-  fields {
+
+fragment toolkitGrid on Page_Pagecomponents_Components_Toolkitgrid {
+  fieldGroupName
+  toolkits {
     toolkit {
       ... on Toolkit {
-        _meta {
-          uid
+        id
+        slug
+        toolkit {
+          aside
+          category {
+            ... on ToolkitCategory {
+              toolkitCategory {
+                color
+                description
+                fieldGroupName
+              }
+              title
+            }
+          }
+          description
+          image {
+            mediaItemUrl
+          }
         }
         title
-        description
-        image
-        category {
-          ... on Toolkit_category {
-            title
+      }
+    }
+  }
+}
+
+fragment contactForm on Page_Pagecomponents_Components_Contactform {
+  fieldGroupName
+  visible
+}
+fragment fullWidthImage on Page_Pagecomponents_Components_Fullwidthimage {
+  fieldGroupName
+  image {
+    mediaItemUrl
+  }
+}
+fragment personGrid on Page_Pagecomponents_Components_Persongrid {
+  fieldGroupName
+  people {
+    person {
+      ... on Person {
+        id
+        person {
+          bio
+          fieldGroupName
+          fullName
+          role
+          portrait {
+            mediaItemUrl
+          }
+        }
+      }
+    }
+    fieldGroupName
+  }
+}
+fragment doubleImageCta on Page_Pagecomponents_Components_Doubleimagecta {
+  fieldGroupName
+  link {
+    target
+    title
+    url
+  }
+  image2 {
+    mediaItemUrl
+  }
+  image1 {
+    mediaItemUrl
+  }
+}
+fragment bigTextSmallText on Page_Pagecomponents_Components_Bigtextsmalltext {
+  fieldGroupName
+  description
+  heading
+}
+
+fragment iconTextRow on Page_Pagecomponents_Components_Icontextrow {
+  fieldGroupName
+  toolkitCategories {
+    toolkitCategory {
+      ... on ToolkitCategory {
+        id
+        title
+        toolkitCategory {
+          color
+          description
+          fieldGroupName
+          icon {
+            mediaItemUrl
           }
         }
       }
     }
   }
 }
-fragment contactForm on PageBodyContact_form {
-  type
+
+fragment newsletterSignup on Page_Pagecomponents_Components_Newslettersignup {
+  fieldGroupName
+  headline
+  subheadline
 }
-fragment fullWidthImage on PageBodyFull_width_image {
-  type
-  primary {
-    image
-  }
-}
-fragment personGrid on PageBodyPerson_grid {
-  type
-  fields {
-    person {
-      ... on Person {
-        portrait
-        full_name
-        role
-        bio
+
+fragment eventsGrid on Page_Pagecomponents_Components_Eventsgrid {
+  fieldGroupName
+  events {
+    event {
+      ... on Event {
+        id
+        event {
+          date
+          eventUrl
+          image {
+            mediaItemUrl
+            title
+            altText
+          }
+          location
+          recapUrl
+          title
+        }
       }
     }
   }
 }
-fragment doubleImageCta on PageBodyDouble_image_cta {
-  type
-  primary {
-    image_1
-    image_2
-    link {
-      ...link
-    }
-    link_text
-  }
-}
-fragment bigTextSmallText on PageBodyBig_text_small_text {
-  type
-  primary {
-    heading
-    description
-  }
-}
-fragment iconTextRow on PageBodyIconText_row {
-  type
-  fields {
-    toolkit_category {
-      ... on Toolkit_category {
-        title
-        icon
-        description
-        color
-      }
-    }
-  }
-}
+

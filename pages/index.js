@@ -19,15 +19,19 @@ const Page = () => {
   const {
     loading,
     error,
-    data: { page }
+    data
   } = useQuery(pageQuery, {
-    variables: { lang: 'en-us', uid: 'home' },
+    variables: { uri: 'home' },
     notifyOnNetworkStatusChange: true
   })
+  const page = data?.pageBy
+  console.log("Page", page)
   if (error) return <ErrorMessage message="Error loading page." />
   if (loading)
     return (
-      <Layout>
+      <Layout
+      seo={page?.seo}
+      >
         <Loader loading />
       </Layout>
     )
@@ -38,12 +42,11 @@ const Page = () => {
 
   return (
     <Layout
-      title={metaTitle}
-      description={metaDescription}
+  seo={page?.seo}
       url={`https://thinkfwd.co/${asPath}`}>
       <Fade>
         <div>
-          {page.body && page.body.map(component => getComponent(component))}
+          { page.pageComponents?.components.map(component => getComponent(component))}
         </div>
       </Fade>
     </Layout>

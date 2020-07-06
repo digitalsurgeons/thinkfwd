@@ -1,5 +1,4 @@
 import { useRef, useState, useEffect } from 'react'
-import { RichText } from 'prismic-reactjs'
 import Modal from 'react-responsive-modal'
 import { useForm } from 'react-hubspot'
 import Fade from 'react-reveal/Fade'
@@ -44,18 +43,18 @@ export default ({ aside, main, downloadLink, downloadLinkText }) => {
       <Wrapper>
         {aside && (
           <Aside>
-            <div>{RichText.render(aside, linkResolver)}</div>
+            <div dangerouslySetInnerHTML={{__html:aside}} />
             {downloadLink && (
               <Button
                 as="div"
                 style={{ marginBottom: 40 }}
                 onClick={() => setOpen(true)}>
-                {downloadLinkText ? downloadLinkText[0].text : 'Download'}
+                {downloadLinkText ? downloadLinkText : 'Download'}
               </Button>
             )}
           </Aside>
         )}
-        {main && <Main>{RichText.render(main, linkResolver)}</Main>}
+        {main && <Main  dangerouslySetInnerHTML={{__html:main}} />}
       </Wrapper>
 
       <Modal open={open} onClose={() => setOpen(false)} center>

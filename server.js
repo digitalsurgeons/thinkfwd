@@ -13,26 +13,6 @@ const handler = routes.getRequestHandler(
     if (query.slug === 'home') {
       res.redirect('/')
     }
-    if (query.slug === 'eventbrite') {
-      let result = await axios(
-        `https://www.eventbriteapi.com/v3/users/me/events/?token=LNQKPABZUHSPRUPOWZCD&expand=organizer,venue&status=live,canceled,started,ended`
-      )
-      let newResults = []
-      result.data.events.map(event => {
-        newResults.push({
-          ...event,
-          title: event.name.text,
-          image_url: event.logo ? event.logo.original.url : null,
-          description: event.description.text,
-          last_update: parseInt(moment(new Date(event.changed)).format('x')),
-          blob: event
-        })
-      })
-      res.json({
-        results_size: result.data.events.length,
-        results: newResults
-      })
-    }
     app.render(req, res, route.page, query)
   }
 )

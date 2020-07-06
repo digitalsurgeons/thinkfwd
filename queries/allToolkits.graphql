@@ -1,18 +1,14 @@
 query {
-  allToolkits {
+  toolkits {
     edges {
       node {
-        _meta {
-          uid
-          firstPublicationDate
-        }
-        title
-        description
-        image
-        category {
-          ... on Toolkit_category {
-            title
-            color
+        toolkit {
+          aside
+          description
+          image {
+            mediaDetails {
+              file
+            }
           }
         }
       }

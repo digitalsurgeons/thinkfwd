@@ -1,31 +1,52 @@
 #import "./fragments.graphql"
-query page($lang: String!, $uid: String!) {
-  page(lang: $lang, uid: $uid) {
-    meta_title
-    meta_description
-    body {
-      ...bodyAnimation
-      ...bigText
-      ...eventsForm
-      ...eventsGrid
-      ...eventsPanel
-      ...funkyCta
-      ...funkyHeadings
-      ...header
-      ...headings
-      ...caseStudyGrid
-      ...imagePanelCta
-      ...logoWall
-      ...newsletterSignup
-      ...stagger
-      ...staggeredCta
-      ...toolkitGrid
-      ...doubleImageCta
-      ...contactForm
-      ...fullWidthImage
-      ...personGrid
-      ...bigTextSmallText
-      ...iconTextRow
+query page($uri: String!) {
+  pageBy(uri: $uri) {
+    seo {
+      opengraphDescription
+      opengraphAuthor
+      title
+      focuskw
+      metaDesc
+      metaKeywords
+      metaRobotsNofollow
+      metaRobotsNoindex
+      canonical
+      opengraphUrl
+      opengraphType
+      opengraphTitle
+      opengraphSiteName
+      opengraphPublishedTime
+      opengraphModifiedTime
+      opengraphPublisher
+      twitterDescription
+      twitterTitle
+      twitterImage {
+        mediaItemUrl
+      }
+      opengraphImage {
+        mediaItemUrl
+      }
+    }
+    pageComponents {
+      components {
+        ...funkyCta
+        ...funkyHeadings
+        ...headings
+        ...header
+        ...caseStudyGrid
+        ...doubleImageCta
+        ...contactForm
+        ...fullWidthImage
+        ...personGrid
+        ...bigTextSmallText
+        ...imagePanelCta
+        ...logoWall
+        ...stagger
+        ...iconTextRow
+        ...toolkitGrid
+        ...newsletterSignup
+        ...eventsGrid
+      }
     }
   }
 }

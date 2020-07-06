@@ -16,7 +16,6 @@ import {
   Wrapper,
   ButtonContainer
 } from './styles'
-import { colors } from '../../lib/settings'
 
 export default ({ primary: { headline, subheadline } }) => {
   const formEl = useRef(null)
@@ -44,8 +43,8 @@ export default ({ primary: { headline, subheadline } }) => {
         <Wrapper>
           <Body>
             <Image src="/static/img/triangle.svg" />
-            <Headline>{headline[0].text}</Headline>
-            <Subheadline>{subheadline[0].text}</Subheadline>
+            <Headline>{headline}</Headline>
+            <Subheadline>{subheadline}</Subheadline>
           </Body>
           <Form ref={formEl} onSubmit={handleSubmit}>
             <FieldRow>
