@@ -46,7 +46,7 @@ export default () => {
         </Row>
         <Row>
           <Copyright>
-            ©{new Date().getFullYear()} thinkfwd. All rights reserved.
+            ©{new Date().getFullYear()} thinkfwd. All rights reserved
           </Copyright>
           <LogosContainer>
             <MadeIn>Made in CT</MadeIn>
@@ -56,7 +56,7 @@ export default () => {
                 target="_blank"
                 rel="noopener noreferrer">
                 <img
-                  style={{ marginRight: 24 }}
+                  style={{ marginRight: 24, maxWidth: 143 }}
                   src="/static/img/digitalsurgeons.svg"
                 />
               </a>
