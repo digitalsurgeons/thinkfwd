@@ -1,6 +1,5 @@
 const next = require('next')
 const routes = require('./lib/routes')
-const PORT = parseInt(process.env.PORT, 10) || 3000
 const express = require('express')
 const axios = require('axios')
 const moment = require('moment')
@@ -36,6 +35,7 @@ const faviconOptions = {
 }
 
 app.prepare().then(() => {
+  const PORT = parseInt(process.env.PORT, 10) || 3000
   express()
     .get('/robots.txt', (req, res) =>
       res.status(200).sendFile('robots.txt', robotsOptions)
