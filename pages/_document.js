@@ -1,4 +1,4 @@
-import Document, { Head, Main, NextScript } from 'next/document'
+ import Document, { Head, Main, NextScript } from 'next/document'
 
 export default class MyDocument extends Document {
   render() {
@@ -100,23 +100,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-562C4XW');`
             }}
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `window.prismic = {
-    endpoint: 'https://thinkfwd.cdn.prismic.io/api/v2'
-  };`
-            }}
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `window.prismic = { endpoint: 'https://thinkfwd.cdn.prismic.io/api/v2' };`
-            }}
-          />
-
-          <script
-            type="text/javascript"
-            src="https://static.cdn.prismic.io/prismic.min.js"
           />
         </Head>
         <body>

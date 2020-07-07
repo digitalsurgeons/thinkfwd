@@ -1,6 +1,5 @@
 const next = require('next')
 const routes = require('./lib/routes')
-const PORT = parseInt(process.env.PORT, 10) || 3000
 const express = require('express')
 const axios = require('axios')
 const moment = require('moment')
@@ -18,24 +17,25 @@ const handler = routes.getRequestHandler(
 )
 
 const robotsOptions = {
-  root: __dirname + '/static/',
+  root: __dirname + '/public/static/',
   headers: {
     'Content-Type': 'text/plain;charset=UTF-8'
   }
 }
 
 const sitemapOptions = {
-  root: __dirname + '/static/',
+  root: __dirname + '/public/static/',
   headers: {
     'Content-Type': 'text/xml;charset=UTF-8'
   }
 }
 
 const faviconOptions = {
-  root: __dirname + '/static/'
+  root: __dirname + '/public/static/'
 }
 
 app.prepare().then(() => {
+  const PORT = parseInt(process.env.PORT, 10) || 3000
   express()
     .get('/robots.txt', (req, res) =>
       res.status(200).sendFile('robots.txt', robotsOptions)

@@ -1,6 +1,7 @@
 # build output
 dist
 .next
+.env
 
 # dependencies
 node_modules
@@ -21,3 +22,4 @@ test/**/out
 index.stories.*
 
 now-secrets.json
+/.idea
