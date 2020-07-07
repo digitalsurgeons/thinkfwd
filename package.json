@@ -4,7 +4,6 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "postinstall": "npm run build",
     "start": "NODE_ENV=production node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
