@@ -115,7 +115,7 @@ build_frontend:
   stage: build
   only:
     refs:
-      - branches
+      - /^(master|hotfix\/|release\/)/
     variables:
       - $FRONTEND == "true"
   except:
