@@ -25,6 +25,70 @@ variables:
   # $CLOUDFLARE_EMAIL
   # $CLOUDFLARE_API_KEY
 
-include:
-  - project: 'digitalsurgeons/gitlab-ci-configs'
-    file: '/.gitlab-ci.yml'
+.deploy:
+  image: sebble/deploy
+  before_script:
+    # Set up the .ssh directory
+    - mkdir ~/.ssh
+    - chmod 0700 ~/.ssh
+    # Adds host keys for all deployed environments, so we know when something goes wrong
+    - echo -n "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+    - chmod 0600 ~/.ssh/known_hosts
+    # Adds private key so we can connect to destination server
+    - echo -n "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+    - chmod 0600 ~/.ssh/id_ed25519
+    # Export the environment url, which only exists in the child jobs,
+    # so that we can set cypress' base url in the test phase
+    - echo -n "$CI_ENVIRONMENT_URL" > cypress_env
+  artifacts:
+    paths:
+      - cypress_env
+  stage: deploy
+
+deploy_prod:
+  extends: .deploy
+  script:
+    - echo "$PRD_DOTENV" > .env
+    - curl -O -L https://gitlab.com/digitalsurgeons/gitlab-ci-configs/raw/master/.rsyncignore
+    - rm public/static/robots.txt
+    - rsync --copy-unsafe-links -rvzcSl --exclude-from '.rsyncignore' ./ $SERVER_DETAILS_PRD:$SERVER_PATH_PRD/
+    - ssh $SERVER_DETAILS_STG:$SERVER_PATH_STG "pm2 restart thinkfwd"
+  environment:
+    name: production
+    url: $PRD_DOMAIN
+  when: manual
+  only:
+    refs:
+      - master
+    variables:
+      - $PRODUCTION == "true"
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-prod-deploy/
+      - $CI_COMMIT_MESSAGE =~ /skip-deploy/
+
+deploy_stage:
+  extends: .deploy
+  script:
+    - echo "$STG_DOTENV" > .env
+    - rm public/static/robots.txt
+    - mv public/static/robots.stage.txt public/static/robots.txt
+    - curl -O -L https://gitlab.com/digitalsurgeons/gitlab-ci-configs/raw/master/.rsyncignore
+    - rsync --copy-unsafe-links -rvzcSl --exclude-from '.rsyncignore' ./ $SERVER_DETAILS_STG:$SERVER_PATH_STG/
+    - ssh $SERVER_DETAILS_STG:$SERVER_PATH_STG "pm2 restart thinkfwd-stage"
+  environment:
+    name: staging
+    url: $STG_DOMAIN
+  only:
+    refs:
+      # Deploy from hotfix and release branches as well as master, so we
+      # can test and make modifications on those branches before finishing
+      # out a branch. This leads to fewer version bumps and less repo
+      # noise.
+      - /^(master|hotfix\/|release\/)/
+    variables:
+      - $STAGING == "true"
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-stg-deploy/
+      - $CI_COMMIT_MESSAGE =~ /skip-deploy/
