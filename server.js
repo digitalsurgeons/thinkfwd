@@ -18,21 +18,21 @@ const handler = routes.getRequestHandler(
 )
 
 const robotsOptions = {
-  root: __dirname + '/static/',
+  root: __dirname + '/public/static/',
   headers: {
     'Content-Type': 'text/plain;charset=UTF-8'
   }
 }
 
 const sitemapOptions = {
-  root: __dirname + '/static/',
+  root: __dirname + '/public/static/',
   headers: {
     'Content-Type': 'text/xml;charset=UTF-8'
   }
 }
 
 const faviconOptions = {
-  root: __dirname + '/static/'
+  root: __dirname + '/public/static/'
 }
 
 app.prepare().then(() => {

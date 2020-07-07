@@ -1,0 +1,30 @@
+# This file declares configuration variables for Gitlab CI and then includes our centralized GIT
+
+variables:
+  # Use these to define user@ip details for each destination server.
+  # This way you wont have to worry about making changes in multiple
+  # places
+
+  # Change this to digitalsurgeonsdev.com if you need to
+  STG_DOMAIN: https://staging.thinkfwd.co
+  PRD_DOMAIN: https://www.thinkfwd.co
+
+  NODE_VERSION: 12
+
+  # Build Variables
+  DEVELOP: "false"
+  FEATURE: "false"
+  STAGING: "true"
+  PRODUCTION: "true"
+  # Had to use 'RUN_COMPOSER' instead of 'COMPOSER' because composer looks for a config file at it's own ENV var
+  RUN_COMPOSER: "false"
+  FRONTEND: "false"
+  TEST: "false"
+  CLOUDFLARE: "false"
+  # $CLOUDFLARE_ZONE_ID
+  # $CLOUDFLARE_EMAIL
+  # $CLOUDFLARE_API_KEY
+
+include:
+  - project: 'digitalsurgeons/gitlab-ci-configs'
+    file: '/.gitlab-ci.yml'
