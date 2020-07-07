@@ -49,10 +49,9 @@ deploy_prod:
   extends: .deploy
   script:
     - echo "$PRD_DOTENV" > .env
-    - curl -O -L https://gitlab.com/digitalsurgeons/gitlab-ci-configs/raw/master/.rsyncignore
     - rm public/static/robots.txt
     - rsync --copy-unsafe-links -rvzcSl --exclude-from '.rsyncignore' ./ $SERVER_DETAILS_PRD:$SERVER_PATH_PRD/
-    - ssh $SERVER_DETAILS_PRD "cd $SERVER_PATH_PRD; next build; pm2 restart thinkfwd"
+    - ssh $SERVER_DETAILS_PRD "source ~/.bash_profile; cd $SERVER_PATH_PRD; next build; pm2 restart thinkfwd"
   environment:
     name: production
     url: $PRD_DOMAIN
@@ -73,9 +72,8 @@ deploy_stage:
     - echo "$STG_DOTENV" > .env
     - rm public/static/robots.txt
     - mv public/static/robots.stage.txt public/static/robots.txt
-    - curl -O -L https://gitlab.com/digitalsurgeons/gitlab-ci-configs/raw/master/.rsyncignore
     - rsync --copy-unsafe-links -rvzcSl --exclude-from '.rsyncignore' ./ $SERVER_DETAILS_STG:$SERVER_PATH_STG/
-    - ssh $SERVER_DETAILS_STG "cd $SERVER_PATH_STG; next build; pm2 restart thinkfwd-stage"
+    - ssh $SERVER_DETAILS_STG "source ~/.bash_profile; cd $SERVER_PATH_STG; next build; pm2 restart thinkfwd-stage"
   environment:
     name: staging
     url: $STG_DOMAIN
