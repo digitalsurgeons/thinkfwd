@@ -21,3 +21,4 @@ test/**/out
 index.stories.*
 
 now-secrets.json
+/.idea
