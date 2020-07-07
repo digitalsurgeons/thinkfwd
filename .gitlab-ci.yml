@@ -9,7 +9,7 @@ variables:
   STG_DOMAIN: https://staging.thinkfwd.co
   PRD_DOMAIN: https://www.thinkfwd.co
 
-  NODE_VERSION: 12
+  NODE_VERSION: 10
 
   # Build Variables
   DEVELOP: "false"
@@ -18,7 +18,7 @@ variables:
   PRODUCTION: "true"
   # Had to use 'RUN_COMPOSER' instead of 'COMPOSER' because composer looks for a config file at it's own ENV var
   RUN_COMPOSER: "false"
-  FRONTEND: "false"
+  FRONTEND: "true"
   TEST: "false"
   CLOUDFLARE: "false"
   # $CLOUDFLARE_ZONE_ID
@@ -52,7 +52,7 @@ deploy_prod:
     - curl -O -L https://gitlab.com/digitalsurgeons/gitlab-ci-configs/raw/master/.rsyncignore
     - rm public/static/robots.txt
     - rsync --copy-unsafe-links -rvzcSl --exclude-from '.rsyncignore' ./ $SERVER_DETAILS_PRD:$SERVER_PATH_PRD/
-    - ssh $SERVER_DETAILS_STG:$SERVER_PATH_STG "pm2 restart thinkfwd"
+    - ssh $SERVER_DETAILS_PRD "cd $SERVER_PATH_PRD; next build; pm2 restart thinkfwd"
   environment:
     name: production
     url: $PRD_DOMAIN
@@ -75,7 +75,7 @@ deploy_stage:
     - mv public/static/robots.stage.txt public/static/robots.txt
     - curl -O -L https://gitlab.com/digitalsurgeons/gitlab-ci-configs/raw/master/.rsyncignore
     - rsync --copy-unsafe-links -rvzcSl --exclude-from '.rsyncignore' ./ $SERVER_DETAILS_STG:$SERVER_PATH_STG/
-    - ssh $SERVER_DETAILS_STG:$SERVER_PATH_STG "pm2 restart thinkfwd-stage"
+    - ssh $SERVER_DETAILS_STG "cd $SERVER_PATH_STG; next build; pm2 restart thinkfwd-stage"
   environment:
     name: staging
     url: $STG_DOMAIN
@@ -92,3 +92,35 @@ deploy_stage:
     variables:
       - $CI_COMMIT_MESSAGE =~ /skip-stg-deploy/
       - $CI_COMMIT_MESSAGE =~ /skip-deploy/
+
+# Build steps for boilerplate frontend
+build_frontend:
+  image: node:$NODE_VERSION
+  script:
+    # Update npm to ensure ci command present
+    # TODO: This will eventually cause failures if and when npm itself
+    # can no longer run on an earlier version of node. As of the time
+    # this change was introduced, the latest npm works all the way back
+    # to node 6, so we're going to chance it until npm introduces some
+    # breaking change.
+    - npm -g i npm
+    # Install dependencies
+    - npm ci
+  cache:
+    key: npm
+    paths:
+      - node_modules/
+  artifacts:
+    paths:
+      - node_modules/
+    expire_in: 2 mos
+  stage: build
+  only:
+    refs:
+      - branches
+    variables:
+      - $FRONTEND == "true"
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-frontend-build/
+      - $CI_COMMIT_MESSAGE =~ /skip-build/
