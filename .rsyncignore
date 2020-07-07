@@ -11,7 +11,6 @@
 bower.json
 gulpfile.js
 npm-shrinkwrap.json
-package.json
 id_rsa
 gulp
 npm-debug.log
