@@ -52,7 +52,7 @@ deploy_prod:
     - rm public/static/robots.txt
     - rsync --copy-unsafe-links -rvzcSl --exclude-from '.rsyncignore' ./ $SERVER_DETAILS_PRD:$SERVER_PATH_PRD/
     - >
-      ssh $SERVER_DETAILS_PRD "export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"; cd $SERVER_PATH_PRD; next build; pm2 restart thinkfwd"
+      ssh $SERVER_DETAILS_PRD 'export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"; cd $SERVER_PATH_PRD; next build; pm2 restart thinkfwd'
   environment:
     name: production
     url: $PRD_DOMAIN
@@ -75,7 +75,7 @@ deploy_stage:
     - mv public/static/robots.stage.txt public/static/robots.txt
     - rsync --copy-unsafe-links -rvzcSl --exclude-from '.rsyncignore' ./ $SERVER_DETAILS_STG:$SERVER_PATH_STG/
     - >
-      ssh $SERVER_DETAILS_STG "export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"; cd $SERVER_PATH_STG; next build; pm2 restart thinkfwd-stage"
+      ssh $SERVER_DETAILS_STG 'export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"; cd $SERVER_PATH_STG; next build; pm2 restart thinkfwd-stage'
   environment:
     name: staging
     url: $STG_DOMAIN
