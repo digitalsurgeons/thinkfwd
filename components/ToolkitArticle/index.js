@@ -77,7 +77,7 @@ export default ({ aside, main, downloadLink, downloadLinkText }) => {
                 Thanks for your submission.
                 <a
                   style={{ fontWeight: 600, color: colors.pink }}
-                  href={downloadLink.url}
+                  href={downloadLink}
                   target="__blank">
                   <br />
                   Click here
@@ -112,7 +112,7 @@ export default ({ aside, main, downloadLink, downloadLinkText }) => {
                 <ButtonContainer>
                   <Button variant="secondary" type="submit">
                     <span>
-                      {downloadLinkText ? downloadLinkText[0].text : 'Download'}
+                      {downloadLink ? downloadLinkText : 'Download'}
                     </span>
                   </Button>
                 </ButtonContainer>
